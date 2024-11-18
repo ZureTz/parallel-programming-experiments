@@ -50,11 +50,17 @@ private:
 
 class ParallelShellSorterArgs : public SorterArgs {
 public:
-  ParallelShellSorterArgs(ParallelShellSorter *s, int tid, uint64_t *array,
-                          int arraySize)
-      : SorterArgs(s), tid(tid), array(array), arraySize(arraySize) {}
+  ParallelShellSorterArgs(ParallelShellSorter *s, int tid, int *runConditions,
+                          uint64_t *array, int arraySize)
+      : SorterArgs(s), tid(tid), runConditions(runConditions), array(array),
+        arraySize(arraySize) {}
 
   int tid;
+
+  // Determine if this thread can run after pthread_cond_broadcast
+  // 0: Wait 1: Run 2: Stop Waiting
+  int *runConditions;
+
   uint64_t *array;
   int arraySize;
 };
