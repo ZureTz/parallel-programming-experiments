@@ -1,0 +1,8 @@
+CompileFlags:
+  Add: [
+    -O2,
+    -xc++, 
+    -std=c++14, 
+    -pthread,
+  ]
+  Compiler: g++
