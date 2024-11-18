@@ -12,6 +12,7 @@ void ShellSorter::sort(uint64_t *array, int array_size) {
     }
   }
 }
+
 void ParallelShellSorter::sort(uint64_t *array, int array_size) {
   
 }
