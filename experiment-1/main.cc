@@ -1,7 +1,8 @@
-#include <stdint.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
+#include <cstdint>
+#include <cstdio>
+#include <cstdlib>
+#include <ctime>
+
 #include <unistd.h>
 
 #include "HRTimer.hh"
@@ -63,9 +64,16 @@ int main(int argc, char *const argv[]) {
   }
 #ifdef PARALLEL
   if (nthreads <= 0) {
-    printf("Missing required option -n\n");
+    fprintf(stderr, "Missing required option -n\n");
     print_usage(argv[0]);
     return 1;
+  }
+
+  if (array_size < nthreads) {
+    fprintf(stderr,
+            "Array size (%d) cannot be smaller than thread numbers (%d).\n",
+            array_size, nthreads);
+    print_usage(argv[0]);
   }
 #endif
 
@@ -78,9 +86,9 @@ int main(int argc, char *const argv[]) {
   for (int i = 0; i < array_size; i++) {
     // Ranges from 0 to 2 ^ 64
     array[i] = (rand() & 0xffff);
-    array[i] |= (rand() & 0xffff) << 16;
-    array[i] |= static_cast<uint64_t>(rand() & 0xffff) << 32;
-    array[i] |= static_cast<uint64_t>(rand() & 0xffff) << 48;
+    // array[i] |= (rand() & 0xffff) << 16;
+    // array[i] |= static_cast<uint64_t>(rand() & 0xffff) << 32;
+    // array[i] |= static_cast<uint64_t>(rand() & 0xffff) << 48;
   }
 
   HRTimer timer;
@@ -109,6 +117,11 @@ int main(int argc, char *const argv[]) {
   end = timer.get_time_ns();
 
   // Check
+
+  for (int i = 0; i < array_size; i++) {
+    printf("%lu ", array[i]);
+  }
+  putchar('\n');
 
   for (int i = 1; i < array_size; i++) {
     if (array[i - 1] > array[i]) {
