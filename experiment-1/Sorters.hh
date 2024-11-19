@@ -50,19 +50,18 @@ private:
 
 class ParallelShellSorterArgs : public SorterArgs {
 public:
-  ParallelShellSorterArgs(ParallelShellSorter *s, int tid, int *runConditions,
-                          uint64_t *array, int arraySize)
-      : SorterArgs(s), tid(tid), runConditions(runConditions), array(array),
-        arraySize(arraySize) {}
+  ParallelShellSorterArgs(ParallelShellSorter *s, int tid, uint64_t *array,
+                          int arraySize, int mergeBegin = 0, int mergeMid = 0,
+                          int mergeEnd = 0)
+      : SorterArgs(s), tid(tid), array(array), arraySize(arraySize),
+        mergeBegin(mergeBegin), mergeMid(mergeMid), mergeEnd(mergeEnd) {}
 
   int tid;
 
-  // Determine if this thread can run after pthread_cond_broadcast
-  // 0: Wait 1: Run 2: Stop Waiting
-  int *runConditions;
-
   uint64_t *array;
   int arraySize;
+
+  int mergeBegin, mergeMid, mergeEnd;
 };
 
 class RadixSorter : public Sorter {
