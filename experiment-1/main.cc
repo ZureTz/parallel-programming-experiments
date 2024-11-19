@@ -62,6 +62,7 @@ int main(int argc, char *const argv[]) {
     print_usage(argv[0]);
     return 1;
   }
+
 #ifdef PARALLEL
   if (nthreads <= 0) {
     fprintf(stderr, "Missing required option -n\n");
@@ -74,7 +75,9 @@ int main(int argc, char *const argv[]) {
             "Array size (%d) cannot be smaller than thread numbers (%d).\n",
             array_size, nthreads);
     print_usage(argv[0]);
+    return 1;
   }
+
 #endif
 
   // Create array and then fill with random numbers
@@ -86,9 +89,9 @@ int main(int argc, char *const argv[]) {
   for (int i = 0; i < array_size; i++) {
     // Ranges from 0 to 2 ^ 64
     array[i] = (rand() & 0xffff);
-    // array[i] |= (rand() & 0xffff) << 16;
-    // array[i] |= static_cast<uint64_t>(rand() & 0xffff) << 32;
-    // array[i] |= static_cast<uint64_t>(rand() & 0xffff) << 48;
+    array[i] |= (rand() & 0xffff) << 16;
+    array[i] |= static_cast<uint64_t>(rand() & 0xffff) << 32;
+    array[i] |= static_cast<uint64_t>(rand() & 0xffff) << 48;
   }
 
   HRTimer timer;
@@ -118,10 +121,10 @@ int main(int argc, char *const argv[]) {
 
   // Check
 
-  for (int i = 0; i < array_size; i++) {
-    printf("%lu ", array[i]);
-  }
-  putchar('\n');
+  // for (int i = 0; i < array_size; i++) {
+  //   printf("%lu ", array[i]);
+  // }
+  // putchar('\n');
 
   for (int i = 1; i < array_size; i++) {
     if (array[i - 1] > array[i]) {

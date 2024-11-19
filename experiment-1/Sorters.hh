@@ -69,6 +69,9 @@ public:
   RadixSorter() {}
 
   void sort(uint64_t *array, int array_size) override;
+private:
+  // 对数组按照某一位进行计数排序
+  void counting_sort(uint64_t *array, int array_size, int exp);
 };
 
 class ParallelRadixSorter : public Sorter {
