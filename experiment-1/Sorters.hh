@@ -37,7 +37,7 @@ public:
 
 class ParallelShellSorter : public Sorter {
 public:
-  ParallelShellSorter(int nthreads) { m_nthreads = nthreads; }
+  ParallelShellSorter(int nthreads) : m_nthreads(nthreads) {}
 
   void sort(uint64_t *array, int array_size) override;
 
@@ -69,9 +69,10 @@ public:
   RadixSorter() {}
 
   void sort(uint64_t *array, int array_size) override;
+
 private:
   // 对数组按照某一位进行计数排序
-  void counting_sort(uint64_t *array, int array_size, int exp);
+  void counting_sort(uint64_t *array, int array_size, uint64_t exp);
 };
 
 class ParallelRadixSorter : public Sorter {
@@ -88,10 +89,18 @@ private:
 
 class ParallelRadixSorterArgs : public SorterArgs {
 public:
-  ParallelRadixSorterArgs(ParallelRadixSorter *s, int _tid)
-      : SorterArgs(s), tid(_tid) {}
+  ParallelRadixSorterArgs(ParallelRadixSorter *s, int tid, uint64_t *array,
+                          int arraySize, int mergeBegin = 0, int mergeMid = 0,
+                          int mergeEnd = 0)
+      : SorterArgs(s), tid(tid), array(array), arraySize(arraySize),
+        mergeBegin(mergeBegin), mergeMid(mergeMid), mergeEnd(mergeEnd) {}
 
   int tid;
+
+  uint64_t *array;
+  int arraySize;
+
+  int mergeBegin, mergeMid, mergeEnd;
 };
 
 #endif
