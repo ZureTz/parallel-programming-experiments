@@ -1,64 +1,45 @@
 #ifndef HRTIMERS_H
 #define HRTIMERS_H
 
-#if defined(sparc)
-#include <sys/time.h>
-#elif defined(__i386) || defined(__tune_i686__) || defined(__x86_64__) ||      \
-    defined(__x86_64) || defined(__amd64)
-    
-#include <stdio.h>
-#include <string.h>
+#include <ctime>
 
-typedef long long int hrtime_t;
-
-extern "C" {
-__inline__ hrtime_t rdtsc() {
-  unsigned long int lo, hi;
-  __asm__ __volatile__("rdtsc" : "=a"(lo), "=d"(hi));
-  return (hrtime_t)hi << 32 | lo;
-}
-}
-
-#endif
+typedef struct timespec hrtime_t;
+constexpr long ONE_S_TO_NS = 1000000000l;
 
 class HRTimer {
-
 public:
-  HRTimer() {
-#if defined(__linux) || defined(__linux__) || defined(linux)
-    FILE *cpuinfo;
-    char str[100];
-    cpuinfo = fopen("/proc/cpuinfo", "r");
-    while (fgets(str, 100, cpuinfo) != NULL) {
-      char cmp_str[8];
-      strncpy(cmp_str, str, 7);
-      cmp_str[7] = '\0';
-      if (strcmp(cmp_str, "cpu MHz") == 0) {
-        double cpu_mhz;
-        sscanf(str, "cpu MHz : %lf", &cpu_mhz);
-        m_cpu_mhz = cpu_mhz;
-        break;
-      }
-    }
+  HRTimer() {}
 
-    fclose(cpuinfo);
-
-#endif
+  hrtime_t get_time_ns() const {
+    hrtime_t currentTime;
+    clock_gettime(CLOCK_REALTIME, &currentTime);
+    return currentTime;
   }
-
-  hrtime_t get_time_ns() {
-#if defined(sparc)
-    return gethrtime();
-#elif defined(__i386) || defined(__tune_i686__) || defined(__x86_64__) ||      \
-    defined(__x86_64) || defined(__amd64)
-    return static_cast<hrtime_t>(((double)(rdtsc()) * 1.0e3) / (m_cpu_mhz));
-#endif
-  }
-
-private:
-#if defined(__linux) || defined(__linux__) || defined(linux)
-  double m_cpu_mhz;
-#endif
 };
+
+inline hrtime_t operator-(const hrtime_t &t1, const hrtime_t &t2) {
+  if (t1.tv_sec <= t2.tv_sec) {
+    const hrtime_t negResult = t2 - t1;
+    return {.tv_sec = -negResult.tv_sec, .tv_nsec = -negResult.tv_nsec};
+  }
+
+  hrtime_t result = {.tv_sec = t1.tv_sec - t2.tv_sec,
+                     .tv_nsec = t1.tv_nsec - t2.tv_nsec};
+  if (result.tv_nsec < 0) {
+    result.tv_sec -= 1;
+    result.tv_nsec += ONE_S_TO_NS;
+  }
+  return result;
+}
+
+inline hrtime_t operator+(const hrtime_t &t1, const hrtime_t &t2) {
+  hrtime_t result = {.tv_sec = t1.tv_sec + t2.tv_sec,
+                     .tv_nsec = t1.tv_nsec + t2.tv_nsec};
+  if (result.tv_nsec > ONE_S_TO_NS) {
+    result.tv_sec += 1;
+    result.tv_nsec -= ONE_S_TO_NS;
+  }
+  return result;
+}
 
 #endif

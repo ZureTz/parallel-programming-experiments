@@ -94,9 +94,6 @@ int main(int argc, char *const argv[]) {
     array[i] |= static_cast<uint64_t>(rand() & 0xffff) << 48;
   }
 
-  HRTimer timer;
-  hrtime_t start, end;
-
 #ifdef PARALLEL
 
 #ifdef SHELL
@@ -114,10 +111,11 @@ int main(int argc, char *const argv[]) {
 #endif
 
 #endif
+  const HRTimer timer;
 
-  start = timer.get_time_ns();
+  const hrtime_t start = timer.get_time_ns();
   sorter.sort(array, array_size);
-  end = timer.get_time_ns();
+  const hrtime_t end = timer.get_time_ns();
 
   // Check
 
@@ -133,7 +131,10 @@ int main(int argc, char *const argv[]) {
     }
   }
 
-  printf("Sort time: %llu nanoseconds\n", end - start);
+  const hrtime_t runningTime = end - start;
+  printf("Sort time: %ld s %ld ns (%ld ns in total)\n", runningTime.tv_sec,
+         runningTime.tv_nsec,
+         runningTime.tv_sec * ONE_S_TO_NS + runningTime.tv_nsec);
 
   // Free memory
   delete[] array;

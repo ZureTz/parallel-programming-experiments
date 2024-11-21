@@ -1,6 +1,6 @@
 CXX= g++
 CXXFLAGS= -O2
-LDFLAGS = -lpthread
+LDFLAGS = -pthread
 
 all: shellsort shellsort-parallel radixsort radixsort-parallel
 
