@@ -18,7 +18,7 @@ public:
 };
 
 inline hrtime_t operator-(const hrtime_t &t1, const hrtime_t &t2) {
-  if (t1.tv_sec <= t2.tv_sec) {
+  if (t1.tv_sec < t2.tv_sec) {
     const hrtime_t negResult = t2 - t1;
     return {.tv_sec = -negResult.tv_sec, .tv_nsec = -negResult.tv_nsec};
   }

@@ -1,0 +1,145 @@
+------------------------------------------------------------------
+Making again ...
+rm -f shellsort
+rm -f shellsort-parallel
+rm -f radixsort
+rm -f radixsort-parallel
+rm -f *~
+g++ -O2 -DSHELL main.cc ShellSorter.cc -o shellsort -pthread
+g++ -O2 -DSHELL -DPARALLEL main.cc ShellSorter.cc -o shellsort-parallel -pthread
+g++ -O2 main.cc RadixSorter.cc -o radixsort -pthread
+g++ -O2 -DPARALLEL main.cc RadixSorter.cc -o radixsort-parallel -pthread
+Remake finished
+------------------------------------------------------------------
+
+------------------------------------------------------------------
+Shellsort Performance: 
+---------------------------------
+arrayLength = 5000000
+Without parallelism performance:
+Sort time: 0 s 495998821 ns (495998821 ns in total)
+---------------------------------
+With parallelism performance:
+Using 1 threads: 
+Sort time: 0 s 486856339 ns (486856339 ns in total)
+Using 2 threads: 
+Sort time: 0 s 248024016 ns (248024016 ns in total)
+Using 4 threads: 
+Sort time: 0 s 144981884 ns (144981884 ns in total)
+Using 8 threads: 
+Sort time: 0 s 98361417 ns (98361417 ns in total)
+Using 16 threads: 
+Sort time: 0 s 75080183 ns (75080183 ns in total)
+Using 32 threads: 
+Sort time: 0 s 76242595 ns (76242595 ns in total)
+Using 64 threads: 
+Sort time: 0 s 79775090 ns (79775090 ns in total)
+---------------------------------
+---------------------------------
+arrayLength = 10000000
+Without parallelism performance:
+Sort time: 1 s 101254514 ns (1101254514 ns in total)
+---------------------------------
+With parallelism performance:
+Using 1 threads: 
+Sort time: 1 s 76755394 ns (1076755394 ns in total)
+Using 2 threads: 
+Sort time: 0 s 541490597 ns (541490597 ns in total)
+Using 4 threads: 
+Sort time: 0 s 307419268 ns (307419268 ns in total)
+Using 8 threads: 
+Sort time: 0 s 205758444 ns (205758444 ns in total)
+Using 16 threads: 
+Sort time: 0 s 165987127 ns (165987127 ns in total)
+Using 32 threads: 
+Sort time: 0 s 154003872 ns (154003872 ns in total)
+Using 64 threads: 
+Sort time: 0 s 169026316 ns (169026316 ns in total)
+---------------------------------
+---------------------------------
+arrayLength = 30000000
+Without parallelism performance:
+Sort time: 4 s 22202483 ns (4022202483 ns in total)
+---------------------------------
+With parallelism performance:
+Using 1 threads: 
+Sort time: 3 s 735702357 ns (3735702357 ns in total)
+Using 2 threads: 
+Sort time: 1 s 839055562 ns (1839055562 ns in total)
+Using 4 threads: 
+Sort time: 1 s 44855256 ns (1044855256 ns in total)
+Using 8 threads: 
+Sort time: 0 s 702714351 ns (702714351 ns in total)
+Using 16 threads: 
+Sort time: 0 s 587649388 ns (587649388 ns in total)
+Using 32 threads: 
+Sort time: 0 s 577204315 ns (577204315 ns in total)
+Using 64 threads: 
+Sort time: 0 s 559114525 ns (559114525 ns in total)
+---------------------------------
+------------------------------------------------------------------
+Radixsort Performance: 
+---------------------------------
+arrayLength = 5000000
+Without parallelism performance:
+Sort time: 0 s 583071037 ns (583071037 ns in total)
+---------------------------------
+With parallelism performance:
+Using 1 threads: 
+Sort time: 0 s 579741911 ns (579741911 ns in total)
+Using 2 threads: 
+Sort time: 0 s 243013987 ns (243013987 ns in total)
+Using 4 threads: 
+Sort time: 0 s 158798150 ns (158798150 ns in total)
+Using 8 threads: 
+Sort time: 0 s 121751812 ns (121751812 ns in total)
+Using 16 threads: 
+Sort time: 0 s 102932625 ns (102932625 ns in total)
+Using 32 threads: 
+Sort time: 0 s 100296923 ns (100296923 ns in total)
+Using 64 threads: 
+Sort time: 0 s 88240079 ns (88240079 ns in total)
+---------------------------------
+---------------------------------
+arrayLength = 10000000
+Without parallelism performance:
+Sort time: 1 s 180298948 ns (1180298948 ns in total)
+---------------------------------
+With parallelism performance:
+Using 1 threads: 
+Sort time: 1 s 172177482 ns (1172177482 ns in total)
+Using 2 threads: 
+Sort time: 0 s 645661749 ns (645661749 ns in total)
+Using 4 threads: 
+Sort time: 0 s 328803439 ns (328803439 ns in total)
+Using 8 threads: 
+Sort time: 0 s 286137068 ns (286137068 ns in total)
+Using 16 threads: 
+Sort time: 0 s 276686056 ns (276686056 ns in total)
+Using 32 threads: 
+Sort time: 0 s 273927705 ns (273927705 ns in total)
+Using 64 threads: 
+Sort time: 0 s 226401430 ns (226401430 ns in total)
+---------------------------------
+---------------------------------
+arrayLength = 30000000
+Without parallelism performance:
+Sort time: 3 s 511247484 ns (3511247484 ns in total)
+---------------------------------
+With parallelism performance:
+Using 1 threads: 
+Sort time: 3 s 544408974 ns (3544408974 ns in total)
+Using 2 threads: 
+Sort time: 1 s 970109166 ns (1970109166 ns in total)
+Using 4 threads: 
+Sort time: 1 s 280599453 ns (1280599453 ns in total)
+Using 8 threads: 
+Sort time: 0 s 927428504 ns (927428504 ns in total)
+Using 16 threads: 
+Sort time: 0 s 996169930 ns (996169930 ns in total)
+Using 32 threads: 
+Sort time: 0 s 996259316 ns (996259316 ns in total)
+Using 64 threads: 
+Sort time: 1 s 44813934 ns (1044813934 ns in total)
+---------------------------------
+------------------------------------------------------------------
