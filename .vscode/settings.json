@@ -1,3 +1,8 @@
 {
-  "makefile.configureOnOpen": false
+  "makefile.configureOnOpen": false,
+  "cSpell.words": [
+    "Pthread",
+    "radixsort",
+    "shellsort"
+  ]
 }
