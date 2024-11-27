@@ -1,0 +1,14 @@
+If:
+  PathMatch: 
+    - .*\.c
+    - .*\.h
+
+CompileFlags:
+  Add: [
+    -xc,
+    -g,
+    -fopenmp,
+    -O3,
+    -std=c99
+  ]
+  Compiler: gcc

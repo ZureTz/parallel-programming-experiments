@@ -2,8 +2,11 @@
 
 # Recommeneded usage: ./test.sh | tee test-result.log
 
+
+
 echo '------------------------------------------------------------------'
 echo 'Making again ...'
+cd src
 make clean
 make all
 echo 'Remake finished'

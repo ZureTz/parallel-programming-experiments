@@ -1,6 +1,8 @@
 {
   "makefile.configureOnOpen": false,
   "cSpell.words": [
+    "kmeans",
+    "nclusters",
     "Pthread",
     "radixsort",
     "shellsort"
