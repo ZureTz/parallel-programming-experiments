@@ -1,0 +1,681 @@
+----------------------------------------------------------------------------------
+Init data...
+Building files...
+rm -f *~ kmeans-serial kmeans-parallel
+gcc -g -fopenmp -O3 -std=c99 main.c cluster.c kmeans_clustering.c -o kmeans-serial
+gcc -g -fopenmp -O3 -std=c99 -DPARALLEL main.c cluster.c kmeans_clustering.c -o kmeans-parallel
+----------------------------------------------------------------------------------
+Running: ./kmeans-serial -s 10000 -k 2
+number of Clusters: 2
+number of Objects: 10000
+number of Attributes per Object: 24
+
+Time for process: 0.008898 s
+-----------------------------------------
+Running: ./kmeans-serial -s 10000 -k 4
+number of Clusters: 4
+number of Objects: 10000
+number of Attributes per Object: 24
+
+Time for process: 0.064850 s
+-----------------------------------------
+Running: ./kmeans-serial -s 10000 -k 8
+number of Clusters: 8
+number of Objects: 10000
+number of Attributes per Object: 24
+
+Time for process: 0.052548 s
+-----------------------------------------
+Running: ./kmeans-serial -s 10000 -k 16
+number of Clusters: 16
+number of Objects: 10000
+number of Attributes per Object: 24
+
+Time for process: 0.092734 s
+-----------------------------------------
+Running: ./kmeans-serial -s 100000 -k 2
+number of Clusters: 2
+number of Objects: 100000
+number of Attributes per Object: 24
+
+Time for process: 0.073578 s
+-----------------------------------------
+Running: ./kmeans-serial -s 100000 -k 4
+number of Clusters: 4
+number of Objects: 100000
+number of Attributes per Object: 24
+
+Time for process: 0.710056 s
+-----------------------------------------
+Running: ./kmeans-serial -s 100000 -k 8
+number of Clusters: 8
+number of Objects: 100000
+number of Attributes per Object: 24
+
+Time for process: 2.356356 s
+-----------------------------------------
+Running: ./kmeans-serial -s 100000 -k 16
+number of Clusters: 16
+number of Objects: 100000
+number of Attributes per Object: 24
+
+Time for process: 5.409473 s
+-----------------------------------------
+Running: ./kmeans-serial -s 1000000 -k 2
+number of Clusters: 2
+number of Objects: 1000000
+number of Attributes per Object: 24
+
+Time for process: 0.670876 s
+-----------------------------------------
+Running: ./kmeans-serial -s 1000000 -k 4
+number of Clusters: 4
+number of Objects: 1000000
+number of Attributes per Object: 24
+
+Time for process: 4.511564 s
+-----------------------------------------
+Running: ./kmeans-serial -s 1000000 -k 8
+number of Clusters: 8
+number of Objects: 1000000
+number of Attributes per Object: 24
+
+Time for process: 16.713731 s
+-----------------------------------------
+Running: ./kmeans-serial -s 1000000 -k 16
+number of Clusters: 16
+number of Objects: 1000000
+number of Attributes per Object: 24
+
+Time for process: 144.898494 s
+-----------------------------------------
+----------------------------------------------------------------------------------
+Running: ./kmeans-parallel -s 10000 -k 2 -n 1
+number of Clusters: 2
+number of Objects: 10000
+number of Attributes per Object: 24
+
+Time for process: 0.008869 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 10000 -k 4 -n 1
+number of Clusters: 4
+number of Objects: 10000
+number of Attributes per Object: 24
+
+Time for process: 0.064557 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 10000 -k 8 -n 1
+number of Clusters: 8
+number of Objects: 10000
+number of Attributes per Object: 24
+
+Time for process: 0.053643 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 10000 -k 16 -n 1
+number of Clusters: 16
+number of Objects: 10000
+number of Attributes per Object: 24
+
+Time for process: 0.096438 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 100000 -k 2 -n 1
+number of Clusters: 2
+number of Objects: 100000
+number of Attributes per Object: 24
+
+Time for process: 0.075178 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 100000 -k 4 -n 1
+number of Clusters: 4
+number of Objects: 100000
+number of Attributes per Object: 24
+
+Time for process: 0.685073 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 100000 -k 8 -n 1
+number of Clusters: 8
+number of Objects: 100000
+number of Attributes per Object: 24
+
+Time for process: 2.319754 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 100000 -k 16 -n 1
+number of Clusters: 16
+number of Objects: 100000
+number of Attributes per Object: 24
+
+Time for process: 5.328266 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 1000000 -k 2 -n 1
+number of Clusters: 2
+number of Objects: 1000000
+number of Attributes per Object: 24
+
+Time for process: 0.642073 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 1000000 -k 4 -n 1
+number of Clusters: 4
+number of Objects: 1000000
+number of Attributes per Object: 24
+
+Time for process: 4.365810 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 1000000 -k 8 -n 1
+number of Clusters: 8
+number of Objects: 1000000
+number of Attributes per Object: 24
+
+Time for process: 17.200635 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 1000000 -k 16 -n 1
+number of Clusters: 16
+number of Objects: 1000000
+number of Attributes per Object: 24
+
+Time for process: 151.325733 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 10000 -k 2 -n 2
+number of Clusters: 2
+number of Objects: 10000
+number of Attributes per Object: 24
+
+Time for process: 0.004876 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 10000 -k 4 -n 2
+number of Clusters: 4
+number of Objects: 10000
+number of Attributes per Object: 24
+
+Time for process: 0.034514 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 10000 -k 8 -n 2
+number of Clusters: 8
+number of Objects: 10000
+number of Attributes per Object: 24
+
+Time for process: 0.027893 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 10000 -k 16 -n 2
+number of Clusters: 16
+number of Objects: 10000
+number of Attributes per Object: 24
+
+Time for process: 0.048833 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 100000 -k 2 -n 2
+number of Clusters: 2
+number of Objects: 100000
+number of Attributes per Object: 24
+
+Time for process: 0.037765 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 100000 -k 4 -n 2
+number of Clusters: 4
+number of Objects: 100000
+number of Attributes per Object: 24
+
+Time for process: 0.361557 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 100000 -k 8 -n 2
+number of Clusters: 8
+number of Objects: 100000
+number of Attributes per Object: 24
+
+Time for process: 1.495545 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 100000 -k 16 -n 2
+number of Clusters: 16
+number of Objects: 100000
+number of Attributes per Object: 24
+
+Time for process: 2.775978 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 1000000 -k 2 -n 2
+number of Clusters: 2
+number of Objects: 1000000
+number of Attributes per Object: 24
+
+Time for process: 0.352449 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 1000000 -k 4 -n 2
+number of Clusters: 4
+number of Objects: 1000000
+number of Attributes per Object: 24
+
+Time for process: 2.285478 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 1000000 -k 8 -n 2
+number of Clusters: 8
+number of Objects: 1000000
+number of Attributes per Object: 24
+
+Time for process: 10.410756 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 1000000 -k 16 -n 2
+number of Clusters: 16
+number of Objects: 1000000
+number of Attributes per Object: 24
+
+Time for process: 73.560596 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 10000 -k 2 -n 4
+number of Clusters: 2
+number of Objects: 10000
+number of Attributes per Object: 24
+
+Time for process: 0.002739 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 10000 -k 4 -n 4
+number of Clusters: 4
+number of Objects: 10000
+number of Attributes per Object: 24
+
+Time for process: 0.018282 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 10000 -k 8 -n 4
+number of Clusters: 8
+number of Objects: 10000
+number of Attributes per Object: 24
+
+Time for process: 0.014539 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 10000 -k 16 -n 4
+number of Clusters: 16
+number of Objects: 10000
+number of Attributes per Object: 24
+
+Time for process: 0.025102 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 100000 -k 2 -n 4
+number of Clusters: 2
+number of Objects: 100000
+number of Attributes per Object: 24
+
+Time for process: 0.019482 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 100000 -k 4 -n 4
+number of Clusters: 4
+number of Objects: 100000
+number of Attributes per Object: 24
+
+Time for process: 0.185191 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 100000 -k 8 -n 4
+number of Clusters: 8
+number of Objects: 100000
+number of Attributes per Object: 24
+
+Time for process: 0.748216 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 100000 -k 16 -n 4
+number of Clusters: 16
+number of Objects: 100000
+number of Attributes per Object: 24
+
+Time for process: 1.436222 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 1000000 -k 2 -n 4
+number of Clusters: 2
+number of Objects: 1000000
+number of Attributes per Object: 24
+
+Time for process: 0.170428 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 1000000 -k 4 -n 4
+number of Clusters: 4
+number of Objects: 1000000
+number of Attributes per Object: 24
+
+Time for process: 1.154920 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 1000000 -k 8 -n 4
+number of Clusters: 8
+number of Objects: 1000000
+number of Attributes per Object: 24
+
+Time for process: 4.355730 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 1000000 -k 16 -n 4
+number of Clusters: 16
+number of Objects: 1000000
+number of Attributes per Object: 24
+
+Time for process: 38.170828 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 10000 -k 2 -n 8
+number of Clusters: 2
+number of Objects: 10000
+number of Attributes per Object: 24
+
+Time for process: 0.002226 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 10000 -k 4 -n 8
+number of Clusters: 4
+number of Objects: 10000
+number of Attributes per Object: 24
+
+Time for process: 0.010335 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 10000 -k 8 -n 8
+number of Clusters: 8
+number of Objects: 10000
+number of Attributes per Object: 24
+
+Time for process: 0.008292 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 10000 -k 16 -n 8
+number of Clusters: 16
+number of Objects: 10000
+number of Attributes per Object: 24
+
+Time for process: 0.013455 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 100000 -k 2 -n 8
+number of Clusters: 2
+number of Objects: 100000
+number of Attributes per Object: 24
+
+Time for process: 0.010610 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 100000 -k 4 -n 8
+number of Clusters: 4
+number of Objects: 100000
+number of Attributes per Object: 24
+
+Time for process: 0.094917 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 100000 -k 8 -n 8
+number of Clusters: 8
+number of Objects: 100000
+number of Attributes per Object: 24
+
+Time for process: 0.319418 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 100000 -k 16 -n 8
+number of Clusters: 16
+number of Objects: 100000
+number of Attributes per Object: 24
+
+Time for process: 0.726846 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 1000000 -k 2 -n 8
+number of Clusters: 2
+number of Objects: 1000000
+number of Attributes per Object: 24
+
+Time for process: 0.089331 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 1000000 -k 4 -n 8
+number of Clusters: 4
+number of Objects: 1000000
+number of Attributes per Object: 24
+
+Time for process: 0.581956 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 1000000 -k 8 -n 8
+number of Clusters: 8
+number of Objects: 1000000
+number of Attributes per Object: 24
+
+Time for process: 2.645968 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 1000000 -k 16 -n 8
+number of Clusters: 16
+number of Objects: 1000000
+number of Attributes per Object: 24
+
+Time for process: 19.634728 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 10000 -k 2 -n 16
+number of Clusters: 2
+number of Objects: 10000
+number of Attributes per Object: 24
+
+Time for process: 0.001826 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 10000 -k 4 -n 16
+number of Clusters: 4
+number of Objects: 10000
+number of Attributes per Object: 24
+
+Time for process: 0.007112 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 10000 -k 8 -n 16
+number of Clusters: 8
+number of Objects: 10000
+number of Attributes per Object: 24
+
+Time for process: 0.005135 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 10000 -k 16 -n 16
+number of Clusters: 16
+number of Objects: 10000
+number of Attributes per Object: 24
+
+Time for process: 0.008012 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 100000 -k 2 -n 16
+number of Clusters: 2
+number of Objects: 100000
+number of Attributes per Object: 24
+
+Time for process: 0.006085 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 100000 -k 4 -n 16
+number of Clusters: 4
+number of Objects: 100000
+number of Attributes per Object: 24
+
+Time for process: 0.050224 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 100000 -k 8 -n 16
+number of Clusters: 8
+number of Objects: 100000
+number of Attributes per Object: 24
+
+Time for process: 0.201598 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 100000 -k 16 -n 16
+number of Clusters: 16
+number of Objects: 100000
+number of Attributes per Object: 24
+
+Time for process: 0.412667 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 1000000 -k 2 -n 16
+number of Clusters: 2
+number of Objects: 1000000
+number of Attributes per Object: 24
+
+Time for process: 0.253709 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 1000000 -k 4 -n 16
+number of Clusters: 4
+number of Objects: 1000000
+number of Attributes per Object: 24
+
+Time for process: 0.719136 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 1000000 -k 8 -n 16
+number of Clusters: 8
+number of Objects: 1000000
+number of Attributes per Object: 24
+
+Time for process: 1.434348 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 1000000 -k 16 -n 16
+number of Clusters: 16
+number of Objects: 1000000
+number of Attributes per Object: 24
+
+Time for process: 13.640049 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 10000 -k 2 -n 32
+number of Clusters: 2
+number of Objects: 10000
+number of Attributes per Object: 24
+
+Time for process: 0.070027 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 10000 -k 4 -n 32
+number of Clusters: 4
+number of Objects: 10000
+number of Attributes per Object: 24
+
+Time for process: 0.011059 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 10000 -k 8 -n 32
+number of Clusters: 8
+number of Objects: 10000
+number of Attributes per Object: 24
+
+Time for process: 0.006841 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 10000 -k 16 -n 32
+number of Clusters: 16
+number of Objects: 10000
+number of Attributes per Object: 24
+
+Time for process: 0.009419 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 100000 -k 2 -n 32
+number of Clusters: 2
+number of Objects: 100000
+number of Attributes per Object: 24
+
+Time for process: 0.006638 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 100000 -k 4 -n 32
+number of Clusters: 4
+number of Objects: 100000
+number of Attributes per Object: 24
+
+Time for process: 0.047446 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 100000 -k 8 -n 32
+number of Clusters: 8
+number of Objects: 100000
+number of Attributes per Object: 24
+
+Time for process: 0.175687 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 100000 -k 16 -n 32
+number of Clusters: 16
+number of Objects: 100000
+number of Attributes per Object: 24
+
+Time for process: 0.353420 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 1000000 -k 2 -n 32
+number of Clusters: 2
+number of Objects: 1000000
+number of Attributes per Object: 24
+
+Time for process: 0.048245 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 1000000 -k 4 -n 32
+number of Clusters: 4
+number of Objects: 1000000
+number of Attributes per Object: 24
+
+Time for process: 0.264942 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 1000000 -k 8 -n 32
+number of Clusters: 8
+number of Objects: 1000000
+number of Attributes per Object: 24
+
+Time for process: 1.098838 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 1000000 -k 16 -n 32
+number of Clusters: 16
+number of Objects: 1000000
+number of Attributes per Object: 24
+
+Time for process: 9.259467 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 10000 -k 2 -n 64
+number of Clusters: 2
+number of Objects: 10000
+number of Attributes per Object: 24
+
+Time for process: 0.018473 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 10000 -k 4 -n 64
+number of Clusters: 4
+number of Objects: 10000
+number of Attributes per Object: 24
+
+Time for process: 0.069175 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 10000 -k 8 -n 64
+number of Clusters: 8
+number of Objects: 10000
+number of Attributes per Object: 24
+
+Time for process: 0.033305 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 10000 -k 16 -n 64
+number of Clusters: 16
+number of Objects: 10000
+number of Attributes per Object: 24
+
+Time for process: 0.034298 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 100000 -k 2 -n 64
+number of Clusters: 2
+number of Objects: 100000
+number of Attributes per Object: 24
+
+Time for process: 0.019770 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 100000 -k 4 -n 64
+number of Clusters: 4
+number of Objects: 100000
+number of Attributes per Object: 24
+
+Time for process: 0.119565 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 100000 -k 8 -n 64
+number of Clusters: 8
+number of Objects: 100000
+number of Attributes per Object: 24
+
+Time for process: 0.309678 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 100000 -k 16 -n 64
+number of Clusters: 16
+number of Objects: 100000
+number of Attributes per Object: 24
+
+Time for process: 0.568455 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 1000000 -k 2 -n 64
+number of Clusters: 2
+number of Objects: 1000000
+number of Attributes per Object: 24
+
+Time for process: 0.071530 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 1000000 -k 4 -n 64
+number of Clusters: 4
+number of Objects: 1000000
+number of Attributes per Object: 24
+
+Time for process: 0.346870 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 1000000 -k 8 -n 64
+number of Clusters: 8
+number of Objects: 1000000
+number of Attributes per Object: 24
+
+Time for process: 1.248203 s
+-----------------------------------------
+Running: ./kmeans-parallel -s 1000000 -k 16 -n 64
+number of Clusters: 16
+number of Objects: 1000000
+number of Attributes per Object: 24
+
+Time for process: 14.528426 s
+-----------------------------------------
+----------------------------------------------------------------------------------
