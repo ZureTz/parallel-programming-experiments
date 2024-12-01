@@ -3,970 +3,970 @@ Init data...
 Building files...
 rm -f serial_ocean
 rm -f omp_ocean
-gcc -O3 -std=c99 ocean_main.c serial_ocean.c -o serial_ocean 
-gcc -O3 -std=c99 -DPARALLEL -fopenmp ocean_main.c omp_ocean.c -o omp_ocean 
+gcc -O3 -std=gnu2x ocean_main.c serial_ocean.c -o serial_ocean 
+gcc -O3 -std=gnu2x -DPARALLEL -fopenmp ocean_main.c omp_ocean.c -o omp_ocean 
 ----------------------------------------------------------------------------------
 Running serial_ocean...
 Running ./serial_ocean -d 4 -t 4
-Total Execution time: 4500 ns
+Total Execution time: 2375 ns
 -----------------------------------------
 Running ./serial_ocean -d 4 -t 16
-Total Execution time: 1687 ns
+Total Execution time: 1187 ns
 -----------------------------------------
 Running ./serial_ocean -d 4 -t 64
-Total Execution time: 4162 ns
+Total Execution time: 1187 ns
 -----------------------------------------
 Running ./serial_ocean -d 4 -t 256
-Total Execution time: 12262 ns
+Total Execution time: 2375 ns
 -----------------------------------------
 Running ./serial_ocean -d 6 -t 4
-Total Execution time: 1462 ns
+Total Execution time: 1188 ns
 -----------------------------------------
 Running ./serial_ocean -d 6 -t 16
-Total Execution time: 2812 ns
+Total Execution time: 1188 ns
 -----------------------------------------
 Running ./serial_ocean -d 6 -t 64
-Total Execution time: 8100 ns
+Total Execution time: 2375 ns
 -----------------------------------------
 Running ./serial_ocean -d 6 -t 256
-Total Execution time: 29250 ns
+Total Execution time: 5936 ns
 -----------------------------------------
 Running ./serial_ocean -d 8 -t 4
-Total Execution time: 2475 ns
+Total Execution time: 1187 ns
 -----------------------------------------
 Running ./serial_ocean -d 8 -t 16
-Total Execution time: 5062 ns
+Total Execution time: 2374 ns
 -----------------------------------------
 Running ./serial_ocean -d 8 -t 64
-Total Execution time: 15187 ns
+Total Execution time: 2374 ns
 -----------------------------------------
 Running ./serial_ocean -d 8 -t 256
-Total Execution time: 59287 ns
+Total Execution time: 7123 ns
 -----------------------------------------
 Running ./serial_ocean -d 10 -t 4
-Total Execution time: 3150 ns
+Total Execution time: 1188 ns
 -----------------------------------------
 Running ./serial_ocean -d 10 -t 16
-Total Execution time: 7537 ns
+Total Execution time: 1187 ns
 -----------------------------------------
 Running ./serial_ocean -d 10 -t 64
-Total Execution time: 24750 ns
+Total Execution time: 3561 ns
 -----------------------------------------
 Running ./serial_ocean -d 10 -t 256
-Total Execution time: 92475 ns
+Total Execution time: 9499 ns
 -----------------------------------------
 Running ./serial_ocean -d 12 -t 4
-Total Execution time: 3600 ns
+Total Execution time: 2375 ns
 -----------------------------------------
 Running ./serial_ocean -d 12 -t 16
-Total Execution time: 13387 ns
+Total Execution time: 2375 ns
 -----------------------------------------
 Running ./serial_ocean -d 12 -t 64
-Total Execution time: 53887 ns
+Total Execution time: 5936 ns
 -----------------------------------------
 Running ./serial_ocean -d 12 -t 256
-Total Execution time: 214762 ns
+Total Execution time: 18997 ns
 -----------------------------------------
 Running ./serial_ocean -d 18 -t 4
-Total Execution time: 6187 ns
+Total Execution time: 1187 ns
 -----------------------------------------
 Running ./serial_ocean -d 18 -t 16
-Total Execution time: 23062 ns
+Total Execution time: 3562 ns
 -----------------------------------------
 Running ./serial_ocean -d 18 -t 64
-Total Execution time: 91687 ns
+Total Execution time: 9498 ns
 -----------------------------------------
 Running ./serial_ocean -d 18 -t 256
-Total Execution time: 364837 ns
+Total Execution time: 36806 ns
 -----------------------------------------
 Running ./serial_ocean -d 66 -t 4
-Total Execution time: 54000 ns
+Total Execution time: 5936 ns
 -----------------------------------------
 Running ./serial_ocean -d 66 -t 16
-Total Execution time: 213075 ns
+Total Execution time: 20184 ns
 -----------------------------------------
 Running ./serial_ocean -d 66 -t 64
-Total Execution time: 894150 ns
+Total Execution time: 79549 ns
 -----------------------------------------
 Running ./serial_ocean -d 66 -t 256
-Total Execution time: 3415162 ns
+Total Execution time: 303947 ns
 -----------------------------------------
 Running ./serial_ocean -d 258 -t 4
-Total Execution time: 804262 ns
+Total Execution time: 71237 ns
 -----------------------------------------
 Running ./serial_ocean -d 258 -t 16
-Total Execution time: 3298275 ns
+Total Execution time: 294449 ns
 -----------------------------------------
 Running ./serial_ocean -d 258 -t 64
-Total Execution time: 12718462 ns
+Total Execution time: 1169483 ns
 -----------------------------------------
 Running ./serial_ocean -d 258 -t 256
-Total Execution time: 50970937 ns
+Total Execution time: 4499838 ns
 -----------------------------------------
 Running ./serial_ocean -d 1026 -t 4
-Total Execution time: 13481775 ns
+Total Execution time: 1222911 ns
 -----------------------------------------
 Running ./serial_ocean -d 1026 -t 16
-Total Execution time: 3615829 ns
+Total Execution time: 4821594 ns
 -----------------------------------------
 Running ./serial_ocean -d 1026 -t 64
-Total Execution time: 14447023 ns
+Total Execution time: 19242447 ns
 -----------------------------------------
 Running ./serial_ocean -d 1026 -t 256
-Total Execution time: 59072215 ns
+Total Execution time: 77112262 ns
 -----------------------------------------
 Running ./serial_ocean -d 4098 -t 4
-Total Execution time: 307704262 ns
+Total Execution time: 28683795 ns
 -----------------------------------------
 Running ./serial_ocean -d 4098 -t 16
-Total Execution time: 1250157600 ns
+Total Execution time: 113023106 ns
 -----------------------------------------
 Running ./serial_ocean -d 4098 -t 64
-Total Execution time: 4949145675 ns
+Total Execution time: 440265807 ns
 -----------------------------------------
 Running ./serial_ocean -d 4098 -t 256
-Total Execution time: 1367455491 ns
+Total Execution time: 1783460338 ns
 -----------------------------------------
 ----------------------------------------------------------------------------------
 Running omp_ocean...
 Running ./omp_ocean -d 4 -t 4 -n 1
-Total Execution time: 5787 ns
+Total Execution time: 8311 ns
 -----------------------------------------
 Running ./omp_ocean -d 6 -t 4 -n 1
-Total Execution time: 3954 ns
+Total Execution time: 5937 ns
 -----------------------------------------
 Running ./omp_ocean -d 8 -t 4 -n 1
-Total Execution time: 3633 ns
+Total Execution time: 4750 ns
 -----------------------------------------
 Running ./omp_ocean -d 10 -t 4 -n 1
-Total Execution time: 4072 ns
+Total Execution time: 5937 ns
 -----------------------------------------
 Running ./omp_ocean -d 12 -t 4 -n 1
-Total Execution time: 3837 ns
+Total Execution time: 7124 ns
 -----------------------------------------
 Running ./omp_ocean -d 18 -t 4 -n 1
-Total Execution time: 4072 ns
+Total Execution time: 5936 ns
 -----------------------------------------
 Running ./omp_ocean -d 66 -t 4 -n 1
-Total Execution time: 7784 ns
+Total Execution time: 10686 ns
 -----------------------------------------
 Running ./omp_ocean -d 258 -t 4 -n 1
-Total Execution time: 63927 ns
+Total Execution time: 86672 ns
 -----------------------------------------
 Running ./omp_ocean -d 1026 -t 4 -n 1
-Total Execution time: 1180875 ns
+Total Execution time: 1189667 ns
 -----------------------------------------
 Running ./omp_ocean -d 4098 -t 4 -n 1
-Total Execution time: 21851077 ns
+Total Execution time: 28606622 ns
 -----------------------------------------
 Running ./omp_ocean -d 4 -t 16 -n 1
-Total Execution time: 143325 ns
+Total Execution time: 15435 ns
 -----------------------------------------
 Running ./omp_ocean -d 6 -t 16 -n 1
-Total Execution time: 140175 ns
+Total Execution time: 15435 ns
 -----------------------------------------
 Running ./omp_ocean -d 8 -t 16 -n 1
-Total Execution time: 145125 ns
+Total Execution time: 15435 ns
 -----------------------------------------
 Running ./omp_ocean -d 10 -t 16 -n 1
-Total Execution time: 138262 ns
+Total Execution time: 14247 ns
 -----------------------------------------
 Running ./omp_ocean -d 12 -t 16 -n 1
-Total Execution time: 155137 ns
+Total Execution time: 15435 ns
 -----------------------------------------
 Running ./omp_ocean -d 18 -t 16 -n 1
-Total Execution time: 155025 ns
+Total Execution time: 15435 ns
 -----------------------------------------
 Running ./omp_ocean -d 66 -t 16 -n 1
-Total Execution time: 393975 ns
+Total Execution time: 40368 ns
 -----------------------------------------
 Running ./omp_ocean -d 258 -t 16 -n 1
-Total Execution time: 3473887 ns
+Total Execution time: 315820 ns
 -----------------------------------------
 Running ./omp_ocean -d 1026 -t 16 -n 1
-Total Execution time: 56677387 ns
+Total Execution time: 4714738 ns
 -----------------------------------------
 Running ./omp_ocean -d 4098 -t 16 -n 1
-Total Execution time: 1252017112 ns
+Total Execution time: 115620906 ns
 -----------------------------------------
 Running ./omp_ocean -d 4 -t 64 -n 1
-Total Execution time: 248962 ns
+Total Execution time: 26120 ns
 -----------------------------------------
 Running ./omp_ocean -d 6 -t 64 -n 1
-Total Execution time: 232537 ns
+Total Execution time: 23746 ns
 -----------------------------------------
 Running ./omp_ocean -d 8 -t 64 -n 1
-Total Execution time: 279112 ns
+Total Execution time: 24933 ns
 -----------------------------------------
 Running ./omp_ocean -d 10 -t 64 -n 1
-Total Execution time: 267187 ns
+Total Execution time: 26120 ns
 -----------------------------------------
 Running ./omp_ocean -d 12 -t 64 -n 1
-Total Execution time: 310950 ns
+Total Execution time: 36806 ns
 -----------------------------------------
 Running ./omp_ocean -d 18 -t 64 -n 1
-Total Execution time: 348300 ns
+Total Execution time: 36806 ns
 -----------------------------------------
 Running ./omp_ocean -d 66 -t 64 -n 1
-Total Execution time: 1237162 ns
+Total Execution time: 135352 ns
 -----------------------------------------
 Running ./omp_ocean -d 258 -t 64 -n 1
-Total Execution time: 13718700 ns
+Total Execution time: 1227660 ns
 -----------------------------------------
 Running ./omp_ocean -d 1026 -t 64 -n 1
-Total Execution time: 216592875 ns
+Total Execution time: 20258769 ns
 -----------------------------------------
 Running ./omp_ocean -d 4098 -t 64 -n 1
-Total Execution time: 4804796587 ns
+Total Execution time: 451824114 ns
 -----------------------------------------
 Running ./omp_ocean -d 4 -t 256 -n 1
-Total Execution time: 709762 ns
+Total Execution time: 66488 ns
 -----------------------------------------
 Running ./omp_ocean -d 6 -t 256 -n 1
-Total Execution time: 676575 ns
+Total Execution time: 66489 ns
 -----------------------------------------
 Running ./omp_ocean -d 8 -t 256 -n 1
-Total Execution time: 835762 ns
+Total Execution time: 73612 ns
 -----------------------------------------
 Running ./omp_ocean -d 10 -t 256 -n 1
-Total Execution time: 1560375 ns
+Total Execution time: 80736 ns
 -----------------------------------------
 Running ./omp_ocean -d 12 -t 256 -n 1
-Total Execution time: 864000 ns
+Total Execution time: 83111 ns
 -----------------------------------------
 Running ./omp_ocean -d 18 -t 256 -n 1
-Total Execution time: 1051312 ns
+Total Execution time: 102107 ns
 -----------------------------------------
 Running ./omp_ocean -d 66 -t 256 -n 1
-Total Execution time: 4727250 ns
+Total Execution time: 432175 ns
 -----------------------------------------
 Running ./omp_ocean -d 258 -t 256 -n 1
-Total Execution time: 55463175 ns
+Total Execution time: 4883334 ns
 -----------------------------------------
 Running ./omp_ocean -d 1026 -t 256 -n 1
-Total Execution time: 892521225 ns
+Total Execution time: 79264828 ns
 -----------------------------------------
 Running ./omp_ocean -d 4098 -t 256 -n 1
-Total Execution time: 1782387385 ns
+Total Execution time: 1811931684 ns
 -----------------------------------------
 Running ./omp_ocean -d 4 -t 4 -n 2
-Total Execution time: 638437 ns
+Total Execution time: 53428 ns
 -----------------------------------------
 Running ./omp_ocean -d 6 -t 4 -n 2
-Total Execution time: 634837 ns
+Total Execution time: 85485 ns
 -----------------------------------------
 Running ./omp_ocean -d 8 -t 4 -n 2
-Total Execution time: 544837 ns
+Total Execution time: 55803 ns
 -----------------------------------------
 Running ./omp_ocean -d 10 -t 4 -n 2
-Total Execution time: 534262 ns
+Total Execution time: 45117 ns
 -----------------------------------------
 Running ./omp_ocean -d 12 -t 4 -n 2
-Total Execution time: 552712 ns
+Total Execution time: 47492 ns
 -----------------------------------------
 Running ./omp_ocean -d 18 -t 4 -n 2
-Total Execution time: 586687 ns
+Total Execution time: 52241 ns
 -----------------------------------------
 Running ./omp_ocean -d 66 -t 4 -n 2
-Total Execution time: 1156275 ns
+Total Execution time: 86672 ns
 -----------------------------------------
 Running ./omp_ocean -d 258 -t 4 -n 2
-Total Execution time: 4167562 ns
+Total Execution time: 349064 ns
 -----------------------------------------
 Running ./omp_ocean -d 1026 -t 4 -n 2
-Total Execution time: 24875775 ns
+Total Execution time: 2247545 ns
 -----------------------------------------
 Running ./omp_ocean -d 4098 -t 4 -n 2
-Total Execution time: 276775987 ns
+Total Execution time: 24157839 ns
 -----------------------------------------
 Running ./omp_ocean -d 4 -t 16 -n 2
-Total Execution time: 794925 ns
+Total Execution time: 75987 ns
 -----------------------------------------
 Running ./omp_ocean -d 6 -t 16 -n 2
-Total Execution time: 782550 ns
+Total Execution time: 73613 ns
 -----------------------------------------
 Running ./omp_ocean -d 8 -t 16 -n 2
-Total Execution time: 696825 ns
+Total Execution time: 77174 ns
 -----------------------------------------
 Running ./omp_ocean -d 10 -t 16 -n 2
-Total Execution time: 764437 ns
+Total Execution time: 65301 ns
 -----------------------------------------
 Running ./omp_ocean -d 12 -t 16 -n 2
-Total Execution time: 749812 ns
+Total Execution time: 73613 ns
 -----------------------------------------
 Running ./omp_ocean -d 18 -t 16 -n 2
-Total Execution time: 958162 ns
+Total Execution time: 80735 ns
 -----------------------------------------
 Running ./omp_ocean -d 66 -t 16 -n 2
-Total Execution time: 2636887 ns
+Total Execution time: 242208 ns
 -----------------------------------------
 Running ./omp_ocean -d 258 -t 16 -n 2
-Total Execution time: 14590912 ns
+Total Execution time: 459482 ns
 -----------------------------------------
 Running ./omp_ocean -d 1026 -t 16 -n 2
-Total Execution time: 43830000 ns
+Total Execution time: 8147201 ns
 -----------------------------------------
 Running ./omp_ocean -d 4098 -t 16 -n 2
-Total Execution time: 1068734700 ns
+Total Execution time: 98330371 ns
 -----------------------------------------
 Running ./omp_ocean -d 4 -t 64 -n 2
-Total Execution time: 1531125 ns
+Total Execution time: 143663 ns
 -----------------------------------------
 Running ./omp_ocean -d 6 -t 64 -n 2
-Total Execution time: 1381950 ns
+Total Execution time: 118729 ns
 -----------------------------------------
 Running ./omp_ocean -d 8 -t 64 -n 2
-Total Execution time: 1678837 ns
+Total Execution time: 130603 ns
 -----------------------------------------
 Running ./omp_ocean -d 10 -t 64 -n 2
-Total Execution time: 1626637 ns
+Total Execution time: 149599 ns
 -----------------------------------------
 Running ./omp_ocean -d 12 -t 64 -n 2
-Total Execution time: 1586700 ns
+Total Execution time: 143663 ns
 -----------------------------------------
 Running ./omp_ocean -d 18 -t 64 -n 2
-Total Execution time: 2166750 ns
+Total Execution time: 206589 ns
 -----------------------------------------
 Running ./omp_ocean -d 66 -t 64 -n 2
-Total Execution time: 9384412 ns
+Total Execution time: 832292 ns
 -----------------------------------------
 Running ./omp_ocean -d 258 -t 64 -n 2
-Total Execution time: 4425031 ns
+Total Execution time: 4466594 ns
 -----------------------------------------
 Running ./omp_ocean -d 1026 -t 64 -n 2
-Total Execution time: 28801005 ns
+Total Execution time: 14877961 ns
 -----------------------------------------
 Running ./omp_ocean -d 4098 -t 64 -n 2
-Total Execution time: 4532439150 ns
+Total Execution time: 392948676 ns
 -----------------------------------------
 Running ./omp_ocean -d 4 -t 256 -n 2
-Total Execution time: 368345 ns
+Total Execution time: 333629 ns
 -----------------------------------------
 Running ./omp_ocean -d 6 -t 256 -n 2
-Total Execution time: 448010 ns
+Total Execution time: 355001 ns
 -----------------------------------------
 Running ./omp_ocean -d 8 -t 256 -n 2
-Total Execution time: 375257 ns
+Total Execution time: 423863 ns
 -----------------------------------------
 Running ./omp_ocean -d 10 -t 256 -n 2
-Total Execution time: 420678 ns
+Total Execution time: 453545 ns
 -----------------------------------------
 Running ./omp_ocean -d 12 -t 256 -n 2
-Total Execution time: 464155 ns
+Total Execution time: 512911 ns
 -----------------------------------------
 Running ./omp_ocean -d 18 -t 256 -n 2
-Total Execution time: 751399 ns
+Total Execution time: 685068 ns
 -----------------------------------------
 Running ./omp_ocean -d 66 -t 256 -n 2
-Total Execution time: 3459484 ns
+Total Execution time: 3210439 ns
 -----------------------------------------
 Running ./omp_ocean -d 258 -t 256 -n 2
-Total Execution time: 4951071 ns
+Total Execution time: 17573116 ns
 -----------------------------------------
 Running ./omp_ocean -d 1026 -t 256 -n 2
-Total Execution time: 91572724 ns
+Total Execution time: 126402714 ns
 -----------------------------------------
 Running ./omp_ocean -d 4098 -t 256 -n 2
-Total Execution time: 16837777575 ns
+Total Execution time: 1507303383 ns
 -----------------------------------------
 Running ./omp_ocean -d 4 -t 4 -n 4
-Total Execution time: 109830 ns
+Total Execution time: 104482 ns
 -----------------------------------------
 Running ./omp_ocean -d 6 -t 4 -n 4
-Total Execution time: 111042 ns
+Total Execution time: 86672 ns
 -----------------------------------------
 Running ./omp_ocean -d 8 -t 4 -n 4
-Total Execution time: 98190 ns
+Total Execution time: 92608 ns
 -----------------------------------------
 Running ./omp_ocean -d 10 -t 4 -n 4
-Total Execution time: 102493 ns
+Total Execution time: 81923 ns
 -----------------------------------------
 Running ./omp_ocean -d 12 -t 4 -n 4
-Total Execution time: 98040 ns
+Total Execution time: 84298 ns
 -----------------------------------------
 Running ./omp_ocean -d 18 -t 4 -n 4
-Total Execution time: 91851 ns
+Total Execution time: 85485 ns
 -----------------------------------------
 Running ./omp_ocean -d 66 -t 4 -n 4
-Total Execution time: 142265 ns
+Total Execution time: 128228 ns
 -----------------------------------------
 Running ./omp_ocean -d 258 -t 4 -n 4
-Total Execution time: 280122 ns
+Total Execution time: 250519 ns
 -----------------------------------------
 Running ./omp_ocean -d 1026 -t 4 -n 4
-Total Execution time: 845270 ns
+Total Execution time: 1279902 ns
 -----------------------------------------
 Running ./omp_ocean -d 4098 -t 4 -n 4
-Total Execution time: 14807289 ns
+Total Execution time: 18141829 ns
 -----------------------------------------
 Running ./omp_ocean -d 4 -t 16 -n 4
-Total Execution time: 95188 ns
+Total Execution time: 132977 ns
 -----------------------------------------
 Running ./omp_ocean -d 6 -t 16 -n 4
-Total Execution time: 90475 ns
+Total Execution time: 115168 ns
 -----------------------------------------
 Running ./omp_ocean -d 8 -t 16 -n 4
-Total Execution time: 88454 ns
+Total Execution time: 116355 ns
 -----------------------------------------
 Running ./omp_ocean -d 10 -t 16 -n 4
-Total Execution time: 90862 ns
+Total Execution time: 113980 ns
 -----------------------------------------
 Running ./omp_ocean -d 12 -t 16 -n 4
-Total Execution time: 97897 ns
+Total Execution time: 116355 ns
 -----------------------------------------
 Running ./omp_ocean -d 18 -t 16 -n 4
-Total Execution time: 103444 ns
+Total Execution time: 123478 ns
 -----------------------------------------
 Running ./omp_ocean -d 66 -t 16 -n 4
-Total Execution time: 202597 ns
+Total Execution time: 251706 ns
 -----------------------------------------
 Running ./omp_ocean -d 258 -t 16 -n 4
-Total Execution time: 593105 ns
+Total Execution time: 785987 ns
 -----------------------------------------
 Running ./omp_ocean -d 1026 -t 16 -n 4
-Total Execution time: 3731207 ns
+Total Execution time: 4663685 ns
 -----------------------------------------
 Running ./omp_ocean -d 4098 -t 16 -n 4
-Total Execution time: 52892342 ns
+Total Execution time: 65331955 ns
 -----------------------------------------
 Running ./omp_ocean -d 4 -t 64 -n 4
-Total Execution time: 2071125 ns
+Total Execution time: 195903 ns
 -----------------------------------------
 Running ./omp_ocean -d 6 -t 64 -n 4
-Total Execution time: 1946025 ns
+Total Execution time: 178094 ns
 -----------------------------------------
 Running ./omp_ocean -d 8 -t 64 -n 4
-Total Execution time: 2119837 ns
+Total Execution time: 195904 ns
 -----------------------------------------
 Running ./omp_ocean -d 10 -t 64 -n 4
-Total Execution time: 2194875 ns
+Total Execution time: 192342 ns
 -----------------------------------------
 Running ./omp_ocean -d 12 -t 64 -n 4
-Total Execution time: 2620350 ns
+Total Execution time: 212526 ns
 -----------------------------------------
 Running ./omp_ocean -d 18 -t 64 -n 4
-Total Execution time: 2721487 ns
+Total Execution time: 241021 ns
 -----------------------------------------
 Running ./omp_ocean -d 66 -t 64 -n 4
-Total Execution time: 7846762 ns
+Total Execution time: 715938 ns
 -----------------------------------------
 Running ./omp_ocean -d 258 -t 64 -n 4
-Total Execution time: 31396837 ns
+Total Execution time: 2810322 ns
 -----------------------------------------
 Running ./omp_ocean -d 1026 -t 64 -n 4
-Total Execution time: 200593687 ns
+Total Execution time: 18069404 ns
 -----------------------------------------
 Running ./omp_ocean -d 4098 -t 64 -n 4
-Total Execution time: 2888874562 ns
+Total Execution time: 251361690 ns
 -----------------------------------------
 Running ./omp_ocean -d 4 -t 256 -n 4
-Total Execution time: 4914337 ns
+Total Execution time: 430988 ns
 -----------------------------------------
 Running ./omp_ocean -d 6 -t 256 -n 4
-Total Execution time: 5167912 ns
+Total Execution time: 463044 ns
 -----------------------------------------
 Running ./omp_ocean -d 8 -t 256 -n 4
-Total Execution time: 5202225 ns
+Total Execution time: 511723 ns
 -----------------------------------------
 Running ./omp_ocean -d 10 -t 256 -n 4
-Total Execution time: 5854837 ns
+Total Execution time: 534282 ns
 -----------------------------------------
 Running ./omp_ocean -d 12 -t 256 -n 4
-Total Execution time: 6572700 ns
+Total Execution time: 585335 ns
 -----------------------------------------
 Running ./omp_ocean -d 18 -t 256 -n 4
-Total Execution time: 8550337 ns
+Total Execution time: 718312 ns
 -----------------------------------------
 Running ./omp_ocean -d 66 -t 256 -n 4
-Total Execution time: 29415937 ns
+Total Execution time: 2636977 ns
 -----------------------------------------
 Running ./omp_ocean -d 258 -t 256 -n 4
-Total Execution time: 122615662 ns
+Total Execution time: 10970583 ns
 -----------------------------------------
 Running ./omp_ocean -d 1026 -t 256 -n 4
-Total Execution time: 799741350 ns
+Total Execution time: 71547432 ns
 -----------------------------------------
 Running ./omp_ocean -d 4098 -t 256 -n 4
-Total Execution time: 11302309237 ns
+Total Execution time: 1002150842 ns
 -----------------------------------------
 Running ./omp_ocean -d 4 -t 4 -n 8
-Total Execution time: 1948162 ns
+Total Execution time: 194716 ns
 -----------------------------------------
 Running ./omp_ocean -d 6 -t 4 -n 8
-Total Execution time: 2008125 ns
+Total Execution time: 154348 ns
 -----------------------------------------
 Running ./omp_ocean -d 8 -t 4 -n 8
-Total Execution time: 1756125 ns
+Total Execution time: 151973 ns
 -----------------------------------------
 Running ./omp_ocean -d 10 -t 4 -n 8
-Total Execution time: 1708875 ns
+Total Execution time: 149599 ns
 -----------------------------------------
 Running ./omp_ocean -d 12 -t 4 -n 8
-Total Execution time: 125642 ns
+Total Execution time: 222024 ns
 -----------------------------------------
 Running ./omp_ocean -d 18 -t 4 -n 8
-Total Execution time: 128713 ns
+Total Execution time: 175719 ns
 -----------------------------------------
 Running ./omp_ocean -d 66 -t 4 -n 8
-Total Execution time: 135485 ns
+Total Execution time: 193529 ns
 -----------------------------------------
 Running ./omp_ocean -d 258 -t 4 -n 8
-Total Execution time: 203385 ns
+Total Execution time: 255268 ns
 -----------------------------------------
 Running ./omp_ocean -d 1026 -t 4 -n 8
-Total Execution time: 765316 ns
+Total Execution time: 966457 ns
 -----------------------------------------
 Running ./omp_ocean -d 4098 -t 4 -n 8
-Total Execution time: 12161095 ns
+Total Execution time: 15629518 ns
 -----------------------------------------
 Running ./omp_ocean -d 4 -t 16 -n 8
-Total Execution time: 164407 ns
+Total Execution time: 186405 ns
 -----------------------------------------
 Running ./omp_ocean -d 6 -t 16 -n 8
-Total Execution time: 147676 ns
+Total Execution time: 206588 ns
 -----------------------------------------
 Running ./omp_ocean -d 8 -t 16 -n 8
-Total Execution time: 143289 ns
+Total Execution time: 184030 ns
 -----------------------------------------
 Running ./omp_ocean -d 10 -t 16 -n 8
-Total Execution time: 151553 ns
+Total Execution time: 193528 ns
 -----------------------------------------
 Running ./omp_ocean -d 12 -t 16 -n 8
-Total Execution time: 146077 ns
+Total Execution time: 184030 ns
 -----------------------------------------
 Running ./omp_ocean -d 18 -t 16 -n 8
-Total Execution time: 149449 ns
+Total Execution time: 203027 ns
 -----------------------------------------
 Running ./omp_ocean -d 66 -t 16 -n 8
-Total Execution time: 216607 ns
+Total Execution time: 283763 ns
 -----------------------------------------
 Running ./omp_ocean -d 258 -t 16 -n 8
-Total Execution time: 469087 ns
+Total Execution time: 578211 ns
 -----------------------------------------
 Running ./omp_ocean -d 1026 -t 16 -n 8
-Total Execution time: 2598980 ns
+Total Execution time: 3229435 ns
 -----------------------------------------
 Running ./omp_ocean -d 4098 -t 16 -n 8
-Total Execution time: 48711062 ns
+Total Execution time: 54166658 ns
 -----------------------------------------
 Running ./omp_ocean -d 4 -t 64 -n 8
-Total Execution time: 294335 ns
+Total Execution time: 273077 ns
 -----------------------------------------
 Running ./omp_ocean -d 6 -t 64 -n 8
-Total Execution time: 346080 ns
+Total Execution time: 287325 ns
 -----------------------------------------
 Running ./omp_ocean -d 8 -t 64 -n 8
-Total Execution time: 293072 ns
+Total Execution time: 286137 ns
 -----------------------------------------
 Running ./omp_ocean -d 10 -t 64 -n 8
-Total Execution time: 284516 ns
+Total Execution time: 286138 ns
 -----------------------------------------
 Running ./omp_ocean -d 12 -t 64 -n 8
-Total Execution time: 296341 ns
+Total Execution time: 300385 ns
 -----------------------------------------
 Running ./omp_ocean -d 18 -t 64 -n 8
-Total Execution time: 332231 ns
+Total Execution time: 334816 ns
 -----------------------------------------
 Running ./omp_ocean -d 66 -t 64 -n 8
-Total Execution time: 628417 ns
+Total Execution time: 615017 ns
 -----------------------------------------
 Running ./omp_ocean -d 258 -t 64 -n 8
-Total Execution time: 1929516 ns
+Total Execution time: 1880671 ns
 -----------------------------------------
 Running ./omp_ocean -d 1026 -t 64 -n 8
-Total Execution time: 12756793 ns
+Total Execution time: 12308661 ns
 -----------------------------------------
 Running ./omp_ocean -d 4098 -t 64 -n 8
-Total Execution time: 2265354337 ns
+Total Execution time: 203116064 ns
 -----------------------------------------
 Running ./omp_ocean -d 4 -t 256 -n 8
-Total Execution time: 514782 ns
+Total Execution time: 661322 ns
 -----------------------------------------
 Running ./omp_ocean -d 6 -t 256 -n 8
-Total Execution time: 532123 ns
+Total Execution time: 651824 ns
 -----------------------------------------
 Running ./omp_ocean -d 8 -t 256 -n 8
-Total Execution time: 547768 ns
+Total Execution time: 675569 ns
 -----------------------------------------
 Running ./omp_ocean -d 10 -t 256 -n 8
-Total Execution time: 549538 ns
+Total Execution time: 674382 ns
 -----------------------------------------
 Running ./omp_ocean -d 12 -t 256 -n 8
-Total Execution time: 604319 ns
+Total Execution time: 704064 ns
 -----------------------------------------
 Running ./omp_ocean -d 18 -t 256 -n 8
-Total Execution time: 670035 ns
+Total Execution time: 853664 ns
 -----------------------------------------
 Running ./omp_ocean -d 66 -t 256 -n 8
-Total Execution time: 22033350 ns
+Total Execution time: 1973281 ns
 -----------------------------------------
 Running ./omp_ocean -d 258 -t 256 -n 8
-Total Execution time: 78438262 ns
+Total Execution time: 7047768 ns
 -----------------------------------------
 Running ./omp_ocean -d 1026 -t 256 -n 8
-Total Execution time: 39342125 ns
+Total Execution time: 49030432 ns
 -----------------------------------------
 Running ./omp_ocean -d 4098 -t 256 -n 8
-Total Execution time: 8897905462 ns
+Total Execution time: 830746194 ns
 -----------------------------------------
 Running ./omp_ocean -d 4 -t 4 -n 16
-Total Execution time: 3803737 ns
+Total Execution time: 314633 ns
 -----------------------------------------
 Running ./omp_ocean -d 6 -t 4 -n 16
-Total Execution time: 3421687 ns
+Total Execution time: 299198 ns
 -----------------------------------------
 Running ./omp_ocean -d 8 -t 4 -n 16
-Total Execution time: 3395250 ns
+Total Execution time: 302760 ns
 -----------------------------------------
 Running ./omp_ocean -d 10 -t 4 -n 16
-Total Execution time: 3348900 ns
+Total Execution time: 293262 ns
 -----------------------------------------
 Running ./omp_ocean -d 12 -t 4 -n 16
-Total Execution time: 250976 ns
+Total Execution time: 300385 ns
 -----------------------------------------
 Running ./omp_ocean -d 18 -t 4 -n 16
-Total Execution time: 250314 ns
+Total Execution time: 317007 ns
 -----------------------------------------
 Running ./omp_ocean -d 66 -t 4 -n 16
-Total Execution time: 259640 ns
+Total Execution time: 313446 ns
 -----------------------------------------
 Running ./omp_ocean -d 258 -t 4 -n 16
-Total Execution time: 289869 ns
+Total Execution time: 376372 ns
 -----------------------------------------
 Running ./omp_ocean -d 1026 -t 4 -n 16
-Total Execution time: 822844 ns
+Total Execution time: 809734 ns
 -----------------------------------------
 Running ./omp_ocean -d 4098 -t 4 -n 16
-Total Execution time: 9753611 ns
+Total Execution time: 12040333 ns
 -----------------------------------------
 Running ./omp_ocean -d 4 -t 16 -n 16
-Total Execution time: 299099 ns
+Total Execution time: 350252 ns
 -----------------------------------------
 Running ./omp_ocean -d 6 -t 16 -n 16
-Total Execution time: 277292 ns
+Total Execution time: 334816 ns
 -----------------------------------------
 Running ./omp_ocean -d 8 -t 16 -n 16
-Total Execution time: 275307 ns
+Total Execution time: 344314 ns
 -----------------------------------------
 Running ./omp_ocean -d 10 -t 16 -n 16
-Total Execution time: 281497 ns
+Total Execution time: 345502 ns
 -----------------------------------------
 Running ./omp_ocean -d 12 -t 16 -n 16
-Total Execution time: 284410 ns
+Total Execution time: 359750 ns
 -----------------------------------------
 Running ./omp_ocean -d 18 -t 16 -n 16
-Total Execution time: 285222 ns
+Total Execution time: 345502 ns
 -----------------------------------------
 Running ./omp_ocean -d 66 -t 16 -n 16
-Total Execution time: 301802 ns
+Total Execution time: 376371 ns
 -----------------------------------------
 Running ./omp_ocean -d 258 -t 16 -n 16
-Total Execution time: 473619 ns
+Total Execution time: 584148 ns
 -----------------------------------------
 Running ./omp_ocean -d 1026 -t 16 -n 16
-Total Execution time: 2255768 ns
+Total Execution time: 2676157 ns
 -----------------------------------------
 Running ./omp_ocean -d 4098 -t 16 -n 16
-Total Execution time: 38603890 ns
+Total Execution time: 41866309 ns
 -----------------------------------------
 Running ./omp_ocean -d 4 -t 64 -n 16
-Total Execution time: 388983 ns
+Total Execution time: 480853 ns
 -----------------------------------------
 Running ./omp_ocean -d 6 -t 64 -n 16
-Total Execution time: 404628 ns
+Total Execution time: 486790 ns
 -----------------------------------------
 Running ./omp_ocean -d 8 -t 64 -n 16
-Total Execution time: 394765 ns
+Total Execution time: 483228 ns
 -----------------------------------------
 Running ./omp_ocean -d 10 -t 64 -n 16
-Total Execution time: 404223 ns
+Total Execution time: 477292 ns
 -----------------------------------------
 Running ./omp_ocean -d 12 -t 64 -n 16
-Total Execution time: 382268 ns
+Total Execution time: 505786 ns
 -----------------------------------------
 Running ./omp_ocean -d 18 -t 64 -n 16
-Total Execution time: 446308 ns
+Total Execution time: 527158 ns
 -----------------------------------------
 Running ./omp_ocean -d 66 -t 64 -n 16
-Total Execution time: 561041 ns
+Total Execution time: 667259 ns
 -----------------------------------------
 Running ./omp_ocean -d 258 -t 64 -n 16
-Total Execution time: 1209717 ns
+Total Execution time: 1480554 ns
 -----------------------------------------
 Running ./omp_ocean -d 1026 -t 64 -n 16
-Total Execution time: 8115026 ns
+Total Execution time: 10004127 ns
 -----------------------------------------
 Running ./omp_ocean -d 4098 -t 64 -n 16
-Total Execution time: 129770012 ns
+Total Execution time: 154631791 ns
 -----------------------------------------
 Running ./omp_ocean -d 4 -t 256 -n 16
-Total Execution time: 808872 ns
+Total Execution time: 1049567 ns
 -----------------------------------------
 Running ./omp_ocean -d 6 -t 256 -n 16
-Total Execution time: 842434 ns
+Total Execution time: 1016322 ns
 -----------------------------------------
 Running ./omp_ocean -d 8 -t 256 -n 16
-Total Execution time: 884039 ns
+Total Execution time: 1101807 ns
 -----------------------------------------
 Running ./omp_ocean -d 10 -t 256 -n 16
-Total Execution time: 11687287 ns
+Total Execution time: 1110119 ns
 -----------------------------------------
 Running ./omp_ocean -d 12 -t 256 -n 16
-Total Execution time: 13038637 ns
+Total Execution time: 1107744 ns
 -----------------------------------------
 Running ./omp_ocean -d 18 -t 256 -n 16
-Total Execution time: 1008967 ns
+Total Execution time: 1170671 ns
 -----------------------------------------
 Running ./omp_ocean -d 66 -t 256 -n 16
-Total Execution time: 1509441 ns
+Total Execution time: 1790437 ns
 -----------------------------------------
 Running ./omp_ocean -d 258 -t 256 -n 16
-Total Execution time: 4114726 ns
+Total Execution time: 5004438 ns
 -----------------------------------------
 Running ./omp_ocean -d 1026 -t 256 -n 16
-Total Execution time: 32481795 ns
+Total Execution time: 39085670 ns
 -----------------------------------------
 Running ./omp_ocean -d 4098 -t 256 -n 16
-Total Execution time: 501582691 ns
+Total Execution time: 580979043 ns
 -----------------------------------------
 Running ./omp_ocean -d 4 -t 4 -n 32
-Total Execution time: 520487 ns
+Total Execution time: 858413 ns
 -----------------------------------------
 Running ./omp_ocean -d 6 -t 4 -n 32
-Total Execution time: 519884 ns
+Total Execution time: 620954 ns
 -----------------------------------------
 Running ./omp_ocean -d 8 -t 4 -n 32
-Total Execution time: 504370 ns
+Total Execution time: 14038547 ns
 -----------------------------------------
 Running ./omp_ocean -d 10 -t 4 -n 32
-Total Execution time: 5974678 ns
+Total Execution time: 647074 ns
 -----------------------------------------
 Running ./omp_ocean -d 12 -t 4 -n 32
-Total Execution time: 499674 ns
+Total Execution time: 623328 ns
 -----------------------------------------
 Running ./omp_ocean -d 18 -t 4 -n 32
-Total Execution time: 495874 ns
+Total Execution time: 620954 ns
 -----------------------------------------
 Running ./omp_ocean -d 66 -t 4 -n 32
-Total Execution time: 518584 ns
+Total Execution time: 8772905 ns
 -----------------------------------------
 Running ./omp_ocean -d 258 -t 4 -n 32
-Total Execution time: 558912 ns
+Total Execution time: 643513 ns
 -----------------------------------------
 Running ./omp_ocean -d 1026 -t 4 -n 32
-Total Execution time: 943384 ns
+Total Execution time: 1224099 ns
 -----------------------------------------
 Running ./omp_ocean -d 4098 -t 4 -n 32
-Total Execution time: 16901459 ns
+Total Execution time: 12595987 ns
 -----------------------------------------
 Running ./omp_ocean -d 4 -t 16 -n 32
-Total Execution time: 586963 ns
+Total Execution time: 704065 ns
 -----------------------------------------
 Running ./omp_ocean -d 6 -t 16 -n 32
-Total Execution time: 549262 ns
+Total Execution time: 695754 ns
 -----------------------------------------
 Running ./omp_ocean -d 8 -t 16 -n 32
-Total Execution time: 713535 ns
+Total Execution time: 683880 ns
 -----------------------------------------
 Running ./omp_ocean -d 10 -t 16 -n 32
-Total Execution time: 557997 ns
+Total Execution time: 686255 ns
 -----------------------------------------
 Running ./omp_ocean -d 12 -t 16 -n 32
-Total Execution time: 560666 ns
+Total Execution time: 822794 ns
 -----------------------------------------
 Running ./omp_ocean -d 18 -t 16 -n 32
-Total Execution time: 683283 ns
+Total Execution time: 676757 ns
 -----------------------------------------
 Running ./omp_ocean -d 66 -t 16 -n 32
-Total Execution time: 7010157 ns
+Total Execution time: 782426 ns
 -----------------------------------------
 Running ./omp_ocean -d 258 -t 16 -n 32
-Total Execution time: 668022 ns
+Total Execution time: 1595722 ns
 -----------------------------------------
 Running ./omp_ocean -d 1026 -t 16 -n 32
-Total Execution time: 2272726 ns
+Total Execution time: 2704652 ns
 -----------------------------------------
 Running ./omp_ocean -d 4098 -t 16 -n 32
-Total Execution time: 40767406 ns
+Total Execution time: 41873433 ns
 -----------------------------------------
 Running ./omp_ocean -d 4 -t 64 -n 32
-Total Execution time: 778449 ns
+Total Execution time: 911841 ns
 -----------------------------------------
 Running ./omp_ocean -d 6 -t 64 -n 32
-Total Execution time: 790746 ns
+Total Execution time: 952208 ns
 -----------------------------------------
 Running ./omp_ocean -d 8 -t 64 -n 32
-Total Execution time: 2650709 ns
+Total Execution time: 4547331 ns
 -----------------------------------------
 Running ./omp_ocean -d 10 -t 64 -n 32
-Total Execution time: 6119626 ns
+Total Execution time: 947459 ns
 -----------------------------------------
 Running ./omp_ocean -d 12 -t 64 -n 32
-Total Execution time: 773664 ns
+Total Execution time: 974767 ns
 -----------------------------------------
 Running ./omp_ocean -d 18 -t 64 -n 32
-Total Execution time: 780748 ns
+Total Execution time: 1214600 ns
 -----------------------------------------
 Running ./omp_ocean -d 66 -t 64 -n 32
-Total Execution time: 6346141 ns
+Total Execution time: 1029383 ns
 -----------------------------------------
 Running ./omp_ocean -d 258 -t 64 -n 32
-Total Execution time: 1237715 ns
+Total Execution time: 1536357 ns
 -----------------------------------------
 Running ./omp_ocean -d 1026 -t 64 -n 32
-Total Execution time: 14391336 ns
+Total Execution time: 9833157 ns
 -----------------------------------------
 Running ./omp_ocean -d 4098 -t 64 -n 32
-Total Execution time: 129351143 ns
+Total Execution time: 149443324 ns
 -----------------------------------------
 Running ./omp_ocean -d 4 -t 256 -n 32
-Total Execution time: 1577660 ns
+Total Execution time: 78769737 ns
 -----------------------------------------
 Running ./omp_ocean -d 6 -t 256 -n 32
-Total Execution time: 5917297 ns
+Total Execution time: 45665647 ns
 -----------------------------------------
 Running ./omp_ocean -d 8 -t 256 -n 32
-Total Execution time: 1568787 ns
+Total Execution time: 16630407 ns
 -----------------------------------------
 Running ./omp_ocean -d 10 -t 256 -n 32
-Total Execution time: 1624845 ns
+Total Execution time: 145152452 ns
 -----------------------------------------
 Running ./omp_ocean -d 12 -t 256 -n 32
-Total Execution time: 1660191 ns
+Total Execution time: 1956658 ns
 -----------------------------------------
 Running ./omp_ocean -d 18 -t 256 -n 32
-Total Execution time: 6886450 ns
+Total Execution time: 21598039 ns
 -----------------------------------------
 Running ./omp_ocean -d 66 -t 256 -n 32
-Total Execution time: 1898983 ns
+Total Execution time: 66103700 ns
 -----------------------------------------
 Running ./omp_ocean -d 258 -t 256 -n 32
-Total Execution time: 4009885 ns
+Total Execution time: 68494908 ns
 -----------------------------------------
 Running ./omp_ocean -d 1026 -t 256 -n 32
-Total Execution time: 31008687 ns
+Total Execution time: 163462877 ns
 -----------------------------------------
 Running ./omp_ocean -d 4098 -t 256 -n 32
-Total Execution time: 466318377 ns
+Total Execution time: 1614627664 ns
 -----------------------------------------
 Running ./omp_ocean -d 4 -t 4 -n 64
-Total Execution time: 1342476 ns
+Total Execution time: 1408129 ns
 -----------------------------------------
 Running ./omp_ocean -d 6 -t 4 -n 64
-Total Execution time: 1222725 ns
+Total Execution time: 1385570 ns
 -----------------------------------------
 Running ./omp_ocean -d 8 -t 4 -n 64
-Total Execution time: 1290780 ns
+Total Execution time: 1340453 ns
 -----------------------------------------
 Running ./omp_ocean -d 10 -t 4 -n 64
-Total Execution time: 1284975 ns
+Total Execution time: 1278714 ns
 -----------------------------------------
 Running ./omp_ocean -d 12 -t 4 -n 64
-Total Execution time: 1261769 ns
+Total Execution time: 1463932 ns
 -----------------------------------------
 Running ./omp_ocean -d 18 -t 4 -n 64
-Total Execution time: 1277261 ns
+Total Execution time: 1348764 ns
 -----------------------------------------
 Running ./omp_ocean -d 66 -t 4 -n 64
-Total Execution time: 1317193 ns
+Total Execution time: 1429500 ns
 -----------------------------------------
 Running ./omp_ocean -d 258 -t 4 -n 64
-Total Execution time: 1300401 ns
+Total Execution time: 1373698 ns
 -----------------------------------------
 Running ./omp_ocean -d 1026 -t 4 -n 64
-Total Execution time: 1739780 ns
+Total Execution time: 1739384 ns
 -----------------------------------------
 Running ./omp_ocean -d 4098 -t 4 -n 64
-Total Execution time: 11381283 ns
+Total Execution time: 13336857 ns
 -----------------------------------------
 Running ./omp_ocean -d 4 -t 16 -n 64
-Total Execution time: 2097269 ns
+Total Execution time: 2553866 ns
 -----------------------------------------
 Running ./omp_ocean -d 6 -t 16 -n 64
-Total Execution time: 2130104 ns
+Total Execution time: 2613231 ns
 -----------------------------------------
 Running ./omp_ocean -d 8 -t 16 -n 64
-Total Execution time: 2093754 ns
+Total Execution time: 2458883 ns
 -----------------------------------------
 Running ./omp_ocean -d 10 -t 16 -n 64
-Total Execution time: 2303363 ns
+Total Execution time: 2593047 ns
 -----------------------------------------
 Running ./omp_ocean -d 12 -t 16 -n 64
-Total Execution time: 2107513 ns
+Total Execution time: 2448197 ns
 -----------------------------------------
 Running ./omp_ocean -d 18 -t 16 -n 64
-Total Execution time: 2053440 ns
+Total Execution time: 2461258 ns
 -----------------------------------------
 Running ./omp_ocean -d 66 -t 16 -n 64
-Total Execution time: 2170127 ns
+Total Execution time: 3041843 ns
 -----------------------------------------
 Running ./omp_ocean -d 258 -t 16 -n 64
-Total Execution time: 2223329 ns
+Total Execution time: 2571676 ns
 -----------------------------------------
 Running ./omp_ocean -d 1026 -t 16 -n 64
-Total Execution time: 3773424 ns
+Total Execution time: 4061728 ns
 -----------------------------------------
 Running ./omp_ocean -d 4098 -t 16 -n 64
-Total Execution time: 36561248 ns
+Total Execution time: 46366151 ns
 -----------------------------------------
 Running ./omp_ocean -d 4 -t 64 -n 64
-Total Execution time: 5468533 ns
+Total Execution time: 6178670 ns
 -----------------------------------------
 Running ./omp_ocean -d 6 -t 64 -n 64
-Total Execution time: 5555178 ns
+Total Execution time: 7754207 ns
 -----------------------------------------
 Running ./omp_ocean -d 8 -t 64 -n 64
-Total Execution time: 5458458 ns
+Total Execution time: 6610845 ns
 -----------------------------------------
 Running ./omp_ocean -d 10 -t 64 -n 64
-Total Execution time: 5508347 ns
+Total Execution time: 6962284 ns
 -----------------------------------------
 Running ./omp_ocean -d 12 -t 64 -n 64
-Total Execution time: 5381636 ns
+Total Execution time: 6804374 ns
 -----------------------------------------
 Running ./omp_ocean -d 18 -t 64 -n 64
-Total Execution time: 5485310 ns
+Total Execution time: 6517049 ns
 -----------------------------------------
 Running ./omp_ocean -d 66 -t 64 -n 64
-Total Execution time: 5581871 ns
+Total Execution time: 6614407 ns
 -----------------------------------------
 Running ./omp_ocean -d 258 -t 64 -n 64
-Total Execution time: 6001940 ns
+Total Execution time: 7463322 ns
 -----------------------------------------
 Running ./omp_ocean -d 1026 -t 64 -n 64
-Total Execution time: 12055636 ns
+Total Execution time: 14095538 ns
 -----------------------------------------
 Running ./omp_ocean -d 4098 -t 64 -n 64
-Total Execution time: 121855242 ns
+Total Execution time: 149641609 ns
 -----------------------------------------
 Running ./omp_ocean -d 4 -t 256 -n 64
-Total Execution time: 19712827 ns
+Total Execution time: 24916522 ns
 -----------------------------------------
 Running ./omp_ocean -d 6 -t 256 -n 64
-Total Execution time: 18966196 ns
+Total Execution time: 23365918 ns
 -----------------------------------------
 Running ./omp_ocean -d 8 -t 256 -n 64
-Total Execution time: 18963307 ns
+Total Execution time: 23378979 ns
 -----------------------------------------
 Running ./omp_ocean -d 10 -t 256 -n 64
-Total Execution time: 18888727 ns
+Total Execution time: 23183076 ns
 -----------------------------------------
 Running ./omp_ocean -d 12 -t 256 -n 64
-Total Execution time: 18838626 ns
+Total Execution time: 23801654 ns
 -----------------------------------------
 Running ./omp_ocean -d 18 -t 256 -n 64
-Total Execution time: 18785832 ns
+Total Execution time: 23597440 ns
 -----------------------------------------
 Running ./omp_ocean -d 66 -t 256 -n 64
-Total Execution time: 19027394 ns
+Total Execution time: 24094916 ns
 -----------------------------------------
 Running ./omp_ocean -d 258 -t 256 -n 64
-Total Execution time: 20691889 ns
+Total Execution time: 25487610 ns
 -----------------------------------------
 Running ./omp_ocean -d 1026 -t 256 -n 64
-Total Execution time: 43182381 ns
+Total Execution time: 54372065 ns
 -----------------------------------------
 Running ./omp_ocean -d 4098 -t 256 -n 64
-Total Execution time: 462944201 ns
+Total Execution time: 569944381 ns
 -----------------------------------------
 ----------------------------------------------------------------------------------
