@@ -2,10 +2,9 @@
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
-#include "hwtimer.h"
-
-extern inline void initTimer(hwtimer_t *timer);
+#include "timer.h"
 
 /* Implement this function in serial_ocean and omp_ocean */
 #ifdef PARALLEL
@@ -27,10 +26,6 @@ void usage(char *argv0) {
 void printGrid(int **grid, int dim);
 
 int main(int argc, char *argv[]) {
-  // Init timer
-  hwtimer_t timer;
-  initTimer(&timer);
-
   /********************Get the arguments correctly (start)
    * **************************/
   /*
@@ -112,7 +107,7 @@ int main(int argc, char *argv[]) {
   /////////////////////////////
 
   // Start the time measurement here before the algorithm starts
-  startTimer(&timer);
+  const struct timespec startTime = getRealTimeInNanoSeconds();
 
 #ifdef PARALLEL
   ocean(grid, dim, timesteps, threads);
@@ -120,9 +115,12 @@ int main(int argc, char *argv[]) {
   ocean(grid, dim, timesteps);
 #endif
 
-  stopTimer(&timer); // End the time measurement here since the algorithm ended
+  // End the time measurement here since the algorithm ended
+  const struct timespec endTime = getRealTimeInNanoSeconds();
 
-  const uint64_t runningTime = getTimerNs(&timer);
+  const struct timespec diffTime = subTime(endTime, startTime);
+  const long runningTimeInNanoSeconds =
+      diffTime.tv_sec * ONE_S_TO_NS + diffTime.tv_nsec;
 
   FILE *dataFile = fopen("../data.txt", "a");
   if (dataFile == NULL) {
@@ -131,10 +129,11 @@ int main(int argc, char *argv[]) {
   }
 
   // 按顺序写入 d, t, n, time 的值在同一行
-  fprintf(dataFile, "%d %d %d %lu\n", dim, timesteps, threads, runningTime);
+  fprintf(dataFile, "%d %d %d %lu\n", dim, timesteps, threads,
+          runningTimeInNanoSeconds);
 
   // Do the time calculation
-  printf("Total Execution time: %lu ns\n", runningTime);
+  printf("Total Execution time: %lu ns\n", runningTimeInNanoSeconds);
 
   // Free the memory we allocated for grid
   free(temp);

@@ -1,5 +1,5 @@
 CXX= gcc
-CXXFLAGS= -O3 -std=c99
+CXXFLAGS= -O3 -std=gnu23
 LDFLAGS =  
 
 all: serial_ocean omp_ocean
