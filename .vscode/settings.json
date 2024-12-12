@@ -1,11 +1,20 @@
 {
   "makefile.configureOnOpen": false,
   "cSpell.words": [
+    "Allgatherv",
+    "Allreduce",
+    "displ",
+    "displs",
     "fopenmp",
+    "Gatherv",
     "kmeans",
+    "mpiexec",
     "nclusters",
     "Pthread",
     "radixsort",
-    "shellsort"
+    "Sendrecv",
+    "shellsort",
+    "vect",
+    "Wtime"
   ]
 }
