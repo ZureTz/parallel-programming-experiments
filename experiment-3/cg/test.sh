@@ -10,7 +10,7 @@ make -C src all
 cd src
 
 # 定义取值范围
-np_values=(1 2 4 8 16)
+np_values=(1 2 4 8 16 32)
 dim_values=(1024 2048 4096 8192)
 timesteps_values=(50 100 200 500)
 

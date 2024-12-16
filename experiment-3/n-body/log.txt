@@ -1,0 +1,294 @@
+make: Entering directory '/home/parallel_3/Projects/parallel-programming-experiments/experiment-3/n-body/src'
+rm -f nbody
+make: Leaving directory '/home/parallel_3/Projects/parallel-programming-experiments/experiment-3/n-body/src'
+make: Entering directory '/home/parallel_3/Projects/parallel-programming-experiments/experiment-3/n-body/src'
+mpiCC -O3  body.c -o nbody -lmpi -lm
+make: Leaving directory '/home/parallel_3/Projects/parallel-programming-experiments/experiment-3/n-body/src'
+Running mpirun -np 1 ./cg 128 50
+serial time = 0.001368 s
+parallel time = 0.002687 s
+Running mpirun -np 1 ./cg 128 100
+serial time = 0.002688 s
+parallel time = 0.005295 s
+Running mpirun -np 1 ./cg 128 200
+serial time = 0.005435 s
+parallel time = 0.010769 s
+Running mpirun -np 1 ./cg 128 500
+serial time = 0.013599 s
+parallel time = 0.026720 s
+Running mpirun -np 1 ./cg 256 50
+serial time = 0.005420 s
+parallel time = 0.010705 s
+Running mpirun -np 1 ./cg 256 100
+serial time = 0.010830 s
+parallel time = 0.021433 s
+Running mpirun -np 1 ./cg 256 200
+serial time = 0.021771 s
+parallel time = 0.042760 s
+Running mpirun -np 1 ./cg 256 500
+serial time = 0.054390 s
+parallel time = 0.106754 s
+Running mpirun -np 1 ./cg 512 50
+serial time = 0.021649 s
+parallel time = 0.042799 s
+Running mpirun -np 1 ./cg 512 100
+serial time = 0.043436 s
+parallel time = 0.085650 s
+Running mpirun -np 1 ./cg 512 200
+serial time = 0.086525 s
+parallel time = 0.170504 s
+Running mpirun -np 1 ./cg 512 500
+serial time = 0.217389 s
+parallel time = 0.428678 s
+Running mpirun -np 1 ./cg 1024 50
+serial time = 0.086977 s
+parallel time = 0.171742 s
+Running mpirun -np 1 ./cg 1024 100
+serial time = 0.174033 s
+parallel time = 0.343621 s
+Running mpirun -np 1 ./cg 1024 200
+serial time = 0.348878 s
+parallel time = 0.687218 s
+Running mpirun -np 1 ./cg 1024 500
+serial time = 0.900169 s
+parallel time = 1.741174 s
+Running mpirun -np 2 ./cg 128 50
+serial time = 0.001371 s
+parallel time = 0.001874 s
+Running mpirun -np 2 ./cg 128 100
+serial time = 0.002737 s
+parallel time = 0.003766 s
+Running mpirun -np 2 ./cg 128 200
+serial time = 0.005635 s
+parallel time = 0.007035 s
+Running mpirun -np 2 ./cg 128 500
+serial time = 0.014077 s
+parallel time = 0.018648 s
+Running mpirun -np 2 ./cg 256 50
+serial time = 0.005586 s
+parallel time = 0.005852 s
+Running mpirun -np 2 ./cg 256 100
+serial time = 0.011266 s
+parallel time = 0.011558 s
+Running mpirun -np 2 ./cg 256 200
+serial time = 0.022651 s
+parallel time = 0.023140 s
+Running mpirun -np 2 ./cg 256 500
+serial time = 0.056495 s
+parallel time = 0.057595 s
+Running mpirun -np 2 ./cg 512 50
+serial time = 0.022446 s
+parallel time = 0.022161 s
+Running mpirun -np 2 ./cg 512 100
+serial time = 0.044142 s
+parallel time = 0.044507 s
+Running mpirun -np 2 ./cg 512 200
+serial time = 0.087832 s
+parallel time = 0.088712 s
+Running mpirun -np 2 ./cg 512 500
+serial time = 0.226689 s
+parallel time = 0.224431 s
+Running mpirun -np 2 ./cg 1024 50
+serial time = 0.090888 s
+parallel time = 0.087789 s
+Running mpirun -np 2 ./cg 1024 100
+serial time = 0.180764 s
+parallel time = 0.175569 s
+Running mpirun -np 2 ./cg 1024 200
+serial time = 0.348690 s
+parallel time = 0.354422 s
+Running mpirun -np 2 ./cg 1024 500
+serial time = 0.887978 s
+parallel time = 0.891193 s
+Running mpirun -np 4 ./cg 128 50
+serial time = 0.001446 s
+parallel time = 0.001167 s
+Running mpirun -np 4 ./cg 128 100
+serial time = 0.002806 s
+parallel time = 0.002144 s
+Running mpirun -np 4 ./cg 128 200
+serial time = 0.005623 s
+parallel time = 0.004127 s
+Running mpirun -np 4 ./cg 128 500
+serial time = 0.014227 s
+parallel time = 0.010183 s
+Running mpirun -np 4 ./cg 256 50
+serial time = 0.005600 s
+parallel time = 0.003403 s
+Running mpirun -np 4 ./cg 256 100
+serial time = 0.011354 s
+parallel time = 0.006560 s
+Running mpirun -np 4 ./cg 256 200
+serial time = 0.022695 s
+parallel time = 0.013149 s
+Running mpirun -np 4 ./cg 256 500
+serial time = 0.056903 s
+parallel time = 0.032813 s
+Running mpirun -np 4 ./cg 512 50
+serial time = 0.022719 s
+parallel time = 0.011703 s
+Running mpirun -np 4 ./cg 512 100
+serial time = 0.045404 s
+parallel time = 0.023337 s
+Running mpirun -np 4 ./cg 512 200
+serial time = 0.090848 s
+parallel time = 0.046317 s
+Running mpirun -np 4 ./cg 512 500
+serial time = 0.226300 s
+parallel time = 0.115459 s
+Running mpirun -np 4 ./cg 1024 50
+serial time = 0.091578 s
+parallel time = 0.045333 s
+Running mpirun -np 4 ./cg 1024 100
+serial time = 0.180980 s
+parallel time = 0.089048 s
+Running mpirun -np 4 ./cg 1024 200
+serial time = 0.365592 s
+parallel time = 0.180359 s
+Running mpirun -np 4 ./cg 1024 500
+serial time = 0.909014 s
+parallel time = 0.450420 s
+Running mpirun -np 8 ./cg 128 50
+serial time = 0.001457 s
+parallel time = 0.001373 s
+Running mpirun -np 8 ./cg 128 100
+serial time = 0.002941 s
+parallel time = 0.002421 s
+Running mpirun -np 8 ./cg 128 200
+serial time = 0.005828 s
+parallel time = 0.004609 s
+Running mpirun -np 8 ./cg 128 500
+serial time = 0.014325 s
+parallel time = 0.011555 s
+Running mpirun -np 8 ./cg 256 50
+serial time = 0.005796 s
+parallel time = 0.003512 s
+Running mpirun -np 8 ./cg 256 100
+serial time = 0.011567 s
+parallel time = 0.006294 s
+Running mpirun -np 8 ./cg 256 200
+serial time = 0.022887 s
+parallel time = 0.013099 s
+Running mpirun -np 8 ./cg 256 500
+serial time = 0.057299 s
+parallel time = 0.021977 s
+Running mpirun -np 8 ./cg 512 50
+serial time = 0.023378 s
+parallel time = 0.012180 s
+Running mpirun -np 8 ./cg 512 100
+serial time = 0.046345 s
+parallel time = 0.023977 s
+Running mpirun -np 8 ./cg 512 200
+serial time = 0.092322 s
+parallel time = 0.047005 s
+Running mpirun -np 8 ./cg 512 500
+serial time = 0.232260 s
+parallel time = 0.086639 s
+Running mpirun -np 8 ./cg 1024 50
+serial time = 0.092829 s
+parallel time = 0.042213 s
+Running mpirun -np 8 ./cg 1024 100
+serial time = 0.185772 s
+parallel time = 0.056038 s
+Running mpirun -np 8 ./cg 1024 200
+serial time = 0.370478 s
+parallel time = 0.100586 s
+Running mpirun -np 8 ./cg 1024 500
+serial time = 0.930767 s
+parallel time = 0.235105 s
+Running mpirun -np 16 ./cg 128 50
+serial time = 0.001478 s
+parallel time = 0.001188 s
+Running mpirun -np 16 ./cg 128 100
+serial time = 0.002968 s
+parallel time = 0.002303 s
+Running mpirun -np 16 ./cg 128 200
+serial time = 0.005916 s
+parallel time = 0.004473 s
+Running mpirun -np 16 ./cg 128 500
+serial time = 0.014633 s
+parallel time = 0.010354 s
+Running mpirun -np 16 ./cg 256 50
+serial time = 0.006011 s
+parallel time = 0.002308 s
+Running mpirun -np 16 ./cg 256 100
+serial time = 0.011932 s
+parallel time = 0.004571 s
+Running mpirun -np 16 ./cg 256 200
+serial time = 0.023349 s
+parallel time = 0.009020 s
+Running mpirun -np 16 ./cg 256 500
+serial time = 0.059530 s
+parallel time = 0.022404 s
+Running mpirun -np 16 ./cg 512 50
+serial time = 0.023851 s
+parallel time = 0.006743 s
+Running mpirun -np 16 ./cg 512 100
+serial time = 0.047725 s
+parallel time = 0.013580 s
+Running mpirun -np 16 ./cg 512 200
+serial time = 0.093581 s
+parallel time = 0.027302 s
+Running mpirun -np 16 ./cg 512 500
+serial time = 0.234301 s
+parallel time = 0.066878 s
+Running mpirun -np 16 ./cg 1024 50
+serial time = 0.094386 s
+parallel time = 0.024206 s
+Running mpirun -np 16 ./cg 1024 100
+serial time = 0.186121 s
+parallel time = 0.048066 s
+Running mpirun -np 16 ./cg 1024 200
+serial time = 0.382082 s
+parallel time = 0.095523 s
+Running mpirun -np 16 ./cg 1024 500
+serial time = 0.939998 s
+parallel time = 0.237558 s
+Running mpirun -np 32 ./cg 128 50
+serial time = 0.001483 s
+parallel time = 0.001984 s
+Running mpirun -np 32 ./cg 128 100
+serial time = 0.003025 s
+parallel time = 0.102220 s
+Running mpirun -np 32 ./cg 128 200
+serial time = 0.005966 s
+parallel time = 0.005787 s
+Running mpirun -np 32 ./cg 128 500
+serial time = 0.014923 s
+parallel time = 0.019658 s
+Running mpirun -np 32 ./cg 256 50
+serial time = 0.005954 s
+parallel time = 0.002468 s
+Running mpirun -np 32 ./cg 256 100
+serial time = 0.011938 s
+parallel time = 0.004336 s
+Running mpirun -np 32 ./cg 256 200
+serial time = 0.023962 s
+parallel time = 0.024033 s
+Running mpirun -np 32 ./cg 256 500
+serial time = 0.059684 s
+parallel time = 0.018599 s
+Running mpirun -np 32 ./cg 512 50
+serial time = 0.023988 s
+parallel time = 0.005684 s
+Running mpirun -np 32 ./cg 512 100
+serial time = 0.053054 s
+parallel time = 0.009257 s
+Running mpirun -np 32 ./cg 512 200
+serial time = 0.096515 s
+parallel time = 0.017217 s
+Running mpirun -np 32 ./cg 512 500
+serial time = 0.240826 s
+parallel time = 0.062511 s
+Running mpirun -np 32 ./cg 1024 50
+serial time = 0.096971 s
+parallel time = 0.017346 s
+Running mpirun -np 32 ./cg 1024 100
+serial time = 0.191773 s
+parallel time = 0.033810 s
+Running mpirun -np 32 ./cg 1024 200
+serial time = 0.389762 s
+parallel time = 0.053320 s
+Running mpirun -np 32 ./cg 1024 500
+serial time = 0.988876 s
+parallel time = 0.192577 s

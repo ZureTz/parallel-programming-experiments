@@ -1,0 +1,582 @@
+make: Entering directory '/home/parallel_3/Projects/parallel-programming-experiments/experiment-3/cg/src'
+rm -f cg
+make: Leaving directory '/home/parallel_3/Projects/parallel-programming-experiments/experiment-3/cg/src'
+make: Entering directory '/home/parallel_3/Projects/parallel-programming-experiments/experiment-3/cg/src'
+mpicc -O3 -std=c99 cg.c main.c -o cg -lmpi -lm
+make: Leaving directory '/home/parallel_3/Projects/parallel-programming-experiments/experiment-3/cg/src'
+Running mpirun -np 1 ./cg 1024 50
+Sequential max error: 4.66293670342566e-15
+Parallel max error: 4.66293670342566e-15
+Generate time: 0.009888 s
+Sequential solution time: 0.004297 s
+Parallel solution time: 0.004374 s
+Running mpirun -np 1 ./cg 1024 100
+Sequential max error: 5.99520433297585e-15
+Parallel max error: 5.99520433297585e-15
+Generate time: 0.010063 s
+Sequential solution time: 0.004299 s
+Parallel solution time: 0.004302 s
+Running mpirun -np 1 ./cg 1024 200
+Sequential max error: 5.99520433297585e-15
+Parallel max error: 5.99520433297585e-15
+Generate time: 0.009819 s
+Sequential solution time: 0.004304 s
+Parallel solution time: 0.004294 s
+Running mpirun -np 1 ./cg 1024 500
+Sequential max error: 5.99520433297585e-15
+Parallel max error: 5.99520433297585e-15
+Generate time: 0.010195 s
+Sequential solution time: 0.004335 s
+Parallel solution time: 0.004435 s
+Running mpirun -np 1 ./cg 2048 50
+Sequential max error: 8.21565038222616e-15
+Parallel max error: 8.21565038222616e-15
+Generate time: 0.043918 s
+Sequential solution time: 0.019434 s
+Parallel solution time: 0.018722 s
+Running mpirun -np 1 ./cg 2048 100
+Sequential max error: 8.21565038222616e-15
+Parallel max error: 8.21565038222616e-15
+Generate time: 0.044237 s
+Sequential solution time: 0.019599 s
+Parallel solution time: 0.019267 s
+Running mpirun -np 1 ./cg 2048 200
+Sequential max error: 8.21565038222616e-15
+Parallel max error: 8.21565038222616e-15
+Generate time: 0.043087 s
+Sequential solution time: 0.019696 s
+Parallel solution time: 0.018573 s
+Running mpirun -np 1 ./cg 2048 500
+Sequential max error: 8.65973959207622e-15
+Parallel max error: 8.65973959207622e-15
+Generate time: 0.044284 s
+Sequential solution time: 0.020022 s
+Parallel solution time: 0.018915 s
+Running mpirun -np 1 ./cg 4096 50
+Sequential max error: 1.31006316905768e-14
+Parallel max error: 1.31006316905768e-14
+Generate time: 0.188925 s
+Sequential solution time: 0.084533 s
+Parallel solution time: 0.084023 s
+Running mpirun -np 1 ./cg 4096 100
+Sequential max error: 1.27675647831893e-14
+Parallel max error: 1.27675647831893e-14
+Generate time: 0.187976 s
+Sequential solution time: 0.084958 s
+Parallel solution time: 0.085249 s
+Running mpirun -np 1 ./cg 4096 200
+Sequential max error: 1.27675647831893e-14
+Parallel max error: 1.27675647831893e-14
+Generate time: 0.188736 s
+Sequential solution time: 0.084474 s
+Parallel solution time: 0.083654 s
+Running mpirun -np 1 ./cg 4096 500
+Sequential max error: 1.43218770176645e-14
+Parallel max error: 1.43218770176645e-14
+Generate time: 0.189468 s
+Sequential solution time: 0.084311 s
+Parallel solution time: 0.083106 s
+Running mpirun -np 1 ./cg 8192 50
+Sequential max error: 1.87627691161651e-14
+Parallel max error: 1.87627691161651e-14
+Generate time: 0.754466 s
+Sequential solution time: 0.348075 s
+Parallel solution time: 0.334986 s
+Running mpirun -np 1 ./cg 8192 100
+Sequential max error: 1.85407245112401e-14
+Parallel max error: 1.85407245112401e-14
+Generate time: 0.755622 s
+Sequential solution time: 0.344523 s
+Parallel solution time: 0.329005 s
+Running mpirun -np 1 ./cg 8192 200
+Sequential max error: 2.07611705604904e-14
+Parallel max error: 2.07611705604904e-14
+Generate time: 0.791787 s
+Sequential solution time: 0.346609 s
+Parallel solution time: 0.358374 s
+Running mpirun -np 1 ./cg 8192 500
+Sequential max error: 2.49800180540660e-14
+Parallel max error: 2.49800180540660e-14
+Generate time: 0.772307 s
+Sequential solution time: 0.349787 s
+Parallel solution time: 0.347863 s
+Running mpirun -np 2 ./cg 1024 50
+Sequential max error: 6.88338275267597e-15
+Parallel max error: 6.77236045021345e-15
+Generate time: 0.011791 s
+Sequential solution time: 0.004348 s
+Parallel solution time: 0.002369 s
+Running mpirun -np 2 ./cg 1024 100
+Sequential max error: 6.55031584528842e-15
+Parallel max error: 6.10622663543836e-15
+Generate time: 0.012465 s
+Sequential solution time: 0.004470 s
+Parallel solution time: 0.002462 s
+Running mpirun -np 2 ./cg 1024 200
+Sequential max error: 6.55031584528842e-15
+Parallel max error: 6.10622663543836e-15
+Generate time: 0.011860 s
+Sequential solution time: 0.004497 s
+Parallel solution time: 0.002357 s
+Running mpirun -np 2 ./cg 1024 500
+Sequential max error: 6.55031584528842e-15
+Parallel max error: 6.10622663543836e-15
+Generate time: 0.012178 s
+Sequential solution time: 0.004486 s
+Parallel solution time: 0.002619 s
+Running mpirun -np 2 ./cg 2048 50
+Sequential max error: 1.03250741290140e-14
+Parallel max error: 1.03250741290140e-14
+Generate time: 0.067340 s
+Sequential solution time: 0.020341 s
+Parallel solution time: 0.010015 s
+Running mpirun -np 2 ./cg 2048 100
+Sequential max error: 1.03250741290140e-14
+Parallel max error: 1.03250741290140e-14
+Generate time: 0.071374 s
+Sequential solution time: 0.020087 s
+Parallel solution time: 0.010185 s
+Running mpirun -np 2 ./cg 2048 200
+Sequential max error: 1.03250741290140e-14
+Parallel max error: 1.03250741290140e-14
+Generate time: 0.065409 s
+Sequential solution time: 0.020284 s
+Parallel solution time: 0.010011 s
+Running mpirun -np 2 ./cg 2048 500
+Sequential max error: 8.77076189453874e-15
+Parallel max error: 8.65973959207622e-15
+Generate time: 0.064110 s
+Sequential solution time: 0.020429 s
+Parallel solution time: 0.009978 s
+Running mpirun -np 2 ./cg 4096 50
+Sequential max error: 1.25455201782643e-14
+Parallel max error: 1.26565424807268e-14
+Generate time: 0.430169 s
+Sequential solution time: 0.088207 s
+Parallel solution time: 0.043596 s
+Running mpirun -np 2 ./cg 4096 100
+Sequential max error: 1.40998324127395e-14
+Parallel max error: 1.42108547152020e-14
+Generate time: 0.403005 s
+Sequential solution time: 0.086041 s
+Parallel solution time: 0.044167 s
+Running mpirun -np 2 ./cg 4096 200
+Sequential max error: 1.32116539930394e-14
+Parallel max error: 1.32116539930394e-14
+Generate time: 0.418518 s
+Sequential solution time: 0.084353 s
+Parallel solution time: 0.044801 s
+Running mpirun -np 2 ./cg 4096 500
+Sequential max error: 1.25455201782643e-14
+Parallel max error: 1.27675647831893e-14
+Generate time: 0.417140 s
+Sequential solution time: 0.086811 s
+Parallel solution time: 0.044918 s
+Running mpirun -np 2 ./cg 8192 50
+Sequential max error: 2.02060590481778e-14
+Parallel max error: 2.00950367457153e-14
+Generate time: 3.216366 s
+Sequential solution time: 0.349969 s
+Parallel solution time: 0.180790 s
+Running mpirun -np 2 ./cg 8192 100
+Sequential max error: 2.16493489801906e-14
+Parallel max error: 2.17603712826531e-14
+Generate time: 2.794617 s
+Sequential solution time: 0.342210 s
+Parallel solution time: 0.181245 s
+Running mpirun -np 2 ./cg 8192 200
+Sequential max error: 1.88737914186277e-14
+Parallel max error: 1.88737914186277e-14
+Generate time: 2.788120 s
+Sequential solution time: 0.347513 s
+Parallel solution time: 0.178420 s
+Running mpirun -np 2 ./cg 8192 500
+Sequential max error: 1.79856129989275e-14
+Parallel max error: 1.80966353013901e-14
+Generate time: 2.778883 s
+Sequential solution time: 0.344093 s
+Parallel solution time: 0.182048 s
+Running mpirun -np 4 ./cg 1024 50
+Sequential max error: 5.88418203051333e-15
+Parallel max error: 5.88418203051333e-15
+Generate time: 0.005974 s
+Sequential solution time: 0.004527 s
+Parallel solution time: 0.001458 s
+Running mpirun -np 4 ./cg 1024 100
+Sequential max error: 5.88418203051333e-15
+Parallel max error: 5.88418203051333e-15
+Generate time: 0.005890 s
+Sequential solution time: 0.004641 s
+Parallel solution time: 0.001451 s
+Running mpirun -np 4 ./cg 1024 200
+Sequential max error: 6.88338275267597e-15
+Parallel max error: 6.88338275267597e-15
+Generate time: 0.005920 s
+Sequential solution time: 0.004554 s
+Parallel solution time: 0.001532 s
+Running mpirun -np 4 ./cg 1024 500
+Sequential max error: 6.88338275267597e-15
+Parallel max error: 6.88338275267597e-15
+Generate time: 0.006006 s
+Sequential solution time: 0.004577 s
+Parallel solution time: 0.001522 s
+Running mpirun -np 4 ./cg 2048 50
+Sequential max error: 9.76996261670138e-15
+Parallel max error: 9.88098491916389e-15
+Generate time: 0.029612 s
+Sequential solution time: 0.020297 s
+Parallel solution time: 0.005314 s
+Running mpirun -np 4 ./cg 2048 100
+Sequential max error: 9.76996261670138e-15
+Parallel max error: 9.88098491916389e-15
+Generate time: 0.030875 s
+Sequential solution time: 0.020037 s
+Parallel solution time: 0.005300 s
+Running mpirun -np 4 ./cg 2048 200
+Sequential max error: 8.77076189453874e-15
+Parallel max error: 8.99280649946377e-15
+Generate time: 0.031677 s
+Sequential solution time: 0.019996 s
+Parallel solution time: 0.005330 s
+Running mpirun -np 4 ./cg 2048 500
+Sequential max error: 8.77076189453874e-15
+Parallel max error: 8.99280649946377e-15
+Generate time: 0.030898 s
+Sequential solution time: 0.019962 s
+Parallel solution time: 0.005287 s
+Running mpirun -np 4 ./cg 4096 50
+Sequential max error: 1.28785870856518e-14
+Parallel max error: 1.31006316905768e-14
+Generate time: 0.170940 s
+Sequential solution time: 0.087278 s
+Parallel solution time: 0.023131 s
+Running mpirun -np 4 ./cg 4096 100
+Sequential max error: 1.29896093881143e-14
+Parallel max error: 1.32116539930394e-14
+Generate time: 0.167492 s
+Sequential solution time: 0.087040 s
+Parallel solution time: 0.022683 s
+Running mpirun -np 4 ./cg 4096 200
+Sequential max error: 1.38777878078145e-14
+Parallel max error: 1.39888101102770e-14
+Generate time: 0.171315 s
+Sequential solution time: 0.087474 s
+Parallel solution time: 0.023203 s
+Running mpirun -np 4 ./cg 4096 500
+Sequential max error: 1.38777878078145e-14
+Parallel max error: 1.39888101102770e-14
+Generate time: 0.167315 s
+Sequential solution time: 0.086585 s
+Parallel solution time: 0.023083 s
+Running mpirun -np 4 ./cg 8192 50
+Sequential max error: 2.17603712826531e-14
+Parallel max error: 2.17603712826531e-14
+Generate time: 1.286319 s
+Sequential solution time: 0.349758 s
+Parallel solution time: 0.091546 s
+Running mpirun -np 4 ./cg 8192 100
+Sequential max error: 2.39808173319034e-14
+Parallel max error: 2.37587727269783e-14
+Generate time: 1.236026 s
+Sequential solution time: 0.351953 s
+Parallel solution time: 0.080670 s
+Running mpirun -np 4 ./cg 8192 200
+Sequential max error: 1.87627691161651e-14
+Parallel max error: 1.88737914186277e-14
+Generate time: 1.146724 s
+Sequential solution time: 0.353298 s
+Parallel solution time: 0.090959 s
+Running mpirun -np 4 ./cg 8192 500
+Sequential max error: 1.94289029309402e-14
+Parallel max error: 1.98729921407903e-14
+Generate time: 1.096588 s
+Sequential solution time: 0.351261 s
+Parallel solution time: 0.091507 s
+Running mpirun -np 8 ./cg 1024 50
+Sequential max error: 4.99600361081320e-15
+Parallel max error: 5.10702591327572e-15
+Generate time: 0.003711 s
+Sequential solution time: 0.004786 s
+Parallel solution time: 0.001168 s
+Running mpirun -np 8 ./cg 1024 100
+Sequential max error: 5.10702591327572e-15
+Parallel max error: 5.32907051820075e-15
+Generate time: 0.003532 s
+Sequential solution time: 0.004543 s
+Parallel solution time: 0.000990 s
+Running mpirun -np 8 ./cg 1024 200
+Sequential max error: 5.10702591327572e-15
+Parallel max error: 5.32907051820075e-15
+Generate time: 0.003322 s
+Sequential solution time: 0.004581 s
+Parallel solution time: 0.001130 s
+Running mpirun -np 8 ./cg 1024 500
+Sequential max error: 5.10702591327572e-15
+Parallel max error: 5.32907051820075e-15
+Generate time: 0.003523 s
+Sequential solution time: 0.004664 s
+Parallel solution time: 0.001067 s
+Running mpirun -np 8 ./cg 2048 50
+Sequential max error: 1.16573417585641e-14
+Parallel max error: 1.16573417585641e-14
+Generate time: 0.018136 s
+Sequential solution time: 0.020708 s
+Parallel solution time: 0.003397 s
+Running mpirun -np 8 ./cg 2048 100
+Sequential max error: 1.16573417585641e-14
+Parallel max error: 1.16573417585641e-14
+Generate time: 0.017420 s
+Sequential solution time: 0.020356 s
+Parallel solution time: 0.003457 s
+Running mpirun -np 8 ./cg 2048 200
+Sequential max error: 1.16573417585641e-14
+Parallel max error: 1.16573417585641e-14
+Generate time: 0.017740 s
+Sequential solution time: 0.020259 s
+Parallel solution time: 0.003302 s
+Running mpirun -np 8 ./cg 2048 500
+Sequential max error: 1.06581410364015e-14
+Parallel max error: 1.05471187339390e-14
+Generate time: 0.016873 s
+Sequential solution time: 0.020870 s
+Parallel solution time: 0.003386 s
+Running mpirun -np 8 ./cg 4096 50
+Sequential max error: 1.34336985979644e-14
+Parallel max error: 1.35447209004269e-14
+Generate time: 0.092382 s
+Sequential solution time: 0.088698 s
+Parallel solution time: 0.018124 s
+Running mpirun -np 8 ./cg 4096 100
+Sequential max error: 1.34336985979644e-14
+Parallel max error: 1.35447209004269e-14
+Generate time: 0.085073 s
+Sequential solution time: 0.088344 s
+Parallel solution time: 0.018006 s
+Running mpirun -np 8 ./cg 4096 200
+Sequential max error: 1.72084568816899e-14
+Parallel max error: 1.74305014866150e-14
+Generate time: 0.089893 s
+Sequential solution time: 0.087971 s
+Parallel solution time: 0.017301 s
+Running mpirun -np 8 ./cg 4096 500
+Sequential max error: 1.37667655053519e-14
+Parallel max error: 1.33226762955019e-14
+Generate time: 0.081458 s
+Sequential solution time: 0.087967 s
+Parallel solution time: 0.017258 s
+Running mpirun -np 8 ./cg 8192 50
+Sequential max error: 1.92068583260152e-14
+Parallel max error: 1.92068583260152e-14
+Generate time: 0.588016 s
+Sequential solution time: 0.357752 s
+Parallel solution time: 0.068948 s
+Running mpirun -np 8 ./cg 8192 100
+Sequential max error: 2.06501482580279e-14
+Parallel max error: 2.05391259555654e-14
+Generate time: 0.516525 s
+Sequential solution time: 0.311139 s
+Parallel solution time: 0.061670 s
+Running mpirun -np 8 ./cg 8192 200
+Sequential max error: 3.06421554796543e-14
+Parallel max error: 3.05311331771918e-14
+Generate time: 0.581961 s
+Sequential solution time: 0.354311 s
+Parallel solution time: 0.069974 s
+Running mpirun -np 8 ./cg 8192 500
+Sequential max error: 2.12052597703405e-14
+Parallel max error: 2.12052597703405e-14
+Generate time: 0.569414 s
+Sequential solution time: 0.354374 s
+Parallel solution time: 0.059729 s
+Running mpirun -np 16 ./cg 1024 50
+Sequential max error: 6.77236045021345e-15
+Parallel max error: 6.88338275267597e-15
+Generate time: 0.001547 s
+Sequential solution time: 0.004773 s
+Parallel solution time: 0.000983 s
+Running mpirun -np 16 ./cg 1024 100
+Sequential max error: 6.77236045021345e-15
+Parallel max error: 6.88338275267597e-15
+Generate time: 0.001536 s
+Sequential solution time: 0.004769 s
+Parallel solution time: 0.000953 s
+Running mpirun -np 16 ./cg 1024 200
+Sequential max error: 5.21804821573824e-15
+Parallel max error: 5.21804821573824e-15
+Generate time: 0.001514 s
+Sequential solution time: 0.004820 s
+Parallel solution time: 0.000943 s
+Running mpirun -np 16 ./cg 1024 500
+Sequential max error: 5.21804821573824e-15
+Parallel max error: 5.21804821573824e-15
+Generate time: 0.001599 s
+Sequential solution time: 0.004718 s
+Parallel solution time: 0.001074 s
+Running mpirun -np 16 ./cg 2048 50
+Sequential max error: 8.88178419700125e-15
+Parallel max error: 8.54871728961371e-15
+Generate time: 0.009230 s
+Sequential solution time: 0.020902 s
+Parallel solution time: 0.002804 s
+Running mpirun -np 16 ./cg 2048 100
+Sequential max error: 1.03250741290140e-14
+Parallel max error: 1.03250741290140e-14
+Generate time: 0.009414 s
+Sequential solution time: 0.021057 s
+Parallel solution time: 0.002532 s
+Running mpirun -np 16 ./cg 2048 200
+Sequential max error: 1.03250741290140e-14
+Parallel max error: 1.03250741290140e-14
+Generate time: 0.009105 s
+Sequential solution time: 0.020814 s
+Parallel solution time: 0.002661 s
+Running mpirun -np 16 ./cg 2048 500
+Sequential max error: 9.43689570931383e-15
+Parallel max error: 9.43689570931383e-15
+Generate time: 0.009389 s
+Sequential solution time: 0.020797 s
+Parallel solution time: 0.002617 s
+Running mpirun -np 16 ./cg 4096 50
+Sequential max error: 1.46549439250521e-14
+Parallel max error: 1.46549439250521e-14
+Generate time: 0.039400 s
+Sequential solution time: 0.092119 s
+Parallel solution time: 0.018386 s
+Running mpirun -np 16 ./cg 4096 100
+Sequential max error: 1.35447209004269e-14
+Parallel max error: 1.35447209004269e-14
+Generate time: 0.038304 s
+Sequential solution time: 0.091560 s
+Parallel solution time: 0.018183 s
+Running mpirun -np 16 ./cg 4096 200
+Sequential max error: 1.35447209004269e-14
+Parallel max error: 1.35447209004269e-14
+Generate time: 0.038294 s
+Sequential solution time: 0.088135 s
+Parallel solution time: 0.018506 s
+Running mpirun -np 16 ./cg 4096 500
+Sequential max error: 1.36557432028894e-14
+Parallel max error: 1.35447209004269e-14
+Generate time: 0.038886 s
+Sequential solution time: 0.092189 s
+Parallel solution time: 0.019641 s
+Running mpirun -np 16 ./cg 8192 50
+Sequential max error: 1.84297022087776e-14
+Parallel max error: 1.83186799063151e-14
+Generate time: 0.188840 s
+Sequential solution time: 0.371883 s
+Parallel solution time: 0.071319 s
+Running mpirun -np 16 ./cg 8192 100
+Sequential max error: 2.29816166097407e-14
+Parallel max error: 2.29816166097407e-14
+Generate time: 0.195230 s
+Sequential solution time: 0.354519 s
+Parallel solution time: 0.068968 s
+Running mpirun -np 16 ./cg 8192 200
+Sequential max error: 2.05391259555654e-14
+Parallel max error: 2.02060590481778e-14
+Generate time: 0.191861 s
+Sequential solution time: 0.311332 s
+Parallel solution time: 0.065291 s
+Running mpirun -np 16 ./cg 8192 500
+Sequential max error: 2.25375273998907e-14
+Parallel max error: 2.24265050974282e-14
+Generate time: 0.185698 s
+Sequential solution time: 0.320427 s
+Parallel solution time: 0.065367 s
+Running mpirun -np 32 ./cg 1024 50
+Sequential max error: 5.88418203051333e-15
+Parallel max error: 5.77315972805081e-15
+Generate time: 0.036116 s
+Sequential solution time: 0.004799 s
+Parallel solution time: 0.002928 s
+Running mpirun -np 32 ./cg 1024 100
+Sequential max error: 6.88338275267597e-15
+Parallel max error: 6.88338275267597e-15
+Generate time: 0.015593 s
+Sequential solution time: 0.004782 s
+Parallel solution time: 0.001159 s
+Running mpirun -np 32 ./cg 1024 200
+Sequential max error: 6.88338275267597e-15
+Parallel max error: 6.88338275267597e-15
+Generate time: 0.001701 s
+Sequential solution time: 0.004828 s
+Parallel solution time: 0.001134 s
+Running mpirun -np 32 ./cg 1024 500
+Sequential max error: 5.66213742558830e-15
+Parallel max error: 5.99520433297585e-15
+Generate time: 0.029010 s
+Sequential solution time: 0.004766 s
+Parallel solution time: 0.043297 s
+Running mpirun -np 32 ./cg 2048 50
+Sequential max error: 8.43769498715119e-15
+Parallel max error: 8.43769498715119e-15
+Generate time: 0.005710 s
+Sequential solution time: 0.022042 s
+Parallel solution time: 0.003706 s
+Running mpirun -np 32 ./cg 2048 100
+Sequential max error: 8.32667268468867e-15
+Parallel max error: 8.54871728961371e-15
+Generate time: 0.007194 s
+Sequential solution time: 0.021514 s
+Parallel solution time: 0.001909 s
+Running mpirun -np 32 ./cg 2048 200
+Sequential max error: 8.32667268468867e-15
+Parallel max error: 8.54871728961371e-15
+Generate time: 0.005733 s
+Sequential solution time: 0.021865 s
+Parallel solution time: 0.001946 s
+Running mpirun -np 32 ./cg 2048 500
+Sequential max error: 9.10382880192628e-15
+Parallel max error: 9.21485110438880e-15
+Generate time: 0.007011 s
+Sequential solution time: 0.021567 s
+Parallel solution time: 0.001724 s
+Running mpirun -np 32 ./cg 4096 50
+Sequential max error: 1.31006316905768e-14
+Parallel max error: 1.31006316905768e-14
+Generate time: 0.030417 s
+Sequential solution time: 0.093450 s
+Parallel solution time: 0.024134 s
+Running mpirun -np 32 ./cg 4096 100
+Sequential max error: 1.33226762955019e-14
+Parallel max error: 1.33226762955019e-14
+Generate time: 0.062012 s
+Sequential solution time: 0.093891 s
+Parallel solution time: 0.015937 s
+Running mpirun -np 32 ./cg 4096 200
+Sequential max error: 1.34336985979644e-14
+Parallel max error: 1.32116539930394e-14
+Generate time: 0.028512 s
+Sequential solution time: 0.092299 s
+Parallel solution time: 0.015620 s
+Running mpirun -np 32 ./cg 4096 500
+Sequential max error: 1.48769885299771e-14
+Parallel max error: 1.49880108324396e-14
+Generate time: 0.027646 s
+Sequential solution time: 0.093526 s
+Parallel solution time: 0.015881 s
+Running mpirun -np 32 ./cg 8192 50
+Sequential max error: 2.35367281220533e-14
+Parallel max error: 2.37587727269783e-14
+Generate time: 0.105799 s
+Sequential solution time: 0.377872 s
+Parallel solution time: 0.068223 s
+Running mpirun -np 32 ./cg 8192 100
+Sequential max error: 1.89848137210902e-14
+Parallel max error: 1.88737914186277e-14
+Generate time: 0.111611 s
+Sequential solution time: 0.376360 s
+Parallel solution time: 0.068402 s
+Running mpirun -np 32 ./cg 8192 200
+Sequential max error: 2.00950367457153e-14
+Parallel max error: 2.00950367457153e-14
+Generate time: 0.122639 s
+Sequential solution time: 0.375414 s
+Parallel solution time: 0.068099 s
+Running mpirun -np 32 ./cg 8192 500
+Sequential max error: 1.97619698383278e-14
+Parallel max error: 1.95399252334028e-14
+Generate time: 0.106380 s
+Sequential solution time: 0.376589 s
+Parallel solution time: 0.067898 s
