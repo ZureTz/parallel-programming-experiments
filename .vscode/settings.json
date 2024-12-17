@@ -9,11 +9,14 @@
     "Gatherv",
     "kmeans",
     "mpiexec",
+    "mpirun",
+    "nbody",
     "nclusters",
     "Pthread",
     "radixsort",
     "Sendrecv",
     "shellsort",
+    "Timestep",
     "vect",
     "Wtime"
   ]
