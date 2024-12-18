@@ -1,0 +1,618 @@
+make: Entering directory '/home/parallel_3/Projects/parallel-programming-experiments/experiment-4/knn/src'
+rm -f knn-exec
+make: Leaving directory '/home/parallel_3/Projects/parallel-programming-experiments/experiment-4/knn/src'
+make: Entering directory '/home/parallel_3/Projects/parallel-programming-experiments/experiment-4/knn/src'
+/usr/local/cuda-12.4/bin/nvcc -O3 -std=c++11 main.cu knnCPU.cpp -o knn-exec
+make: Leaving directory '/home/parallel_3/Projects/parallel-programming-experiments/experiment-4/knn/src'
+Executing: ./knn-exec 10 10 10000 100
+Max grid size:
+  X dimension: 2147483647
+  Y dimension: 65535
+  Z dimension: 65535
+Max shared memory per block: 49152 bytes
+Starting initialization.
+Elapsed time: 94177 ns.
+
+Starting sequential knn.
+Elapsed time: 457660 ns.
+
+Starting parallel knn.
+Elapsed time: 683816 ns.
+
+Output OK!
+
+Executing: ./knn-exec 10 10 10000 1000
+Max grid size:
+  X dimension: 2147483647
+  Y dimension: 65535
+  Z dimension: 65535
+Max shared memory per block: 49152 bytes
+Starting initialization.
+Elapsed time: 99975 ns.
+
+Starting sequential knn.
+Elapsed time: 4522660 ns.
+
+Starting parallel knn.
+Elapsed time: 4636704 ns.
+
+Output OK!
+
+Executing: ./knn-exec 10 10 10000 10000
+Max grid size:
+  X dimension: 2147483647
+  Y dimension: 65535
+  Z dimension: 65535
+Max shared memory per block: 49152 bytes
+Starting initialization.
+Elapsed time: 156187 ns.
+
+Starting sequential knn.
+Elapsed time: 45542970 ns.
+
+Starting parallel knn.
+Elapsed time: 44452229 ns.
+
+Output OK!
+
+Executing: ./knn-exec 10 10 100000 100
+Max grid size:
+  X dimension: 2147483647
+  Y dimension: 65535
+  Z dimension: 65535
+Max shared memory per block: 49152 bytes
+Starting initialization.
+Elapsed time: 939719 ns.
+
+Starting sequential knn.
+Elapsed time: 3504415 ns.
+
+Starting parallel knn.
+Elapsed time: 1680342 ns.
+
+Output OK!
+
+Executing: ./knn-exec 10 10 100000 1000
+Max grid size:
+  X dimension: 2147483647
+  Y dimension: 65535
+  Z dimension: 65535
+Max shared memory per block: 49152 bytes
+Starting initialization.
+Elapsed time: 953246 ns.
+
+Starting sequential knn.
+Elapsed time: 33274572 ns.
+
+Starting parallel knn.
+Elapsed time: 12906896 ns.
+
+Output OK!
+
+Executing: ./knn-exec 10 10 100000 10000
+Max grid size:
+  X dimension: 2147483647
+  Y dimension: 65535
+  Z dimension: 65535
+Max shared memory per block: 49152 bytes
+Starting initialization.
+Elapsed time: 1024852 ns.
+
+Starting sequential knn.
+Elapsed time: 328289505 ns.
+
+Starting parallel knn.
+Elapsed time: 124574158 ns.
+
+Output OK!
+
+Executing: ./knn-exec 10 10 1000000 100
+Max grid size:
+  X dimension: 2147483647
+  Y dimension: 65535
+  Z dimension: 65535
+Max shared memory per block: 49152 bytes
+Starting initialization.
+Elapsed time: 9543773 ns.
+
+Starting sequential knn.
+Elapsed time: 31378382 ns.
+
+Starting parallel knn.
+Elapsed time: 7769885 ns.
+
+Output OK!
+
+Executing: ./knn-exec 10 10 1000000 1000
+Max grid size:
+  X dimension: 2147483647
+  Y dimension: 65535
+  Z dimension: 65535
+Max shared memory per block: 49152 bytes
+Starting initialization.
+Elapsed time: 130930312 ns.
+
+Starting sequential knn.
+Elapsed time: 4201033500 ns.
+
+Starting parallel knn.
+Elapsed time: 819415125 ns.
+
+Output OK!
+
+Executing: ./knn-exec 10 10 1000000 10000
+Max grid size:
+  X dimension: 2147483647
+  Y dimension: 65535
+  Z dimension: 65535
+Max shared memory per block: 49152 bytes
+Starting initialization.
+Elapsed time: 9743291 ns.
+
+Starting sequential knn.
+Elapsed time: 3108683082 ns.
+
+Starting parallel knn.
+Elapsed time: 589172109 ns.
+
+Output OK!
+
+Executing: ./knn-exec 10 20 10000 100
+Max grid size:
+  X dimension: 2147483647
+  Y dimension: 65535
+  Z dimension: 65535
+Max shared memory per block: 49152 bytes
+Starting initialization.
+Elapsed time: 1302187 ns.
+
+Starting sequential knn.
+Elapsed time: 6323175 ns.
+
+Starting parallel knn.
+Elapsed time: 8525475 ns.
+
+Output OK!
+
+Executing: ./knn-exec 10 20 10000 1000
+Max grid size:
+  X dimension: 2147483647
+  Y dimension: 65535
+  Z dimension: 65535
+Max shared memory per block: 49152 bytes
+Starting initialization.
+Elapsed time: 1379137 ns.
+
+Starting sequential knn.
+Elapsed time: 62150062 ns.
+
+Starting parallel knn.
+Elapsed time: 60542212 ns.
+
+Output OK!
+
+Executing: ./knn-exec 10 20 10000 10000
+Max grid size:
+  X dimension: 2147483647
+  Y dimension: 65535
+  Z dimension: 65535
+Max shared memory per block: 49152 bytes
+Starting initialization.
+Elapsed time: 2164500 ns.
+
+Starting sequential knn.
+Elapsed time: 630387675 ns.
+
+Starting parallel knn.
+Elapsed time: 581646375 ns.
+
+Output OK!
+
+Executing: ./knn-exec 10 20 100000 100
+Max grid size:
+  X dimension: 2147483647
+  Y dimension: 65535
+  Z dimension: 65535
+Max shared memory per block: 49152 bytes
+Starting initialization.
+Elapsed time: 12929062 ns.
+
+Starting sequential knn.
+Elapsed time: 47113987 ns.
+
+Starting parallel knn.
+Elapsed time: 21868987 ns.
+
+Output OK!
+
+Executing: ./knn-exec 10 20 100000 1000
+Max grid size:
+  X dimension: 2147483647
+  Y dimension: 65535
+  Z dimension: 65535
+Max shared memory per block: 49152 bytes
+Starting initialization.
+Elapsed time: 13041450 ns.
+
+Starting sequential knn.
+Elapsed time: 450099900 ns.
+
+Starting parallel knn.
+Elapsed time: 168288862 ns.
+
+Output OK!
+
+Executing: ./knn-exec 10 20 100000 10000
+Max grid size:
+  X dimension: 2147483647
+  Y dimension: 65535
+  Z dimension: 65535
+Max shared memory per block: 49152 bytes
+Starting initialization.
+Elapsed time: 13773712 ns.
+
+Starting sequential knn.
+Elapsed time: 4468531950 ns.
+
+Starting parallel knn.
+Elapsed time: 1638643612 ns.
+
+Output OK!
+
+Executing: ./knn-exec 10 20 1000000 100
+Max grid size:
+  X dimension: 2147483647
+  Y dimension: 65535
+  Z dimension: 65535
+Max shared memory per block: 49152 bytes
+Starting initialization.
+Elapsed time: 130843012 ns.
+
+Starting sequential knn.
+Elapsed time: 430173787 ns.
+
+Starting parallel knn.
+Elapsed time: 106497675 ns.
+
+Output OK!
+
+Executing: ./knn-exec 10 20 1000000 1000
+Max grid size:
+  X dimension: 2147483647
+  Y dimension: 65535
+  Z dimension: 65535
+Max shared memory per block: 49152 bytes
+Starting initialization.
+Elapsed time: 9690312 ns.
+
+Starting sequential knn.
+Elapsed time: 308864085 ns.
+
+Starting parallel knn.
+Elapsed time: 60109581 ns.
+
+Output OK!
+
+Executing: ./knn-exec 10 20 1000000 10000
+Max grid size:
+  X dimension: 2147483647
+  Y dimension: 65535
+  Z dimension: 65535
+Max shared memory per block: 49152 bytes
+Starting initialization.
+Elapsed time: 138009375 ns.
+
+Starting sequential knn.
+Elapsed time: 42253710975 ns.
+
+Starting parallel knn.
+Elapsed time: 8028362475 ns.
+
+Output OK!
+
+Executing: ./knn-exec 20 10 10000 100
+Max grid size:
+  X dimension: 2147483647
+  Y dimension: 65535
+  Z dimension: 65535
+Max shared memory per block: 49152 bytes
+Starting initialization.
+Elapsed time: 96003 ns.
+
+Starting sequential knn.
+Elapsed time: 737653 ns.
+
+Starting parallel knn.
+Elapsed time: 1504485 ns.
+
+Output OK!
+
+Executing: ./knn-exec 20 10 10000 1000
+Max grid size:
+  X dimension: 2147483647
+  Y dimension: 65535
+  Z dimension: 65535
+Max shared memory per block: 49152 bytes
+Starting initialization.
+Elapsed time: 118188 ns.
+
+Starting sequential knn.
+Elapsed time: 8328397 ns.
+
+Starting parallel knn.
+Elapsed time: 14181756 ns.
+
+Output OK!
+
+Executing: ./knn-exec 20 10 10000 10000
+Max grid size:
+  X dimension: 2147483647
+  Y dimension: 65535
+  Z dimension: 65535
+Max shared memory per block: 49152 bytes
+Starting initialization.
+Elapsed time: 158999 ns.
+
+Starting sequential knn.
+Elapsed time: 71630947 ns.
+
+Starting parallel knn.
+Elapsed time: 119426419 ns.
+
+Output OK!
+
+Executing: ./knn-exec 20 10 100000 100
+Max grid size:
+  X dimension: 2147483647
+  Y dimension: 65535
+  Z dimension: 65535
+Max shared memory per block: 49152 bytes
+Starting initialization.
+Elapsed time: 965937 ns.
+
+Starting sequential knn.
+Elapsed time: 4037522 ns.
+
+Starting parallel knn.
+Elapsed time: 3531452 ns.
+
+Output OK!
+
+Executing: ./knn-exec 20 10 100000 1000
+Max grid size:
+  X dimension: 2147483647
+  Y dimension: 65535
+  Z dimension: 65535
+Max shared memory per block: 49152 bytes
+Starting initialization.
+Elapsed time: 973339 ns.
+
+Starting sequential knn.
+Elapsed time: 39121610 ns.
+
+Starting parallel knn.
+Elapsed time: 29479940 ns.
+
+Output OK!
+
+Executing: ./knn-exec 20 10 100000 10000
+Max grid size:
+  X dimension: 2147483647
+  Y dimension: 65535
+  Z dimension: 65535
+Max shared memory per block: 49152 bytes
+Starting initialization.
+Elapsed time: 1025867 ns.
+
+Starting sequential knn.
+Elapsed time: 368460322 ns.
+
+Starting parallel knn.
+Elapsed time: 289902483 ns.
+
+Output OK!
+
+Executing: ./knn-exec 20 10 1000000 100
+Max grid size:
+  X dimension: 2147483647
+  Y dimension: 65535
+  Z dimension: 65535
+Max shared memory per block: 49152 bytes
+Starting initialization.
+Elapsed time: 9772413 ns.
+
+Starting sequential knn.
+Elapsed time: 33062478 ns.
+
+Starting parallel knn.
+Elapsed time: 11537644 ns.
+
+Output OK!
+
+Executing: ./knn-exec 20 10 1000000 1000
+Max grid size:
+  X dimension: 2147483647
+  Y dimension: 65535
+  Z dimension: 65535
+Max shared memory per block: 49152 bytes
+Starting initialization.
+Elapsed time: 9890833 ns.
+
+Starting sequential knn.
+Elapsed time: 323154135 ns.
+
+Starting parallel knn.
+Elapsed time: 97146242 ns.
+
+Output OK!
+
+Executing: ./knn-exec 20 10 1000000 10000
+Max grid size:
+  X dimension: 2147483647
+  Y dimension: 65535
+  Z dimension: 65535
+Max shared memory per block: 49152 bytes
+Starting initialization.
+Elapsed time: 9976565 ns.
+
+Starting sequential knn.
+Elapsed time: 3260054193 ns.
+
+Starting parallel knn.
+Elapsed time: 986800346 ns.
+
+Output OK!
+
+Executing: ./knn-exec 20 20 10000 100
+Max grid size:
+  X dimension: 2147483647
+  Y dimension: 65535
+  Z dimension: 65535
+Max shared memory per block: 49152 bytes
+Starting initialization.
+Elapsed time: 114971 ns.
+
+Starting sequential knn.
+Elapsed time: 875277 ns.
+
+Starting parallel knn.
+Elapsed time: 1796632 ns.
+
+Output OK!
+
+Executing: ./knn-exec 20 20 10000 1000
+Max grid size:
+  X dimension: 2147483647
+  Y dimension: 65535
+  Z dimension: 65535
+Max shared memory per block: 49152 bytes
+Starting initialization.
+Elapsed time: 108862 ns.
+
+Starting sequential knn.
+Elapsed time: 7179557 ns.
+
+Starting parallel knn.
+Elapsed time: 12171467 ns.
+
+Output OK!
+
+Executing: ./knn-exec 20 20 10000 10000
+Max grid size:
+  X dimension: 2147483647
+  Y dimension: 65535
+  Z dimension: 65535
+Max shared memory per block: 49152 bytes
+Starting initialization.
+Elapsed time: 168747 ns.
+
+Starting sequential knn.
+Elapsed time: 72294586 ns.
+
+Starting parallel knn.
+Elapsed time: 119511819 ns.
+
+Output OK!
+
+Executing: ./knn-exec 20 20 100000 100
+Max grid size:
+  X dimension: 2147483647
+  Y dimension: 65535
+  Z dimension: 65535
+Max shared memory per block: 49152 bytes
+Starting initialization.
+Elapsed time: 1136391 ns.
+
+Starting sequential knn.
+Elapsed time: 4589031 ns.
+
+Starting parallel knn.
+Elapsed time: 4156986 ns.
+
+Output OK!
+
+Executing: ./knn-exec 20 20 100000 1000
+Max grid size:
+  X dimension: 2147483647
+  Y dimension: 65535
+  Z dimension: 65535
+Max shared memory per block: 49152 bytes
+Starting initialization.
+Elapsed time: 961291 ns.
+
+Starting sequential knn.
+Elapsed time: 36979697 ns.
+
+Starting parallel knn.
+Elapsed time: 29308674 ns.
+
+Output OK!
+
+Executing: ./knn-exec 20 20 100000 10000
+Max grid size:
+  X dimension: 2147483647
+  Y dimension: 65535
+  Z dimension: 65535
+Max shared memory per block: 49152 bytes
+Starting initialization.
+Elapsed time: 1025485 ns.
+
+Starting sequential knn.
+Elapsed time: 373173467 ns.
+
+Starting parallel knn.
+Elapsed time: 290871535 ns.
+
+Output OK!
+
+Executing: ./knn-exec 20 20 1000000 100
+Max grid size:
+  X dimension: 2147483647
+  Y dimension: 65535
+  Z dimension: 65535
+Max shared memory per block: 49152 bytes
+Starting initialization.
+Elapsed time: 9740863 ns.
+
+Starting sequential knn.
+Elapsed time: 32572991 ns.
+
+Starting parallel knn.
+Elapsed time: 11402367 ns.
+
+Output OK!
+
+Executing: ./knn-exec 20 20 1000000 1000
+Max grid size:
+  X dimension: 2147483647
+  Y dimension: 65535
+  Z dimension: 65535
+Max shared memory per block: 49152 bytes
+Starting initialization.
+Elapsed time: 9798930 ns.
+
+Starting sequential knn.
+Elapsed time: 321408723 ns.
+
+Starting parallel knn.
+Elapsed time: 96023881 ns.
+
+Output OK!
+
+Executing: ./knn-exec 20 20 1000000 10000
+Max grid size:
+  X dimension: 2147483647
+  Y dimension: 65535
+  Z dimension: 65535
+Max shared memory per block: 49152 bytes
+Starting initialization.
+Elapsed time: 9883061 ns.
+
+Starting sequential knn.
+Elapsed time: 3223775285 ns.
+
+Starting parallel knn.
+Elapsed time: 982885714 ns.
+
+Output OK!
+
