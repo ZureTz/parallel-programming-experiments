@@ -11,13 +11,13 @@ Max grid size:
   Z dimension: 65535
 Max shared memory per block: 49152 bytes
 Starting initialization.
-Elapsed time: 94177 ns.
+Elapsed time: 109867 ns.
 
 Starting sequential knn.
-Elapsed time: 457660 ns.
+Elapsed time: 544869 ns.
 
 Starting parallel knn.
-Elapsed time: 683816 ns.
+Elapsed time: 790533 ns.
 
 Output OK!
 
@@ -28,13 +28,13 @@ Max grid size:
   Z dimension: 65535
 Max shared memory per block: 49152 bytes
 Starting initialization.
-Elapsed time: 99975 ns.
+Elapsed time: 100304 ns.
 
 Starting sequential knn.
-Elapsed time: 4522660 ns.
+Elapsed time: 4560226 ns.
 
 Starting parallel knn.
-Elapsed time: 4636704 ns.
+Elapsed time: 4636047 ns.
 
 Output OK!
 
@@ -45,13 +45,13 @@ Max grid size:
   Z dimension: 65535
 Max shared memory per block: 49152 bytes
 Starting initialization.
-Elapsed time: 156187 ns.
+Elapsed time: 165043 ns.
 
 Starting sequential knn.
-Elapsed time: 45542970 ns.
+Elapsed time: 44990062 ns.
 
 Starting parallel knn.
-Elapsed time: 44452229 ns.
+Elapsed time: 44060302 ns.
 
 Output OK!
 
@@ -62,13 +62,13 @@ Max grid size:
   Z dimension: 65535
 Max shared memory per block: 49152 bytes
 Starting initialization.
-Elapsed time: 939719 ns.
+Elapsed time: 942650 ns.
 
 Starting sequential knn.
-Elapsed time: 3504415 ns.
+Elapsed time: 3550225 ns.
 
 Starting parallel knn.
-Elapsed time: 1680342 ns.
+Elapsed time: 1671137 ns.
 
 Output OK!
 
@@ -79,13 +79,13 @@ Max grid size:
   Z dimension: 65535
 Max shared memory per block: 49152 bytes
 Starting initialization.
-Elapsed time: 953246 ns.
+Elapsed time: 975103 ns.
 
 Starting sequential knn.
-Elapsed time: 33274572 ns.
+Elapsed time: 33640389 ns.
 
 Starting parallel knn.
-Elapsed time: 12906896 ns.
+Elapsed time: 12865169 ns.
 
 Output OK!
 
@@ -96,13 +96,13 @@ Max grid size:
   Z dimension: 65535
 Max shared memory per block: 49152 bytes
 Starting initialization.
-Elapsed time: 1024852 ns.
+Elapsed time: 1019890 ns.
 
 Starting sequential knn.
-Elapsed time: 328289505 ns.
+Elapsed time: 332065347 ns.
 
 Starting parallel knn.
-Elapsed time: 124574158 ns.
+Elapsed time: 124042555 ns.
 
 Output OK!
 
@@ -113,13 +113,13 @@ Max grid size:
   Z dimension: 65535
 Max shared memory per block: 49152 bytes
 Starting initialization.
-Elapsed time: 9543773 ns.
+Elapsed time: 9509386 ns.
 
 Starting sequential knn.
-Elapsed time: 31378382 ns.
+Elapsed time: 31415925 ns.
 
 Starting parallel knn.
-Elapsed time: 7769885 ns.
+Elapsed time: 7625695 ns.
 
 Output OK!
 
@@ -130,13 +130,13 @@ Max grid size:
   Z dimension: 65535
 Max shared memory per block: 49152 bytes
 Starting initialization.
-Elapsed time: 130930312 ns.
+Elapsed time: 9798351 ns.
 
 Starting sequential knn.
-Elapsed time: 4201033500 ns.
+Elapsed time: 314091848 ns.
 
 Starting parallel knn.
-Elapsed time: 819415125 ns.
+Elapsed time: 59890743 ns.
 
 Output OK!
 
@@ -147,13 +147,13 @@ Max grid size:
   Z dimension: 65535
 Max shared memory per block: 49152 bytes
 Starting initialization.
-Elapsed time: 9743291 ns.
+Elapsed time: 9551026 ns.
 
 Starting sequential knn.
-Elapsed time: 3108683082 ns.
+Elapsed time: 3065750384 ns.
 
 Starting parallel knn.
-Elapsed time: 589172109 ns.
+Elapsed time: 579516145 ns.
 
 Output OK!
 
@@ -164,13 +164,13 @@ Max grid size:
   Z dimension: 65535
 Max shared memory per block: 49152 bytes
 Starting initialization.
-Elapsed time: 1302187 ns.
+Elapsed time: 114346 ns.
 
 Starting sequential knn.
-Elapsed time: 6323175 ns.
+Elapsed time: 574529 ns.
 
 Starting parallel knn.
-Elapsed time: 8525475 ns.
+Elapsed time: 737319 ns.
 
 Output OK!
 
@@ -181,13 +181,13 @@ Max grid size:
   Z dimension: 65535
 Max shared memory per block: 49152 bytes
 Starting initialization.
-Elapsed time: 1379137 ns.
+Elapsed time: 98786 ns.
 
 Starting sequential knn.
-Elapsed time: 62150062 ns.
+Elapsed time: 4491034 ns.
 
 Starting parallel knn.
-Elapsed time: 60542212 ns.
+Elapsed time: 4329425 ns.
 
 Output OK!
 
@@ -198,13 +198,13 @@ Max grid size:
   Z dimension: 65535
 Max shared memory per block: 49152 bytes
 Starting initialization.
-Elapsed time: 2164500 ns.
+Elapsed time: 154401 ns.
 
 Starting sequential knn.
-Elapsed time: 630387675 ns.
+Elapsed time: 44844365 ns.
 
 Starting parallel knn.
-Elapsed time: 581646375 ns.
+Elapsed time: 41815483 ns.
 
 Output OK!
 
@@ -215,13 +215,13 @@ Max grid size:
   Z dimension: 65535
 Max shared memory per block: 49152 bytes
 Starting initialization.
-Elapsed time: 12929062 ns.
+Elapsed time: 922198 ns.
 
 Starting sequential knn.
-Elapsed time: 47113987 ns.
+Elapsed time: 3406845 ns.
 
 Starting parallel knn.
-Elapsed time: 21868987 ns.
+Elapsed time: 1567551 ns.
 
 Output OK!
 
@@ -232,13 +232,13 @@ Max grid size:
   Z dimension: 65535
 Max shared memory per block: 49152 bytes
 Starting initialization.
-Elapsed time: 13041450 ns.
+Elapsed time: 951570 ns.
 
 Starting sequential knn.
-Elapsed time: 450099900 ns.
+Elapsed time: 33243869 ns.
 
 Starting parallel knn.
-Elapsed time: 168288862 ns.
+Elapsed time: 12109142 ns.
 
 Output OK!
 
@@ -249,13 +249,13 @@ Max grid size:
   Z dimension: 65535
 Max shared memory per block: 49152 bytes
 Starting initialization.
-Elapsed time: 13773712 ns.
+Elapsed time: 1001219 ns.
 
 Starting sequential knn.
-Elapsed time: 4468531950 ns.
+Elapsed time: 328293846 ns.
 
 Starting parallel knn.
-Elapsed time: 1638643612 ns.
+Elapsed time: 119046322 ns.
 
 Output OK!
 
@@ -266,13 +266,13 @@ Max grid size:
   Z dimension: 65535
 Max shared memory per block: 49152 bytes
 Starting initialization.
-Elapsed time: 130843012 ns.
+Elapsed time: 9430189 ns.
 
 Starting sequential knn.
-Elapsed time: 430173787 ns.
+Elapsed time: 31009922 ns.
 
 Starting parallel knn.
-Elapsed time: 106497675 ns.
+Elapsed time: 7602004 ns.
 
 Output OK!
 
@@ -283,13 +283,13 @@ Max grid size:
   Z dimension: 65535
 Max shared memory per block: 49152 bytes
 Starting initialization.
-Elapsed time: 9690312 ns.
+Elapsed time: 9556098 ns.
 
 Starting sequential knn.
-Elapsed time: 308864085 ns.
+Elapsed time: 304267412 ns.
 
 Starting parallel knn.
-Elapsed time: 60109581 ns.
+Elapsed time: 59064088 ns.
 
 Output OK!
 
@@ -300,13 +300,13 @@ Max grid size:
   Z dimension: 65535
 Max shared memory per block: 49152 bytes
 Starting initialization.
-Elapsed time: 138009375 ns.
+Elapsed time: 9738772 ns.
 
 Starting sequential knn.
-Elapsed time: 42253710975 ns.
+Elapsed time: 3091916603 ns.
 
 Starting parallel knn.
-Elapsed time: 8028362475 ns.
+Elapsed time: 578428084 ns.
 
 Output OK!
 
@@ -317,13 +317,13 @@ Max grid size:
   Z dimension: 65535
 Max shared memory per block: 49152 bytes
 Starting initialization.
-Elapsed time: 96003 ns.
+Elapsed time: 94645 ns.
 
 Starting sequential knn.
-Elapsed time: 737653 ns.
+Elapsed time: 721039 ns.
 
 Starting parallel knn.
-Elapsed time: 1504485 ns.
+Elapsed time: 1470781 ns.
 
 Output OK!
 
@@ -334,13 +334,13 @@ Max grid size:
   Z dimension: 65535
 Max shared memory per block: 49152 bytes
 Starting initialization.
-Elapsed time: 118188 ns.
+Elapsed time: 97076 ns.
 
 Starting sequential knn.
-Elapsed time: 8328397 ns.
+Elapsed time: 6908536 ns.
 
 Starting parallel knn.
-Elapsed time: 14181756 ns.
+Elapsed time: 11861738 ns.
 
 Output OK!
 
@@ -351,13 +351,13 @@ Max grid size:
   Z dimension: 65535
 Max shared memory per block: 49152 bytes
 Starting initialization.
-Elapsed time: 158999 ns.
+Elapsed time: 155840 ns.
 
 Starting sequential knn.
-Elapsed time: 71630947 ns.
+Elapsed time: 70964182 ns.
 
 Starting parallel knn.
-Elapsed time: 119426419 ns.
+Elapsed time: 117772773 ns.
 
 Output OK!
 
@@ -368,13 +368,13 @@ Max grid size:
   Z dimension: 65535
 Max shared memory per block: 49152 bytes
 Starting initialization.
-Elapsed time: 965937 ns.
+Elapsed time: 955753 ns.
 
 Starting sequential knn.
-Elapsed time: 4037522 ns.
+Elapsed time: 3991051 ns.
 
 Starting parallel knn.
-Elapsed time: 3531452 ns.
+Elapsed time: 3492392 ns.
 
 Output OK!
 
@@ -385,13 +385,13 @@ Max grid size:
   Z dimension: 65535
 Max shared memory per block: 49152 bytes
 Starting initialization.
-Elapsed time: 973339 ns.
+Elapsed time: 947859 ns.
 
 Starting sequential knn.
-Elapsed time: 39121610 ns.
+Elapsed time: 36512926 ns.
 
 Starting parallel knn.
-Elapsed time: 29479940 ns.
+Elapsed time: 28716796 ns.
 
 Output OK!
 
@@ -402,13 +402,13 @@ Max grid size:
   Z dimension: 65535
 Max shared memory per block: 49152 bytes
 Starting initialization.
-Elapsed time: 1025867 ns.
+Elapsed time: 1006239 ns.
 
 Starting sequential knn.
-Elapsed time: 368460322 ns.
+Elapsed time: 366923667 ns.
 
 Starting parallel knn.
-Elapsed time: 289902483 ns.
+Elapsed time: 287061729 ns.
 
 Output OK!
 
@@ -419,13 +419,13 @@ Max grid size:
   Z dimension: 65535
 Max shared memory per block: 49152 bytes
 Starting initialization.
-Elapsed time: 9772413 ns.
+Elapsed time: 9522042 ns.
 
 Starting sequential knn.
-Elapsed time: 33062478 ns.
+Elapsed time: 31550203 ns.
 
 Starting parallel knn.
-Elapsed time: 11537644 ns.
+Elapsed time: 11095660 ns.
 
 Output OK!
 
@@ -436,13 +436,13 @@ Max grid size:
   Z dimension: 65535
 Max shared memory per block: 49152 bytes
 Starting initialization.
-Elapsed time: 9890833 ns.
+Elapsed time: 9664853 ns.
 
 Starting sequential knn.
-Elapsed time: 323154135 ns.
+Elapsed time: 314210320 ns.
 
 Starting parallel knn.
-Elapsed time: 97146242 ns.
+Elapsed time: 94890396 ns.
 
 Output OK!
 
@@ -453,13 +453,13 @@ Max grid size:
   Z dimension: 65535
 Max shared memory per block: 49152 bytes
 Starting initialization.
-Elapsed time: 9976565 ns.
+Elapsed time: 9620433 ns.
 
 Starting sequential knn.
-Elapsed time: 3260054193 ns.
+Elapsed time: 3156235304 ns.
 
 Starting parallel knn.
-Elapsed time: 986800346 ns.
+Elapsed time: 975023747 ns.
 
 Output OK!
 
@@ -470,13 +470,13 @@ Max grid size:
   Z dimension: 65535
 Max shared memory per block: 49152 bytes
 Starting initialization.
-Elapsed time: 114971 ns.
+Elapsed time: 101982 ns.
 
 Starting sequential knn.
-Elapsed time: 875277 ns.
+Elapsed time: 781520 ns.
 
 Starting parallel knn.
-Elapsed time: 1796632 ns.
+Elapsed time: 1605782 ns.
 
 Output OK!
 
@@ -487,13 +487,13 @@ Max grid size:
   Z dimension: 65535
 Max shared memory per block: 49152 bytes
 Starting initialization.
-Elapsed time: 108862 ns.
+Elapsed time: 99717 ns.
 
 Starting sequential knn.
-Elapsed time: 7179557 ns.
+Elapsed time: 7078239 ns.
 
 Starting parallel knn.
-Elapsed time: 12171467 ns.
+Elapsed time: 12065115 ns.
 
 Output OK!
 
@@ -504,13 +504,13 @@ Max grid size:
   Z dimension: 65535
 Max shared memory per block: 49152 bytes
 Starting initialization.
-Elapsed time: 168747 ns.
+Elapsed time: 164819 ns.
 
 Starting sequential knn.
-Elapsed time: 72294586 ns.
+Elapsed time: 70418020 ns.
 
 Starting parallel knn.
-Elapsed time: 119511819 ns.
+Elapsed time: 117093130 ns.
 
 Output OK!
 
@@ -521,13 +521,13 @@ Max grid size:
   Z dimension: 65535
 Max shared memory per block: 49152 bytes
 Starting initialization.
-Elapsed time: 1136391 ns.
+Elapsed time: 924910 ns.
 
 Starting sequential knn.
-Elapsed time: 4589031 ns.
+Elapsed time: 3914482 ns.
 
 Starting parallel knn.
-Elapsed time: 4156986 ns.
+Elapsed time: 3399894 ns.
 
 Output OK!
 
@@ -538,13 +538,13 @@ Max grid size:
   Z dimension: 65535
 Max shared memory per block: 49152 bytes
 Starting initialization.
-Elapsed time: 961291 ns.
+Elapsed time: 940001 ns.
 
 Starting sequential knn.
-Elapsed time: 36979697 ns.
+Elapsed time: 36435080 ns.
 
 Starting parallel knn.
-Elapsed time: 29308674 ns.
+Elapsed time: 28948944 ns.
 
 Output OK!
 
@@ -555,13 +555,13 @@ Max grid size:
   Z dimension: 65535
 Max shared memory per block: 49152 bytes
 Starting initialization.
-Elapsed time: 1025485 ns.
+Elapsed time: 1018605 ns.
 
 Starting sequential knn.
-Elapsed time: 373173467 ns.
+Elapsed time: 373651264 ns.
 
 Starting parallel knn.
-Elapsed time: 290871535 ns.
+Elapsed time: 288369758 ns.
 
 Output OK!
 
@@ -572,13 +572,13 @@ Max grid size:
   Z dimension: 65535
 Max shared memory per block: 49152 bytes
 Starting initialization.
-Elapsed time: 9740863 ns.
+Elapsed time: 9734401 ns.
 
 Starting sequential knn.
-Elapsed time: 32572991 ns.
+Elapsed time: 32614283 ns.
 
 Starting parallel knn.
-Elapsed time: 11402367 ns.
+Elapsed time: 11366871 ns.
 
 Output OK!
 
@@ -589,13 +589,13 @@ Max grid size:
   Z dimension: 65535
 Max shared memory per block: 49152 bytes
 Starting initialization.
-Elapsed time: 9798930 ns.
+Elapsed time: 9588955 ns.
 
 Starting sequential knn.
-Elapsed time: 321408723 ns.
+Elapsed time: 312977560 ns.
 
 Starting parallel knn.
-Elapsed time: 96023881 ns.
+Elapsed time: 95498580 ns.
 
 Output OK!
 
@@ -606,13 +606,13 @@ Max grid size:
   Z dimension: 65535
 Max shared memory per block: 49152 bytes
 Starting initialization.
-Elapsed time: 9883061 ns.
+Elapsed time: 9768556 ns.
 
 Starting sequential knn.
-Elapsed time: 3223775285 ns.
+Elapsed time: 3172708075 ns.
 
 Starting parallel knn.
-Elapsed time: 982885714 ns.
+Elapsed time: 974039718 ns.
 
 Output OK!
 

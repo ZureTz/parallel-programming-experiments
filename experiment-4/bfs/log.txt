@@ -8,11 +8,11 @@ Number of vertices 100000
 Number of edges 1000000
 
 Starting sequential bfs.
-Elapsed time: 17490221 ns.
+Elapsed time: 5573159 ns.
 
 Starting parallel bfs.
 setting device 0 with name NVIDIA GeForce RTX 3060
-Elapsed time: 562784 ns.
+Elapsed time: 771742 ns.
 
 Output OK!
 
@@ -20,11 +20,11 @@ Number of vertices 100000
 Number of edges 10000000
 
 Starting sequential bfs.
-Elapsed time: 48525239 ns.
+Elapsed time: 21412853 ns.
 
 Starting parallel bfs.
 setting device 0 with name NVIDIA GeForce RTX 3060
-Elapsed time: 844175 ns.
+Elapsed time: 715939 ns.
 
 Output OK!
 
@@ -32,11 +32,11 @@ Number of vertices 100000
 Number of edges 100000000
 
 Starting sequential bfs.
-Elapsed time: 244523504 ns.
+Elapsed time: 125713096 ns.
 
 Starting parallel bfs.
 setting device 0 with name NVIDIA GeForce RTX 3060
-Elapsed time: 4888143 ns.
+Elapsed time: 4629260 ns.
 
 Output OK!
 
@@ -44,11 +44,11 @@ Number of vertices 1000000
 Number of edges 1000000
 
 Starting sequential bfs.
-Elapsed time: 4750 ns.
+Elapsed time: 3562 ns.
 
 Starting parallel bfs.
 setting device 0 with name NVIDIA GeForce RTX 3060
-Elapsed time: 2271318 ns.
+Elapsed time: 1313147 ns.
 
 Output OK!
 
@@ -56,11 +56,11 @@ Number of vertices 1000000
 Number of edges 10000000
 
 Starting sequential bfs.
-Elapsed time: 352966187 ns.
+Elapsed time: 117412723 ns.
 
 Starting parallel bfs.
 setting device 0 with name NVIDIA GeForce RTX 3060
-Elapsed time: 8148488 ns.
+Elapsed time: 6582360 ns.
 
 Output OK!
 
@@ -68,11 +68,11 @@ Number of vertices 1000000
 Number of edges 100000000
 
 Starting sequential bfs.
-Elapsed time: 813438242 ns.
+Elapsed time: 320581355 ns.
 
 Starting parallel bfs.
 setting device 0 with name NVIDIA GeForce RTX 3060
-Elapsed time: 31895814 ns.
+Elapsed time: 30189334 ns.
 
 Output OK!
 
@@ -80,11 +80,11 @@ Number of vertices 10000000
 Number of edges 10000000
 
 Starting sequential bfs.
-Elapsed time: 13061 ns.
+Elapsed time: 4749 ns.
 
 Starting parallel bfs.
 setting device 0 with name NVIDIA GeForce RTX 3060
-Elapsed time: 20701884 ns.
+Elapsed time: 12189952 ns.
 
 Output OK!
 
@@ -92,11 +92,11 @@ Number of vertices 10000000
 Number of edges 100000000
 
 Starting sequential bfs.
-Elapsed time: 4701651777 ns.
+Elapsed time: 2266945396 ns.
 
 Starting parallel bfs.
 setting device 0 with name NVIDIA GeForce RTX 3060
-Elapsed time: 98318696 ns.
+Elapsed time: 91020375 ns.
 
 Output OK!
 
@@ -104,11 +104,11 @@ Number of vertices 10000000
 Number of edges 100000000
 
 Starting sequential bfs.
-Elapsed time: 4865734306 ns.
+Elapsed time: 2237710906 ns.
 
 Starting parallel bfs.
 setting device 0 with name NVIDIA GeForce RTX 3060
-Elapsed time: 99059498 ns.
+Elapsed time: 91102309 ns.
 
 Output OK!
 

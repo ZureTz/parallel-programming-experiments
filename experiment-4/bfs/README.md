@@ -1,17 +1,27 @@
-## General
+# Experiment-4 BFS
 
 Sequential and Parallel Breadth-First Search (BFS) using CUDA.
 
+## Compiling
 
-## Compilation
+Before compiling, you need to change working directory to BFS.
+```bash
+cd experiment-4/bfs
+```
 
-`make clean` removes the compiled executable `bfs-exec`.
+To compile source code into binary:
+```bash
+make -C src all
+```
 
-`make` compiles the code.
+To remove the compiled executable `bfs-exec`:
+```bash
+make -C src clean 
+```
 
 ## Running
 
-As this program executes BFS in CPU and then in CUDA without specifying any parameters, providing the parameters below only is OK.
+As this program executes BFS in CPU and then in CUDA sequentially without specifying any parameters, providing the parameters below only is OK.
 
 ```bash
 ./bfs-exec <start vertex> <number of vertices> <number of edges>
@@ -19,8 +29,10 @@ As this program executes BFS in CPU and then in CUDA without specifying any para
 
 ## Performance Testing
 
-Simply run `build.sh`, which includes all the needed parameters be given.
+Simply run `test.sh`, which includes all the needed parameters be given.
+
+Below is a recommended way to run `test.sh` to test the performance.
 
 ```bash
-./test.sh |
+./test.sh | tee log.txt
 ```
