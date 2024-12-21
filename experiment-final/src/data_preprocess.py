@@ -31,6 +31,7 @@ def bleu(pred_seq: str, label_seq: str, k: int) -> float:
     Returns:
         float: The BLEU score.
     """
+    
     pred_tokens, label_tokens = pred_seq.split(" "), label_seq.split(" ")
     len_pred, len_label = len(pred_tokens), len(label_tokens)
     score = math.exp(min(0, 1 - len_label / len_pred))
@@ -88,7 +89,9 @@ class Vocab:  # @save
     Vocabulary for text.
     """
 
-    def __init__(self, tokens=None, min_freq=0, reserved_tokens=None):
+    def __init__(
+        self, tokens: list = None, min_freq: int = 0, reserved_tokens: list = None
+    ):
         if tokens is None:
             tokens = []
         if reserved_tokens is None:
@@ -128,7 +131,7 @@ class Vocab:  # @save
         return self._token_freqs
 
 
-def download(name: str, cache_dir: str = os.path.join(".", "data")) -> str:  # @save
+def download(name: str, cache_dir: str = os.path.join(".", "data")) -> str:
     # """下载一个DATA_HUB中的文件,返回本地文件名"""
     """
     Download a file inserted into DATA_HUB, return the local filename.
@@ -140,6 +143,7 @@ def download(name: str, cache_dir: str = os.path.join(".", "data")) -> str:  # @
     Returns:
         str: The local filename of the downloaded file.
     """
+    
     assert name in DATA_HUB, f"{name} 不存在于 {DATA_HUB}"
     url, sha1_hash = DATA_HUB[name]
     os.makedirs(cache_dir, exist_ok=True)
@@ -161,8 +165,18 @@ def download(name: str, cache_dir: str = os.path.join(".", "data")) -> str:  # @
     return fname
 
 
-def download_extract(name: str, folder: str = None) -> str:  # @save
-    """下载并解压zip/tar文件"""
+def download_extract(name: str, folder: str = None) -> str:
+    """
+    下载并解压zip/tar文件
+
+    Args:
+        name (str): The name of the file to download in DATA_HUB
+        folder (str, optional): The folder to extract the file to. Defaults to None.
+
+    Returns:
+        str: The local directory of the extracted file.
+    """
+    
     fname = download(name)
     base_dir = os.path.dirname(fname)
     data_dir, ext = os.path.splitext(fname)
@@ -177,16 +191,30 @@ def download_extract(name: str, folder: str = None) -> str:  # @save
 
 
 def read_data_nmt():
-    """载入“英语－法语”数据集"""
+    """
+    载入“英语－法语”数据集
+
+    Returns:
+        str: 英语－法语数据集
+    """
+    
     data_dir = download_extract("fra-eng")
     with open(os.path.join(data_dir, "fra.txt"), "r", encoding="utf-8") as f:
         return f.read()
 
 
-def preprocess_nmt(text):
-    """预处理“英语－法语”数据集"""
+def preprocess_nmt(text: str) -> str:
+    """
+    预处理“英语－法语”数据集
 
-    def no_space(char, prev_char):
+    Args:
+        text (str): 英语－法语数据集
+
+    Returns:
+        str: 预处理后的英语－法语数据集
+    """
+
+    def no_space(char: str, prev_char: str) -> bool:
         return char in set(",.!?") and prev_char != " "
 
     # 使用空格替换不间断空格
@@ -200,8 +228,18 @@ def preprocess_nmt(text):
     return "".join(out)
 
 
-def tokenize_nmt(text, num_examples=None):
-    """词元化“英语－法语”数据数据集"""
+def tokenize_nmt(text: str, num_examples: int = None) -> Tuple[list, list]:
+    """
+    词元化“英语－法语”数据数据集
+
+    Args:
+        text (str): 英语－法语数据集
+        num_examples (int, optional): 读取的样本数. Defaults to None.
+
+    Returns:
+        Tuple[list, list]: 源语言和目标语言的词元列表
+    """
+
     source, target = [], []
     for i, line in enumerate(text.split("\n")):
         if num_examples and i > num_examples:
@@ -213,26 +251,39 @@ def tokenize_nmt(text, num_examples=None):
     return source, target
 
 
-def truncate_pad(line, num_steps, padding_token):
-    """截断或填充文本序列"""
+def truncate_pad(line: str, num_steps: int, padding_token: str) -> str:
+    """
+    截断或填充文本序列
+
+    Args:
+        line (str): 文本序列
+        num_steps (int): 文本序列的长度
+        padding_token (str): 填充词元
+
+    Returns:
+        str: 截断或填充后的文本序列
+    """
+
     if len(line) > num_steps:
         return line[:num_steps]  # 截断
     return line + [padding_token] * (num_steps - len(line))  # 填充
 
 
-def build_array_nmt(lines, vocab, num_steps):
-    # """将机器翻译的文本序列转换成小批量"""
+def build_array_nmt(
+    lines: str, vocab: Vocab, num_steps: int
+) -> Tuple[torch.tensor, torch.tensor]:
     """
-    Convert machine translation text sequences into mini-batches.
+    将机器翻译的文本序列转换成小批量
 
     Args:
-        lines (_type_): _description_
-        vocab (_type_): _description_
-        num_steps (_type_): _description_
+        lines (str): 文本序列
+        vocab (Vocab): 词汇表
+        num_steps (int): 文本序列的长度
 
     Returns:
-        _type_: _description_
+        Tuple[torch.tensor, torch.tensor]: 小批量的文本序列和有效长度
     """
+
     lines = [vocab[l] for l in lines]
     lines = [l + [vocab["<eos>"]] for l in lines]
     array = torch.tensor([truncate_pad(l, num_steps, vocab["<pad>"]) for l in lines])
@@ -242,25 +293,38 @@ def build_array_nmt(lines, vocab, num_steps):
 
 def load_array(
     data_arrays: Tuple[torch.tensor], batch_size: int, is_train: bool = True
-):  # @save
+) -> data.DataLoader:
     """
-    Construct a PyTorch data iterator.
+    读取数据数组并返回数据迭代器
 
     Args:
-        data_arrays (Tuple[torch.tensor]): Tuple of data tensors.
-        batch_size (int): Batch size.
-        is_train (bool, optional): Whether the data is for training. Defaults to True.
+        data_arrays (Tuple[torch.tensor]): 数据数组
+        batch_size (int): 批量大小
+        is_train (bool, optional): 是否为训练数据. Defaults to True.
 
     Returns:
-        data.DataLoader: Data loader.
+        data.DataLoader: 数据迭代器
     """
 
     dataset = data.TensorDataset(*data_arrays)
     return data.DataLoader(dataset, batch_size, shuffle=is_train)
 
 
-def load_data_nmt(batch_size, num_steps, num_examples=600):
-    """返回翻译数据集的迭代器和词表"""
+def load_data_nmt(
+    batch_size: int, num_steps: int, num_examples: int = 600
+) -> Tuple[data.DataLoader, Vocab, Vocab]:
+    """
+    返回翻译数据集的迭代器和词表
+
+    Args:
+        batch_size (int): 批量大小
+        num_steps (int): 文本序列的长度
+        num_examples (int, optional): 读取的样本数. Defaults to 600.
+
+    Returns:
+        Tuple[data.DataLoader, Vocab, Vocab]: 数据迭代器和词表
+    """
+    
     text = preprocess_nmt(read_data_nmt())
     source, target = tokenize_nmt(text, num_examples)
     src_vocab = Vocab(source, min_freq=2, reserved_tokens=["<pad>", "<bos>", "<eos>"])

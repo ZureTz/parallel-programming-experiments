@@ -1,4 +1,5 @@
 import math
+from typing import Any
 import torch
 from torch import nn, Tensor
 
@@ -30,7 +31,7 @@ def transpose_output(X: Tensor, num_heads: int) -> Tensor:
     Args:
         X (Tensor): 经过变换的形状为(batch_size, 查询的个数, num_hiddens)
         num_heads (int): 多注意力头的数量
-    
+
     Returns:
         Tensor: 逆转操作后的张量
     """
@@ -39,8 +40,18 @@ def transpose_output(X: Tensor, num_heads: int) -> Tensor:
     return X.reshape(X.shape[0], X.shape[1], -1)
 
 
-def sequence_mask(X: Tensor, valid_len, value=0):
-    """在序列中屏蔽不相关的项"""
+def sequence_mask(X: Tensor, valid_len: Tensor, value: int = 0) -> Tensor:
+    """
+    在序列中屏蔽不相关的项
+
+    Args:
+        X (Tensor): 3D张量
+        valid_len (Tensor): 1D或2D张量
+        value (int, optional): 要替换的值. 默认为 0.
+
+    Returns:
+        Tensor: 一个与X形状相同的张量, 其中有效长度之后的元素被替换为value
+    """
     maxlen = X.size(1)
     mask = (
         torch.arange((maxlen), dtype=torch.float32, device=X.device)[None, :]
@@ -50,8 +61,17 @@ def sequence_mask(X: Tensor, valid_len, value=0):
     return X
 
 
-def masked_softmax(X, valid_lens):
-    """通过在最后一个轴上掩蔽元素来执行softmax操作"""
+def masked_softmax(X: Tensor, valid_lens: Tensor) -> Tensor:
+    """
+    通过在最后一个轴上掩蔽元素来执行softmax操作
+
+    Args:
+        X (Tensor): 3D张量
+        valid_lens (Tensor): 1D或2D张量
+
+    Returns:
+        Tensor: 通过softmax操作后的张量
+    """
     # X:3D张量，valid_lens:1D或2D张量
     if valid_lens is None:
         return nn.functional.softmax(X, dim=-1)
@@ -77,7 +97,7 @@ class Encoder(nn.Module):
     def __init__(self, **kwargs):
         super(Encoder, self).__init__(**kwargs)
 
-    def forward(self, X, *args):
+    def forward(self, X: Tensor, *args):
         raise NotImplementedError
 
 
@@ -123,7 +143,7 @@ class EncoderDecoder(nn.Module):
         nn.Module: PyTorch的神经网络模块
     """
 
-    def __init__(self, encoder, decoder, **kwargs):
+    def __init__(self, encoder: Encoder, decoder: Decoder, **kwargs):
         super(EncoderDecoder, self).__init__(**kwargs)
         self.encoder = encoder
         self.decoder = decoder
@@ -146,7 +166,7 @@ class MaskedSoftmaxCELoss(nn.CrossEntropyLoss):
     # pred的形状：(batch_size,num_steps,vocab_size)
     # label的形状：(batch_size,num_steps)
     # valid_len的形状：(batch_size,)
-    def forward(self, pred, label, valid_len):
+    def forward(self, pred: Tensor, label: Tensor, valid_len: Tensor) -> Tensor:
         weights = torch.ones_like(label)
         weights = sequence_mask(weights, valid_len)
         self.reduction = "none"
@@ -162,7 +182,7 @@ class Accumulator:  # @save
     在n个变量上累加。
     """
 
-    def __init__(self, n):
+    def __init__(self, n: int):
         self.data = [0.0] * n
 
     def add(self, *args):
@@ -171,7 +191,7 @@ class Accumulator:  # @save
     def reset(self):
         self.data = [0.0] * len(self.data)
 
-    def __getitem__(self, idx):
+    def __getitem__(self, idx: int) -> float:
         return self.data[idx]
 
 
@@ -183,7 +203,7 @@ class PositionalEncoding(nn.Module):
         nn.Module: PyTorch的神经网络模块
     """
 
-    def __init__(self, num_hiddens, dropout, max_len=1000):
+    def __init__(self, num_hiddens: int, dropout: float, max_len: int = 1000):
         super(PositionalEncoding, self).__init__()
         self.dropout = nn.Dropout(dropout)
         # 创建一个足够长的P
@@ -194,7 +214,7 @@ class PositionalEncoding(nn.Module):
         self.P[:, :, 0::2] = torch.sin(X)
         self.P[:, :, 1::2] = torch.cos(X)
 
-    def forward(self, X):
+    def forward(self, X: Tensor) -> Tensor:
         X = X + self.P[:, : X.shape[1], :].to(X.device)
         return self.dropout(X)
 
@@ -207,7 +227,7 @@ class DotProductAttention(nn.Module):
         nn.Module: PyTorch的神经网络模块
     """
 
-    def __init__(self, dropout, **kwargs):
+    def __init__(self, dropout: float, **kwargs):
         super(DotProductAttention, self).__init__(**kwargs)
         self.dropout = nn.Dropout(dropout)
 
@@ -215,7 +235,9 @@ class DotProductAttention(nn.Module):
     # keys的形状：(batch_size，“键－值”对的个数，d)
     # values的形状：(batch_size，“键－值”对的个数，值的维度)
     # valid_lens的形状:(batch_size，)或者(batch_size，查询的个数)
-    def forward(self, queries, keys, values, valid_lens=None):
+    def forward(
+        self, queries: Tensor, keys: Tensor, values: Tensor, valid_lens: Tensor = None
+    ) -> Tensor:
         d = queries.shape[-1]
         # 设置transpose_b=True为了交换keys的最后两个维度、
 
@@ -227,18 +249,21 @@ class DotProductAttention(nn.Module):
 class MultiHeadAttention(nn.Module):
     """
     多头注意力
+
+    Args:
+        nn.Module: PyTorch的神经网络模块
     """
 
     def __init__(
         self,
-        key_size,
-        query_size,
-        value_size,
-        num_hiddens,
-        num_heads,
-        dropout,
-        bias=False,
-        **kwargs
+        key_size: int,
+        query_size: int,
+        value_size: int,
+        num_hiddens: int,
+        num_heads: int,
+        dropout: float,
+        bias: bool = False,
+        **kwargs: Any
     ):
         super(MultiHeadAttention, self).__init__(**kwargs)
         self.num_heads = num_heads
@@ -249,7 +274,9 @@ class MultiHeadAttention(nn.Module):
         self.W_v = nn.Linear(value_size, num_hiddens, bias=bias)
         self.W_o = nn.Linear(num_hiddens, num_hiddens, bias=bias)
 
-    def forward(self, queries, keys, values, valid_lens):
+    def forward(
+        self, queries: Tensor, keys: Tensor, values: Tensor, valid_lens: Tensor
+    ) -> nn.Linear:
         # queries，keys，values的形状:
         # (batch_size，查询或者“键－值”对的个数，num_hiddens)
         # valid_lens　的形状:
@@ -278,48 +305,65 @@ class MultiHeadAttention(nn.Module):
 
 
 class PositionWiseFFN(nn.Module):
-    """基于位置的前馈网络"""
+    """
+    基于位置的前馈网络
 
-    def __init__(self, ffn_num_input, ffn_num_hiddens, ffn_num_outputs, **kwargs):
+    Args:
+        nn.Module: PyTorch的神经网络模块
+    """
+
+    def __init__(
+        self, ffn_num_input: int, ffn_num_hiddens: int, ffn_num_outputs: int, **kwargs
+    ):
         super(PositionWiseFFN, self).__init__(**kwargs)
         self.dense1 = nn.Linear(ffn_num_input, ffn_num_hiddens)
         self.relu = nn.ReLU()
         self.dense2 = nn.Linear(ffn_num_hiddens, ffn_num_outputs)
 
-    def forward(self, X):
+    def forward(self, X) -> nn.Linear:
         return self.dense2(self.relu(self.dense1(X)))
 
 
 # @save
 class AddNorm(nn.Module):
-    """残差连接后进行层规范化"""
+    """
+    残差连接后进行层规范化
 
-    def __init__(self, normalized_shape, dropout, **kwargs):
+    Args:
+        nn.Module: PyTorch的神经网络模块
+    """
+
+    def __init__(self, normalized_shape: list[int], dropout: float, **kwargs: Any):
         super(AddNorm, self).__init__(**kwargs)
         self.dropout = nn.Dropout(dropout)
         self.ln = nn.LayerNorm(normalized_shape)
 
-    def forward(self, X, Y):
+    def forward(self, X, Y) -> nn.LayerNorm:
         return self.ln(self.dropout(Y) + X)
 
 
 # @save
 class EncoderBlock(nn.Module):
-    """Transformer编码器块"""
+    """
+    Transformer编码器块
+
+    Args:
+        nn.Module: PyTorch的神经网络模块
+    """
 
     def __init__(
         self,
-        key_size,
-        query_size,
-        value_size,
-        num_hiddens,
-        norm_shape,
-        ffn_num_input,
-        ffn_num_hiddens,
-        num_heads,
-        dropout,
-        use_bias=False,
-        **kwargs
+        key_size: int,
+        query_size: int,
+        value_size: int,
+        num_hiddens: int,
+        norm_shape: list[int],
+        ffn_num_input: int,
+        ffn_num_hiddens: int,
+        num_heads: int,
+        dropout: float,
+        use_bias: bool = False,
+        **kwargs: Any
     ):
         super(EncoderBlock, self).__init__(**kwargs)
         self.attention = MultiHeadAttention(
@@ -336,23 +380,28 @@ class EncoderBlock(nn.Module):
 
 # @save
 class TransformerEncoder(Encoder):
-    """Transformer编码器"""
+    """
+    Transformer编码器
+
+    Args:
+        Encoder: 编码器-解码器架构的基本编码器接口
+    """
 
     def __init__(
         self,
-        vocab_size,
-        key_size,
-        query_size,
-        value_size,
-        num_hiddens,
-        norm_shape,
-        ffn_num_input,
-        ffn_num_hiddens,
-        num_heads,
-        num_layers,
-        dropout,
-        use_bias=False,
-        **kwargs
+        vocab_size: int,
+        key_size: int,
+        query_size: int,
+        value_size: int,
+        num_hiddens: int,
+        norm_shape: list[int],
+        ffn_num_input: int,
+        ffn_num_hiddens: int,
+        num_heads: int,
+        num_layers: int,
+        dropout: float,
+        use_bias: bool = False,
+        **kwargs: Any
     ):
         super(TransformerEncoder, self).__init__(**kwargs)
         self.num_hiddens = num_hiddens
@@ -389,21 +438,26 @@ class TransformerEncoder(Encoder):
 
 
 class DecoderBlock(nn.Module):
-    """解码器中第i个块"""
+    """
+    解码器中第i个块
+
+    Args:
+        nn.Module: PyTorch的神经网络模块
+    """
 
     def __init__(
         self,
-        key_size,
-        query_size,
-        value_size,
-        num_hiddens,
-        norm_shape,
-        ffn_num_input,
-        ffn_num_hiddens,
-        num_heads,
-        dropout,
-        i,
-        **kwargs
+        key_size: int,
+        query_size: int,
+        value_size: int,
+        num_hiddens: int,
+        norm_shape: list[int],
+        ffn_num_input: int,
+        ffn_num_hiddens: int,
+        num_heads: int,
+        dropout: float,
+        i: int,
+        **kwargs: Any
     ):
         super(DecoderBlock, self).__init__(**kwargs)
         self.i = i
@@ -450,20 +504,27 @@ class DecoderBlock(nn.Module):
 
 
 class TransformerDecoder(AttentionDecoder):
+    """
+    Transformer解码器
+
+    Args:
+        AttentionDecoder: 带有注意力机制解码器的基本接口
+    """
+
     def __init__(
         self,
-        vocab_size,
-        key_size,
-        query_size,
-        value_size,
-        num_hiddens,
-        norm_shape,
-        ffn_num_input,
-        ffn_num_hiddens,
-        num_heads,
-        num_layers,
-        dropout,
-        **kwargs
+        vocab_size: int,
+        key_size: int,
+        query_size: int,
+        value_size: int,
+        num_hiddens: int,
+        norm_shape: list[int],
+        ffn_num_input: int,
+        ffn_num_hiddens: int,
+        num_heads: int,
+        num_layers: int,
+        dropout: float,
+        **kwargs: Any
     ):
         super(TransformerDecoder, self).__init__(**kwargs)
         self.num_hiddens = num_hiddens

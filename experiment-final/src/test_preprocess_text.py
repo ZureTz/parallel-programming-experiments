@@ -25,11 +25,14 @@ def download(name: str, cache_dir: str = os.path.join(".", "data")) -> str:
     Args:
         name (str): 在DATA_HUB中下载的文件名
         cache_dir (str, optional): 存储下载文件的本地目录. 默认为 os.path.join(".", "data").
+    
+    Returns:
+        str: 下载文件的本地文件名
     """
 
     # Check if the file is in the DATA_HUB
     assert name in DATA_HUB, f"{name} 不存在于 {DATA_HUB}"
-
+    # Get the URL and SHA-1 hash value from the DATA_HUB
     url, sha1_hash = DATA_HUB[name]
 
     # Create the cache directory if it does not exist
@@ -66,6 +69,8 @@ def read_time_machine() -> list[str]:  # @save
 
     with open(download("time_machine"), "r") as f:
         lines = f.readlines()
+
+    # Return the list of text lines after removing special characters and converting to lowercase
     return [re.sub("[^A-Za-z]+", " ", line).strip().lower() for line in lines]
 
 
