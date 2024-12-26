@@ -1,5 +1,6 @@
 import random
 from typing import Any, Tuple
+
 import torch
 from torch import nn, Tensor
 from torch.utils.data import DataLoader
@@ -28,14 +29,14 @@ def try_gpu(i: int = 0) -> torch.device:
         torch.device: GPU(i) 或 CPU()
     """
 
-    if torch.cuda.device_count() >= i + 1:
-        print("Pytorch version\t:", torch.__version__)
-        print("CUDA version\t:", torch.version.cuda)
-        print("GPU\t\t:", torch.cuda.get_device_name(), "\n", "-" * 50)
-        return torch.device(f"cuda:{i}")
-    else:
-        print("cuda is not available !")
+    if torch.cuda.device_count() < i + 1:
+        print("CUDA is not available !")
         return torch.device("cpu")
+
+    print("Pytorch version\t:", torch.__version__)
+    print("CUDA version\t:", torch.version.cuda)
+    print("GPU\t\t:", torch.cuda.get_device_name(), "\n", "-" * 50)
+    return torch.device(f"cuda:{i}")
 
 
 def grad_clipping(net: nn.Module | Any, theta: int):
@@ -281,9 +282,9 @@ def main():
 
     # 进行4次模型推理, 完成英语到法语的翻译任务 --- 演示翻译效果
     # 检查模型功能是否正确：功能正确则至少出现一个bleu 1.000；否则错误
-    print("\n 4 example of  English => French  translation task")
-    engs = ["go .", "i lost .", "he's calm .", "i'm home ."]
-    fras = ["va !", "j'ai perdu .", "il est calme .", "je suis chez moi ."]
+    print("\n4 example of  English => French  translation task")
+    engs = ["go .", "i lost .", "he 's calm .", "i 'm home ."]
+    fras = ["va !", "j 'ai perdu .", "il est calme .", "je suis chez moi ."]
     for eng, fra in zip(engs, fras):
         translation, dec_attention_weight_seq = predict_seq2seq(
             net, eng, src_vocab, tgt_vocab, num_steps, device, True

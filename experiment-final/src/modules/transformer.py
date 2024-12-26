@@ -177,7 +177,7 @@ class MaskedSoftmaxCELoss(nn.CrossEntropyLoss):
         return weighted_loss
 
 
-class Accumulator: 
+class Accumulator:
     """
     在n个变量上累加。
     """
@@ -324,7 +324,6 @@ class PositionWiseFFN(nn.Module):
         return self.dense2(self.relu(self.dense1(X)))
 
 
-# @save
 class AddNorm(nn.Module):
     """
     残差连接后进行层规范化
@@ -342,7 +341,6 @@ class AddNorm(nn.Module):
         return self.ln(self.dropout(Y) + X)
 
 
-# @save
 class EncoderBlock(nn.Module):
     """
     Transformer编码器块
@@ -378,7 +376,6 @@ class EncoderBlock(nn.Module):
         return self.addnorm2(Y, self.ffn(Y))
 
 
-# @save
 class TransformerEncoder(Encoder):
     """
     Transformer编码器

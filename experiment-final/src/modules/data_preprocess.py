@@ -6,8 +6,9 @@ import hashlib
 import requests
 import math
 import collections
+from typing import Callable, Final, Tuple
 
-from typing import Final, Tuple
+import nltk
 from torch.utils import data
 
 DATA_HUB = dict()
@@ -62,25 +63,6 @@ def count_corpus(tokens: list) -> collections.Counter:
         # 将词元列表展平成一个列表
         tokens = [token for line in tokens for token in line]
     return collections.Counter(tokens)
-
-
-def truncate_pad(line: str, num_steps: int, padding_token: str) -> list:
-    # """截断或填充文本序列"""
-    """
-    Truncate or pad text sequences.
-
-    Args:
-        line (str): The text sequence.
-        num_steps (int): The length of the text sequence.
-        padding_token (str): The padding token.
-
-    Returns:
-        list: The truncated or padded text sequence.
-    """
-
-    if len(line) > num_steps:
-        return line[:num_steps]  # 截断
-    return line + [padding_token] * (num_steps - len(line))  # 填充
 
 
 class Vocab:
@@ -189,7 +171,7 @@ def download_extract(name: str, folder: str = None) -> str:
     return os.path.join(base_dir, folder) if folder else data_dir
 
 
-def read_data_nmt():
+def read_data_nmt() -> str:
     """
     载入“英语－法语”数据集
 
@@ -200,35 +182,6 @@ def read_data_nmt():
     data_dir = download_extract("fra-eng")
     with open(os.path.join(data_dir, "fra.txt"), "r", encoding="utf-8") as f:
         return f.read()
-
-
-def preprocess_nmt(text: str) -> str:
-    """
-    预处理“英语－法语”数据集
-
-    Args:
-        text (str): 英语－法语数据集
-
-    Returns:
-        str: 预处理后的英语－法语数据集
-    """
-
-    # Check if the text is already preprocessed
-    # Ensure the text does not contain any punctuation and spaces
-    # Add fozenset to optimize the performance
-    punctuationSet: Final[frozenset] = frozenset(",.!?")
-    def no_space(char: str, prev_char: str) -> bool:
-        return char in punctuationSet and prev_char != " "
-
-    # 使用空格替换不间断空格
-    # 使用小写字母替换大写字母
-    text = text.replace("\u202f", " ").replace("\xa0", " ").lower()
-    # 在单词和标点符号之间插入空格
-    out = [
-        " " + char if i > 0 and no_space(char, text[i - 1]) else char
-        for i, char in enumerate(text)
-    ]
-    return "".join(out)
 
 
 def tokenize_nmt(text: str, num_examples: int = None) -> Tuple[list, list]:
@@ -243,14 +196,19 @@ def tokenize_nmt(text: str, num_examples: int = None) -> Tuple[list, list]:
         Tuple[list, list]: 源语言和目标语言的词元列表
     """
 
+    # Split the text into two parts: source and target
     source, target = [], []
-    for i, line in enumerate(text.split("\n")):
+
+    for i, line in enumerate(text.lower().split("\n")):
         if num_examples and i > num_examples:
             break
         parts = line.split("\t")
-        if len(parts) == 2:
-            source.append(parts[0].split(" "))
-            target.append(parts[1].split(" "))
+        if len(parts) != 2:
+            continue
+
+        source.append(nltk.word_tokenize(parts[0].strip()))
+        target.append(nltk.word_tokenize(parts[1].strip()))
+
     return source, target
 
 
@@ -328,8 +286,10 @@ def load_data_nmt(
         Tuple[data.DataLoader, Vocab, Vocab]: 数据迭代器和词表
     """
 
-    text = preprocess_nmt(read_data_nmt())
+    # Read data and then 
+    text = read_data_nmt()
     source, target = tokenize_nmt(text, num_examples)
+
     src_vocab = Vocab(source, min_freq=2, reserved_tokens=["<pad>", "<bos>", "<eos>"])
     tgt_vocab = Vocab(target, min_freq=2, reserved_tokens=["<pad>", "<bos>", "<eos>"])
     src_array, src_valid_len = build_array_nmt(source, src_vocab, num_steps)
