@@ -3,8 +3,10 @@ import timeit
 import torch
 import numpy as np
 
-class Timer: 
+
+class Timer:
     """记录多次运行时间"""
+
     def __init__(self):
         self.times = []
         self.start()
@@ -29,8 +31,8 @@ class Timer:
     def cumsum(self):
         """返回累计时间"""
         return np.array(self.times).cumsum().tolist()
-    
-    
+
+
 def time_stamp_cudasync():
     torch.cuda.synchronize()
-    return timeit.default_timer()  
+    return timeit.default_timer()

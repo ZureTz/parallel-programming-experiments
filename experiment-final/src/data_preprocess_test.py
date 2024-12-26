@@ -1,7 +1,6 @@
 # Description: This file is used to test the preprocess_text.py file.
 # Path: experiment-final/src/test_preprocess_text.py
 
-from ast import main
 import re
 import os
 import hashlib
@@ -25,7 +24,7 @@ def download(name: str, cache_dir: str = os.path.join(".", "data")) -> str:
     Args:
         name (str): 在DATA_HUB中下载的文件名
         cache_dir (str, optional): 存储下载文件的本地目录. 默认为 os.path.join(".", "data").
-    
+
     Returns:
         str: 下载文件的本地文件名
     """

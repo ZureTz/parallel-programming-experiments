@@ -1,5 +1,6 @@
 import math
 from typing import Any
+
 import torch
 from torch import nn, Tensor
 
@@ -154,7 +155,6 @@ class EncoderDecoder(nn.Module):
         return self.decoder(dec_X, dec_state)
 
 
-# @save
 class MaskedSoftmaxCELoss(nn.CrossEntropyLoss):
     """
     带遮蔽的softmax交叉熵损失函数
@@ -177,7 +177,7 @@ class MaskedSoftmaxCELoss(nn.CrossEntropyLoss):
         return weighted_loss
 
 
-class Accumulator:  # @save
+class Accumulator: 
     """
     在n个变量上累加。
     """

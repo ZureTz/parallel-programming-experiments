@@ -7,7 +7,7 @@ import requests
 import math
 import collections
 
-from typing import Tuple
+from typing import Final, Tuple
 from torch.utils import data
 
 DATA_HUB = dict()
@@ -19,7 +19,6 @@ DATA_HUB["fra-eng"] = (
 
 
 def bleu(pred_seq: str, label_seq: str, k: int) -> float:
-    # """计算BLEU"""
     """
     Calculate BLEU.
 
@@ -31,7 +30,7 @@ def bleu(pred_seq: str, label_seq: str, k: int) -> float:
     Returns:
         float: The BLEU score.
     """
-    
+
     pred_tokens, label_tokens = pred_seq.split(" "), label_seq.split(" ")
     len_pred, len_label = len(pred_tokens), len(label_tokens)
     score = math.exp(min(0, 1 - len_label / len_pred))
@@ -84,7 +83,7 @@ def truncate_pad(line: str, num_steps: int, padding_token: str) -> list:
     return line + [padding_token] * (num_steps - len(line))  # 填充
 
 
-class Vocab:  # @save
+class Vocab:
     """
     Vocabulary for text.
     """
@@ -143,7 +142,7 @@ def download(name: str, cache_dir: str = os.path.join(".", "data")) -> str:
     Returns:
         str: The local filename of the downloaded file.
     """
-    
+
     assert name in DATA_HUB, f"{name} 不存在于 {DATA_HUB}"
     url, sha1_hash = DATA_HUB[name]
     os.makedirs(cache_dir, exist_ok=True)
@@ -176,7 +175,7 @@ def download_extract(name: str, folder: str = None) -> str:
     Returns:
         str: The local directory of the extracted file.
     """
-    
+
     fname = download(name)
     base_dir = os.path.dirname(fname)
     data_dir, ext = os.path.splitext(fname)
@@ -197,7 +196,7 @@ def read_data_nmt():
     Returns:
         str: 英语－法语数据集
     """
-    
+
     data_dir = download_extract("fra-eng")
     with open(os.path.join(data_dir, "fra.txt"), "r", encoding="utf-8") as f:
         return f.read()
@@ -214,8 +213,12 @@ def preprocess_nmt(text: str) -> str:
         str: 预处理后的英语－法语数据集
     """
 
+    # Check if the text is already preprocessed
+    # Ensure the text does not contain any punctuation and spaces
+    # Add fozenset to optimize the performance
+    punctuationSet: Final[frozenset] = frozenset(",.!?")
     def no_space(char: str, prev_char: str) -> bool:
-        return char in set(",.!?") and prev_char != " "
+        return char in punctuationSet and prev_char != " "
 
     # 使用空格替换不间断空格
     # 使用小写字母替换大写字母
@@ -324,7 +327,7 @@ def load_data_nmt(
     Returns:
         Tuple[data.DataLoader, Vocab, Vocab]: 数据迭代器和词表
     """
-    
+
     text = preprocess_nmt(read_data_nmt())
     source, target = tokenize_nmt(text, num_examples)
     src_vocab = Vocab(source, min_freq=2, reserved_tokens=["<pad>", "<bos>", "<eos>"])
