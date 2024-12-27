@@ -6,7 +6,7 @@ import hashlib
 import requests
 import math
 import collections
-from typing import Callable, Final, Tuple
+from typing import Tuple
 
 import nltk
 from torch.utils import data
@@ -286,14 +286,19 @@ def load_data_nmt(
         Tuple[data.DataLoader, Vocab, Vocab]: 数据迭代器和词表
     """
 
-    # Read data and then 
+    # Read data and then tokenize
     text = read_data_nmt()
     source, target = tokenize_nmt(text, num_examples)
 
+    # Build vocabulary
     src_vocab = Vocab(source, min_freq=2, reserved_tokens=["<pad>", "<bos>", "<eos>"])
     tgt_vocab = Vocab(target, min_freq=2, reserved_tokens=["<pad>", "<bos>", "<eos>"])
+    
+    # Convert the text sequence into a mini-batch
     src_array, src_valid_len = build_array_nmt(source, src_vocab, num_steps)
     tgt_array, tgt_valid_len = build_array_nmt(target, tgt_vocab, num_steps)
+    
+    # Return the data iterator and the vocabularies
     data_arrays = (src_array, src_valid_len, tgt_array, tgt_valid_len)
     data_iter = load_array(data_arrays, batch_size)
     return data_iter, src_vocab, tgt_vocab

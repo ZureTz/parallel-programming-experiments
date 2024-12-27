@@ -47,18 +47,15 @@ def grad_clipping(net: nn.Module | Any, theta: int):
         net (nn.Module): 神经网络
         theta (int): 裁剪的阈值
     """
-    # 如果net是nn.Module的实例, 将其参数存储在列表中
-    if isinstance(net, nn.Module):
-        params = [p for p in net.parameters() if p.requires_grad]
-    # 否则, net应该是nn.Module的实例
-    else:
-        params = net.params
-
-    # 计算梯度的L2范数
-    norm = torch.sqrt(sum(torch.sum((p.grad**2)) for p in params))
-    if norm > theta:
-        for param in params:
-            param.grad[:] *= theta / norm
+    if not isinstance(net, nn.Module):
+        return
+        
+    # 使用PyTorch内置的梯度裁剪函数，更高效且数值稳定
+    torch.nn.utils.clip_grad_norm_(
+        parameters=net.parameters(),
+        max_norm=theta,
+        norm_type=2.0
+    )
 
 
 def train_seq2seq(
