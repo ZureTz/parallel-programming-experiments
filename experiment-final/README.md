@@ -1,5 +1,3 @@
-> 本文为中国石油大学（北京）并行程序设计课程大作业而准备，内容包括从源码安装PyTorch的指南，以及代码模板的说明
-
 # 从源码安装PyTorch
 
 源码安装的官方说明 [PyTorch Github | From Source](https://github.com/pytorch/pytorch?tab=readme-ov-file#from-source) ； 
