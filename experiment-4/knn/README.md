@@ -35,5 +35,3 @@ Below is a recommended way to run `test.sh` to test the performance.
 ```bash
 ./test.sh | tee log.txt
 ```
-
-<!-- knnCPU.cpp里面有两种方法，一种是寻找最近邻时是参考小根堆实现，另一种直接k次循环，每次遍历距离数组，找到k个最小的，若要实现可选择性注释一个函数 -->
