@@ -54,6 +54,7 @@
     "NVCCFLAGS",
     "Pthread",
     "radixsort",
+    "randn",
     "rdtsc",
     "Sendrecv",
     "sharedneighclass",
